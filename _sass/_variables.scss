@@ -1,3 +1,20 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ @prithv1
+ Watch 4
+  Star 37
+  Fork 126 AkshayAgarwal007/Jekyll-Mono
+ Code  Issues 3  Pull requests 3  Projects 0  Wiki  Pulse  Graphs
+Branch: master Find file Copy pathJekyll-Mono/_sass/_variables.scss
+f905f24  on Jun 6
+@AkshayAgarwal007 AkshayAgarwal007 avatar path updated
+1 contributor
+RawBlameHistory    
+50 lines (36 sloc)  1.17 KB
 
 //
 // VARIABLES
@@ -18,16 +35,16 @@ $blue: #4183C4;
 // Main theme colors 
 // Some cool main theme colors(violet:#8476ad;blue:#5cacee;red:#ff7373,#ff6f69;green:#6acf64,#2ddbb3;orange:#ffa268)
 
-$mono-color:#847ad;                // main theme color(header, links, footer icons, buttons, post-title)
+$mono-color:#8476ad;                // main theme color(header, links, footer icons, buttons, post-title)
 $hl-color: $darkGray;              // header link color (author name and posted on date) for blog post meta 
 $navbar-hover-color:$gray;        // navbar hover color (site name and navbar links hover color)
-$link-color: $blue;        // normal hyperlink color other than the ones above.
+$link-color: $darkerGray;        // normal hyperlink color other than the ones above.
 
 
 // Heading colors
 // You can play around with these too!
-$h1-color: $black;
-$h2-color: $black; 
+$h1-color: $mono-color;
+$h2-color: $mono-color; 
 $h3-color: $darkerGray; 
 $h4-color: $gray; 
 
@@ -48,3 +65,5 @@ $georgia: Georgia, serif;
     @content;
   }
 }
+Contact GitHub API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Status Help
