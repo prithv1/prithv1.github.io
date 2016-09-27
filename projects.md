@@ -8,6 +8,8 @@ permalink: /projects/
 ### [Counting Everyday Objects in Everyday Scenes](https://arxiv.org/abs/1604.03505)
 **Prithvijit Chattopadhyay**, **Ramakrishna Vedantam**, **Ramprasaath Selvaraju**, **Devi Parikh**, **Dhruv Batra** 
 <br/>
+I worked under the guidance of [Dr. Devi Parikh](https://filebox.ece.vt.edu/~parikh) and [Dr. Dhruv Batra](https://filebox.ece.vt.edu/~dbatra)
+<br/>
 We introduce the problem of counting everyday objects in everyday scenes. While previous works have studied specific counting problems such as pedestrian counting in surveillance videos, or biological cell counting, we are interested in counting common objects in natural scenes. Given an image, we consider the task of predicting the counts (or the numerosity) of categories of interest. We study some simple approaches and applications for this counting problem. Development in Caffe, Torch, Keras, Python, Lua.
 
 ***
@@ -16,10 +18,21 @@ We introduce the problem of counting everyday objects in everyday scenes. While 
 ### [Guess from Far, Recognize when Near: Searching the Floor for Small Objects](http://robotics.iiit.ac.in/uploads/Main/Publications/Siva_etal_ICVGIP_14.pdf)
 **M Siva Karthik**, **Sudhanshu Mittal**, **K Madhava Krishna**, **Prithvijit Chattopadhyay**, **Ayush Tomar**
 <br/>
+I worked under the guidance of [Dr. K. Madhava Krishna](http://faculty.iiit.ac.in/~mkrishna/).
+<br/>
 We implemented an efficient strategy for a robot to explore, discover, recognize and navigate to a selected few objects among a number of objects scattered on the floor, based on guess from far and recognize from near strategy. From far away, we assign Existential Probabilities to the objects, indicating their similarity to queried objects. A Bayes’ Net is constructed over the probabilities, to overlay and orient a Viewpoint Object Potential(VOP) map over potential search objects. VOP quantifies the probability of accurately recognizing an object through its RGB-D Point Cloud at various viewpoints. Further a decision tree approach is used to formulate a optimal control plan. The framework has been tested on a kinect mounted on a robotic platform. Development in ROS, C++.
 
 ***
+<img src="/images/iacs_proj.png">
 
+### [Exploring f(R) Gravity](http://arxiv.org/abs/0805.1726)
+**Prithvijit Chattopadhyay**, **Dr. Soumitra Sengupta**
+<br/>
+I worked under the guidance of [Dr. Soumitra Sengupta](http://www.iacs.res.in/theoph/tpssg/)
+<br/>
+My specific focus was looking for Charged Rotating Black Hole Solutions in Einstein-Gauss-Bonnet Dilaton Coupled Gravity. I got to explore different theories of gravity attempting to unify Quantum Mechanics and General Relativity. I studied and simulated the conditions for existence of multiple horizons in constant scalar curvature f(R) gravity and acquired results demonstrating the convergence of event and cosmological horizon. As an interesting exercise, I also studied an axisymmetric black hole in constant scalar curvature f(R) gravity.
+
+***
 ## Other Projects
 
 ### This Could Be Another Project Name
