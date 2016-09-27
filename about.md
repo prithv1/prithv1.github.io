@@ -27,22 +27,35 @@ Founder, ABC Organisation
 ## Achievements
 
 
-* [**Semi-Finalists ROBOSUB - AUVSI 2013**](#) 
+* [**Semi-Finalists ROBOSUB - AUVSI, 2013**](#) 
    
    As a part of my Undergraduate Autonomous Underwater Vehicle Team, I had the opportunity to participate in the Annual AUVSI ROBOSUB challenge. We ended up reaching the semifinals.  
 
 ***
 
-* [**This is my second achievement**](#) 
+* [**Finalists NIOT SAVe, 2013**](#) 
 
-    Proin pellentesque malesuada mauris, quis aliquam augue vestibulum ac. Vestibulum ut feugiat nibh. Sed faucibus felis purus, sed convallis leo dictum vehicula.
+    We participated in the NIOT SAVe Challenge organized by National Institue of Ocean Technology, Chennai and ended up reaching the finals.
 
 ***
 
-* [**This is my third achievement**](#) 
+* [**Selected for KVPY and INSPIRE Fellowship, 2012**](#) 
 
-   Proin pellentesque malesuada mauris, quis aliquam augue vestibulum ac. Vestibulum ut feugiat nibh. Sed faucibus felis purus, sed convallis leo dictum vehicula
+   Prior to my undergraduate studies, I was selected for the above fellowships on the basis of Academic Merit by the Department of Science and Technology (DST), Govt. of India.
 
+***
+
+* [**INPhO National Top 1%, 2012**](#)
+
+	I appeared in the Indian National Physics Olympiad Conducted by Tata Institute of Fundamental Research (TIFR) and was awarded Certificate of Merit for being placed in National Top 1 percent.
+
+***
+
+* [**Mathematical Olympiad Camps, 2011**](#)
+
+	I underwent 2 rigorous Mathematical Olympiad Training Camps conducted by Professors from Bhabha Atomic Research Center (BARC) and Indian Institute of Science (IISc).
+
+***
 
 ## Contact me
 
