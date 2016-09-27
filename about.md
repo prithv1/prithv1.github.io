@@ -56,10 +56,7 @@ Founder, ABC Organisation
 ## Contact me
 
 
-* [Primary Email - [prithv1@vt.edu](mailto:prithv1@vt.edu)](#)
+* **Primary Email** - [prithv1@vt.edu](mailto:prithv1@vt.edu)
 
-***
+* **Secondary  Email - [prithvijitchattopadhyay@gmail.com](mailto:prithvijitchattopadhyay@gmail.com)
 
-* [Secondary  Email - [prithvijitchattopadhyay@gmail.com](mailto:prithvijitchattopadhyay@gmail.com)](#)
-
-***
