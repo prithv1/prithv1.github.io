@@ -20,9 +20,11 @@ I am currently working as a Research Assistant in the Computer Vision Machine Le
 <br/>
 <br/>
 <br/>
+<br/>
 * [**Research Intern**](#)  <img src="/images/vt_logo.jpg" style="float:right;width:120px;height:90px;">
 	* [CVMLP Lab](https://filebox.ece.vt.edu/~parikh/CVL.html), Virginia Tech
 	* June 2015 - Aug 2015 
+<br/>
 <br/>
 <br/>
 <br/>
@@ -32,17 +34,20 @@ I am currently working as a Research Assistant in the Computer Vision Machine Le
 <br/>
 <br/>
 <br/>
+<br/>
 * [**Research Intern**](#)  <img src="/images/iacs_logo.jpg" style="float:right;width:120px;height:120px;">
 	* [IACS](http://www.iacs.res.in/), Kolkata
 	* June 2014 - Aug 2014
 <br/>
 <br/>
 <br/>
+<br/>
 * [**Undergraduate Researcher**](#)  <img src="/images/auv_logo.png" style="float:right;width:200px;height:60px;">
 	* [DTU AUV](http://www.dtu.ac.in/Web/Community/projectteams.php), DTU
 	* Oct 2012 - May 2016
-
-
+<br/>
+<br/>
+<br/>
 ## Skills
 
 * **Programming** - `C++` / `Python` / `Lua` / `MATLAB` / `LaTeX` / `Shell` / `Javascript` / `PHP` 
