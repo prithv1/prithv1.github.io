@@ -45,17 +45,20 @@ I worked under the guidance of [Dr. R. K. Sinha](http://spie.org/profile/rsinha)
 
 ***
 
-## Other Projects
+## Publications
 
-### This Could Be Another Project Name
+### DTU AUV ROBOSUB Journal, AUVSI Journal 2013
+ 
+### Passive Source Linear Localization Algorithms using Range Approximation Methods, IOTA IEEE DTU 2014
 
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet urna eu dolor placerat varius. Vivamus eros augue, consequat id scelerisque nec, fringilla in est. Proin pellentesque malesuada mauris, quis aliquam augue vestibulum ac. Vestibulum ut feugiat nibh. Sed faucibus felis purus, sed convallis leo dictum vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet urna eu dolor placerat varius. Vivamus eros augue, consequat id scelerisque nec, fringilla in est. Proin pellentesque malesuada mauris, quis aliquam augue vestibulum ac. Vestibulum ut feugiat nibh. Sed faucibus felis purus, sed convallis leo dictum vehicula.
-   
-### This Could Be Yet Another Project Name
+## ArXiv
 
-   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet urna eu dolor placerat varius. Vivamus eros augue, consequat id scelerisque nec, fringilla in est. Proin pellentesque malesuada mauris, quis aliquam augue vestibulum ac. Vestibulum ut feugiat nibh. Sed faucibus felis purus, sed convallis leo dictum vehicula.
-
+### Counting Everyday Objects in Everyday Scenes
+	
+	**Prithvijit Chattopadhyay**, **Ramakrishna Vedantam**, Ramprasaath RS, Dhruv Batra, Devi Parikh
 
 ## Contact me
 
-[agarwal.akshay.akshay8@gmail.com](mailto:agarwal.akshay.akshay8@gmail.com)
+* **Primary Email** - [prithv1@vt.edu](mailto:prithv1@vt.edu)
+
+* **Secondary  Email** - [prithvijitchattopadhyay@gmail.com](mailto:prithvijitchattopadhyay@gmail.com)
