@@ -17,22 +17,27 @@ I am currently working as a Research Assistant in the Computer Vision Machine Le
 * [**Research Assistant**](#)  <img src="/images/vt_logo.jpg" style="float:right;width:100px;height:90px;">
 	* [CVMLP Lab](https://filebox.ece.vt.edu/~parikh/CVL.html), Virginia Tech
 	* June 2016 - Present
-
+<br/>
+<br/>
+<br/>
 * [**Research Intern**](#)  <img src="/images/vt_logo.jpg" style="float:right;width:100px;height:90px;">
 	* [CVMLP Lab](https://filebox.ece.vt.edu/~parikh/CVL.html), Virginia Tech
 	* June 2015 - Aug 2015 
-
-
+<br/>
+<br/>
+<br/>
 * [**Research Intern**](#)  <img src="/images/iiit_logo.png" style="float:right;width:90px;height:90px;">
 	* [RRC](http://robotics.iiit.ac.in/), IIIT Hyderabad
 	* Dec 2015 - Jan 2015
-
-
+<br/>
+<br/>
+<br/>
 * [**Research Intern**](#)  <img src="/images/iacs_logo.jpg" style="float:right;width:90px;height:90px;">
 	* [IACS](http://www.iacs.res.in/), Kolkata
 	* June 2014 - Aug 2014
-
-
+<br/>
+<br/>
+<br/>
 * [**Undergraduate Researcher**](#)  <img src="/images/auv_logo.png" style="float:right;width:120px;height:90px;">
 	* [DTU AUV](http://www.dtu.ac.in/Web/Community/projectteams.php), DTU
 	* Oct 2012 - May 2016
