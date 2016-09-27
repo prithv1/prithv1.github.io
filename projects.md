@@ -33,7 +33,7 @@ I worked under the guidance of [Dr. Soumitra Sengupta](http://www.iacs.res.in/th
 My specific focus was looking for Charged Rotating Black Hole Solutions in Einstein-Gauss-Bonnet Dilaton Coupled Gravity. I got to explore different theories of gravity attempting to unify Quantum Mechanics and General Relativity. I studied and simulated the conditions for existence of multiple horizons in constant scalar curvature f(R) gravity and acquired results demonstrating the convergence of event and cosmological horizon. As an interesting exercise, I also studied an axisymmetric black hole in constant scalar curvature f(R) gravity.
 
 ***
-<img src="/images/zyra.png" style="width:408px;height:240px;">
+<img src="/images/zyra.jpg" style="width:408px;height:240px;">
 
 ### [Autonomous Underwater Vehicle, DTU](https://www.facebook.com/AUV.DTU/)
 
