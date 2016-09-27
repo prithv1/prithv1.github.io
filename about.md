@@ -47,7 +47,6 @@ I am currently working as a Research Assistant in the Computer Vision Machine Le
 	* Oct 2012 - May 2016
 
 
-	
 ## Skills
 
 * **Programming** - `C++` / `Python` / `Lua` / `MATLAB` / `LaTeX` / `Shell` / `Javascript` / `PHP` 
