@@ -8,8 +8,8 @@ I am currently working as a Research Assistant in the Computer Vision Machine Le
 
 ## Education
 
-* [**B.Tech** in Electrical Engineering (2012-2016)](#)  
-	* **Institute** -  Delhi Technological University (Formerly DCE) <img src="/images/dtu_logo.png" style="float:right;width:60px;height:60px;">
+* [**B.Tech** in Electrical Engineering (2012-2016)](#) <img src="/images/dtu_logo.png" style="float:right;width:60px;height:60px;"> 
+	* **Institute** -  Delhi Technological University (Formerly DCE) 
 	* **CPI** - 81.30
 
 
