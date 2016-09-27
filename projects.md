@@ -55,7 +55,7 @@ I worked under the guidance of [Dr. R. K. Sinha](http://spie.org/profile/rsinha)
 
 ### Counting Everyday Objects in Everyday Scenes
 	
-	**Prithvijit Chattopadhyay**, **Ramakrishna Vedantam**, Ramprasaath RS, Dhruv Batra, Devi Parikh
+	Prithvijit Chattopadhyay*, Ramakrishna Vedantam*, Ramprasaath RS, Dhruv Batra, Devi Parikh
 
 ## Contact me
 
