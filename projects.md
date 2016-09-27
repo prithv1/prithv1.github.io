@@ -28,11 +28,25 @@ We implemented an efficient strategy for a robot to explore, discover, recognize
 ### [Exploring f(R) Gravity](http://arxiv.org/abs/0805.1726)
 **Prithvijit Chattopadhyay**, **Dr. Soumitra Sengupta**
 <br/>
-I worked under the guidance of [Dr. Soumitra Sengupta](http://www.iacs.res.in/theoph/tpssg/)
+I worked under the guidance of [Dr. Soumitra Sengupta](http://www.iacs.res.in/theoph/tpssg/).
 <br/>
 My specific focus was looking for Charged Rotating Black Hole Solutions in Einstein-Gauss-Bonnet Dilaton Coupled Gravity. I got to explore different theories of gravity attempting to unify Quantum Mechanics and General Relativity. I studied and simulated the conditions for existence of multiple horizons in constant scalar curvature f(R) gravity and acquired results demonstrating the convergence of event and cosmological horizon. As an interesting exercise, I also studied an axisymmetric black hole in constant scalar curvature f(R) gravity.
 
 ***
+<img src="/images/zyra.png" style="width:408px;height:240px;">
+
+### [Autonomous Underwater Vehicle, DTU](https://www.facebook.com/AUV.DTU/)
+
+I worked under the guidance of [Dr. R. K. Sinha](http://spie.org/profile/rsinha).
+<br/>
+As a part of the team, I worked in the Underwater Acoustics and Control Systems Department. 
+<br/>
+* **Underwater Acoustics** - My aim was to develop a Passive SONAR system for 3D localization of a sound source underwater. I studied the feasibility of solutions of the hyperboloid formulation of the localization problem and developed and Implemented two Range Estimation Algorithms using TDOA (Time Difference of Arrival) Estimation. I also worked on the implementation of the method of spherical intersection for localization of sound sources. I developed and simulated an algorithm for localization in cylindrical coordinates using TDOA and Bearing Estimations.
+
+∗ **Control Systems** - My aim was to develop a robust control algorithm for the Autonomous Underwater Vehicle. I worked on developing the Control Module to implement simultaneous PID loops to maintain the orientation of the AUV and developed GUIs to tune and adjust the PID parameters accordingly. On the technical front, I implemented the use of an Android phone as the IMU(Inertial Measurement Unit) using an application for Android operating System. The Android phone uses the UDP communication for sending and receiving data packets between itself and the single board computer.
+
+***
+
 ## Other Projects
 
 ### This Could Be Another Project Name
