@@ -52,7 +52,7 @@ I am currently working as a Research Assistant in the Computer Vision Machine Le
 * **Programming** - `C++` , `Python` , `Lua` , `MATLAB` , `LaTeX` , `Shell` , `Javascript` , `PHP`
 <br/>
 <br/> 
-* **Software** - `Caffe` , `Torch` , `Keras` , `TensorFlow` , `ROS` , `PCL` , `OpenCV` , `Visual Studio`
+* **Software** - `Caffe` , `Torch` , `Keras` , `TensorFlow` , `ROS` , `PCL` , `OpenCV` 
     
     
 ## Achievements
