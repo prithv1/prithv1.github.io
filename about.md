@@ -12,6 +12,18 @@ I am currently working as a Research Assistant in the Computer Vision Machine Le
 	* **Institute** -  Delhi Technological University (Formerly DCE) 
 	* **CPI** - 81.30
 
+## Positions
+
+* **Research Assistant (June 2016 - Present)** [CVMLP Lab](https://filebox.ece.vt.edu/~parikh/CVL.html), Virginia Tech <img src="/images/vt_logo.jpg" style="float:right;width:90px;height:90px;">
+
+* **Research Intern (June 2015 - Aug 2015)** [CVMLP Lab](https://filebox.ece.vt.edu/~parikh/CVL.html), Virginia Tech <img src="/images/vt_logo.jpg" style="float:right;width:90px;height:90px;">
+
+* **Research Intern (Dec 2015 - Jan 2015)** [RRC](http://robotics.iiit.ac.in/), IIIT Hyderabad <img src="/images/iiit_logo.png" style="float:right;width:90px;height:90px;">
+
+* **Research Intern (June 2014 - Aug 2014)** [IACS](http://www.iacs.res.in/), Kolkata <img src="/images/iacs_logo.jpg" style="float:right;width:90px;height:90px;">
+
+* **Undergraduate Researcher (Oct 2012 - May 2016)** [DTU AUV](http://www.dtu.ac.in/Web/Community/projectteams.php), DTU <img src="/images/auv_logo.png" style="float:right;width:90px;height:90px;">
+
 
 ## Skills
 
