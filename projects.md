@@ -4,6 +4,7 @@ title: Projects
 permalink: /projects/
 ---
 <img src="/images/counting.png" style="width:624px;height:240px;">
+
 ### [Counting Everyday Objects in Everyday Scenes](https://arxiv.org/abs/1604.03505)
 **Prithvijit Chattopadhyay**, **Ramakrishna Vedantam**, **Ramprasaath Selvaraju**, **Devi Parikh**, **Dhruv Batra** 
 <br/>
