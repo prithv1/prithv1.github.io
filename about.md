@@ -4,13 +4,11 @@ title: About
 permalink: /about/
 ---
 
-I am currently working as a Research Assistant in the Computer Vision Machine Learning and Perception Lab (CVMLP) at Virginia Tech. I am advised by [Dr. Devi Parikh](https://filebox.ece.vt.edu/~parikh) and Dr.Dhruv Batra. I also work closely with Ramakrishna Vedantam and Ramprasaath Selvaraju.
+I am currently working as a Research Assistant in the Computer Vision Machine Learning and Perception Lab (CVMLP) at Virginia Tech. I am advised by [Dr. Devi Parikh](https://filebox.ece.vt.edu/~parikh) and [Dr. Dhruv Batra](https://filebox.ece.vt.edu/~dbatra). I also work closely with Ramakrishna Vedantam and Ramprasaath Selvaraju.
 
 ## Education
 
-* B.Tech in Electrical Engineering from Delhi Technological University (Formerly DCE).
-* ABC degree from XYZ University.
-* ABC degree from XYZ University.
+* Bachelor of Technology in Electrical Engineering from Delhi Technological University (Formerly DCE).
 
 ## Roles
 
@@ -29,9 +27,9 @@ Founder, ABC Organisation
 ## Achievements
 
 
-* [**This is my first achievement**](#) 
+* [**Semi-Finalists ROBOSUB - AUVSI 2013**](#) 
    
-   Proin pellentesque malesuada mauris, quis aliquam augue vestibulum ac. Vestibulum ut feugiat nibh. Sed faucibus felis purus, sed convallis leo dictum vehicula.
+   As a part of my Undergraduate Autonomous Underwater Vehicle Team, I had the opportunity to participate in the Annual AUVSI ROBOSUB challenge. We ended up reaching the semifinals.  
 
 ***
 
