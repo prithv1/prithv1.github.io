@@ -38,7 +38,7 @@ I am currently working as a Research Assistant in the Computer Vision Machine Le
 <br/>
 <br/>
 <br/>
-* [**Undergraduate Researcher**](#)  <img src="/images/auv_logo.png" style="float:right;width:120px;height:90px;">
+* [**Undergraduate Researcher**](#)  <img src="/images/auv_logo.png" style="float:right;width:120px;height:60px;">
 	* [DTU AUV](http://www.dtu.ac.in/Web/Community/projectteams.php), DTU
 	* Oct 2012 - May 2016
 
