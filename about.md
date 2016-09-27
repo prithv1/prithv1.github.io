@@ -4,7 +4,13 @@ title: About
 permalink: /about/
 ---
 
-I am currently working as a Research Assistant in the Computer Vision Machine Learning and Perception Lab (CVMLP) at Virginia Tech. I am advised by [Dr. Devi Parikh](https://filebox.ece.vt.edu/~parikh) and [Dr. Dhruv Batra](https://filebox.ece.vt.edu/~dbatra). I also work closely with Ramakrishna Vedantam and Ramprasaath Selvaraju.
+As of Fall 2016, I am working as a Research Assistant in the Computer Vision Machine Learning and Perception Lab (CVMLP) at Virginia Tech. I am advised by [Dr. Devi Parikh](https://filebox.ece.vt.edu/~parikh) and [Dr. Dhruv Batra](https://filebox.ece.vt.edu/~dbatra) (currently visiting researchers at FAIR). The problems that I work on lie at the intersection of Computer Vision, Machine Learning and Natural Language Processing. My research interests focus on Semantic Scene Understanding. I am also interested in the interpretability aspect of Deep Learning models.
+
+Previously, I have worked with [Dr. K. Madhava Krishna](http://faculty.iiit.ac.in/~mkrishna/) on problems relating to Robot Vision and Navigation at Robotics Research Lab, IIIT Hyderabad. My interest in robotics stemmed from being a part of Autonomous Underwater Vehicle Team in my undergrad days. I specifically worked on Underwater Acoustics and Control System problems relating to the bot.
+
+I also find Theoretical Physics to be fascinating. I've had the privilege to work with [Dr. Soumitra Sengupta](http://www.iacs.res.in/theoph/tpssg/) on f(R) gravity. Our quasi-static journey towards a unified theory, joining Quantum Mechanics and General Relativity, is a rewarding one. My interest in this specific branch of physics originated from trying to study and understand Differential Geometry in my early undergrad days.  
+
+
 
 ## Education
 
