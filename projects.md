@@ -37,13 +37,11 @@ My specific focus was looking for Charged Rotating Black Hole Solutions in Einst
 
 ### [Autonomous Underwater Vehicle, DTU](https://www.facebook.com/AUV.DTU/)
 
-I worked under the guidance of [Dr. R. K. Sinha](http://spie.org/profile/rsinha).
+I worked under the guidance of [Dr. R. K. Sinha](http://spie.org/profile/rsinha). As a part of the team, I worked in the Underwater Acoustics and Control Systems Department. 
 <br/>
-As a part of the team, I worked in the Underwater Acoustics and Control Systems Department. 
-<br/>
-* **Underwater Acoustics** - My aim was to develop a Passive SONAR system for 3D localization of a sound source underwater. I studied the feasibility of solutions of the hyperboloid formulation of the localization problem and developed and Implemented two Range Estimation Algorithms using TDOA (Time Difference of Arrival) Estimation. I also worked on the implementation of the method of spherical intersection for localization of sound sources. I developed and simulated an algorithm for localization in cylindrical coordinates using TDOA and Bearing Estimations.
+**Underwater Acoustics** - My aim was to develop a Passive SONAR system for 3D localization of a sound source underwater. I studied the feasibility of solutions of the hyperboloid formulation of the localization problem and developed and Implemented two Range Estimation Algorithms using TDOA (Time Difference of Arrival) Estimation. I also worked on the implementation of the method of spherical intersection for localization of sound sources. I developed and simulated an algorithm for localization in cylindrical coordinates using TDOA and Bearing Estimations.
 
-∗ **Control Systems** - My aim was to develop a robust control algorithm for the Autonomous Underwater Vehicle. I worked on developing the Control Module to implement simultaneous PID loops to maintain the orientation of the AUV and developed GUIs to tune and adjust the PID parameters accordingly. On the technical front, I implemented the use of an Android phone as the IMU(Inertial Measurement Unit) using an application for Android operating System. The Android phone uses the UDP communication for sending and receiving data packets between itself and the single board computer.
+**Control Systems** - My aim was to develop a robust control algorithm for the Autonomous Underwater Vehicle. I worked on developing the Control Module to implement simultaneous PID loops to maintain the orientation of the AUV and developed GUIs to tune and adjust the PID parameters accordingly. On the technical front, I implemented the use of an Android phone as the IMU(Inertial Measurement Unit) using an application for Android operating System. The Android phone uses the UDP communication for sending and receiving data packets between itself and the single board computer.
 
 ***
 
