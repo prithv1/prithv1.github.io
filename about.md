@@ -8,7 +8,9 @@ I am currently working as a Research Assistant in the Computer Vision Machine Le
 
 ## Education
 
-* Bachelor of Technology in Electrical Engineering from Delhi Technological University (Formerly DCE).
+* [**B.Tech** in Electrical Engineering (2012-2016)](#) 
+	* **Institute** -  Delhi Technological University (Formerly DCE)
+	* **CPI** - 81.30
 
 ## Roles
 
@@ -16,8 +18,8 @@ Founder, ABC Organisation
 
 ## Skills
 
-* **Programming** - `C++` / `Python` / `Lua` / `MATLAB` / `LaTeX` / `Shell` / `Javascript` / `PHP` / `CSS`
-* **Software** - `Caffe` / `Torch` / `Keras` / `TensorFlow` / `ROS` / `PCL` / `OpenCV` / `Qt` / `Visual Studio`
+* **Programming** - `C++` / `Python` / `Lua` / `MATLAB` / `LaTeX` / `Shell` / `Javascript` / `PHP` 
+* **Software** - `Caffe` / `Torch` / `Keras` / `TensorFlow` / `ROS` / `PCL` / `OpenCV` / `Visual Studio`
     
     
 ## Achievements
@@ -58,5 +60,5 @@ Founder, ABC Organisation
 
 * **Primary Email** - [prithv1@vt.edu](mailto:prithv1@vt.edu)
 
-* **Secondary  Email - [prithvijitchattopadhyay@gmail.com](mailto:prithvijitchattopadhyay@gmail.com)
+* **Secondary  Email** - [prithvijitchattopadhyay@gmail.com](mailto:prithvijitchattopadhyay@gmail.com)
 
