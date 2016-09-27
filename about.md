@@ -14,7 +14,7 @@ I am currently working as a Research Assistant in the Computer Vision Machine Le
 
 ## Positions
 
-* **Research Assistant (June 2016 - Present)**  <img src="/images/vt_logo.jpg" style="float:right;width:100px;height:90px;">
+* [**Research Assistant (June 2016 - Present)**](#)  <img src="/images/vt_logo.jpg" style="float:right;width:100px;height:90px;">
 	* [CVMLP Lab](https://filebox.ece.vt.edu/~parikh/CVL.html), Virginia Tech
 
 ***
