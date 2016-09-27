@@ -16,12 +16,12 @@ Founder, ABC Organisation
 
 ## Skills
 
-* **Skill 1** - `Skill` / `Skill` / `Skill` / `Skill`
-* **Skill 2** - `Skill` / `Skill` / `Skill` / `Skill` / `Skill` / `Skill` / `Skill`
-* **Skill 3** - `Skill` / `Skill` / `Skill`
-* **Skill 4** - `Skill` / `Skill` / `Skill` 
-* **Skill 5** - `Skill`
-* **Skill 6** - `Skill` / `Skill` 
+* **Programming** - `C++` / `Python` / `Lua` / `MATLAB` / `LaTeX` / `Shell` / `Javascript` / `PHP` / `CSS`
+* **Software** - `Caffe` / `Torch` / `Keras` / `TensorFlow` / `ROS` / `PCL` / `OpenCV` / `Qt` / `Visual Studio`
+[//]: <> * **Skill 3** - `Skill` / `Skill` / `Skill`
+[//]: <> * **Skill 4** - `Skill` / `Skill` / `Skill` 
+[//]: <> * **Skill 5** - `Skill`
+[//]: <> * **Skill 6** - `Skill` / `Skill` 
     
     
 ## Achievements
@@ -59,4 +59,11 @@ Founder, ABC Organisation
 
 ## Contact me
 
-[agarwal.akshay.akshay8@gmail.com](mailto:agarwal.akshay.akshay8@gmail.com)
+
+* [Primary Email - [prithv1@vt.edu](mailto:prithv1@vt.edu)](#)
+
+***
+
+* [Secondary  Email - [prithvijitchattopadhyay@gmail.com](mailto:prithvijitchattopadhyay@gmail.com)](#)
+
+***
