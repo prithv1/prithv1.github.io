@@ -18,10 +18,6 @@ Founder, ABC Organisation
 
 * **Programming** - `C++` / `Python` / `Lua` / `MATLAB` / `LaTeX` / `Shell` / `Javascript` / `PHP` / `CSS`
 * **Software** - `Caffe` / `Torch` / `Keras` / `TensorFlow` / `ROS` / `PCL` / `OpenCV` / `Qt` / `Visual Studio`
-[//]: <> * **Skill 3** - `Skill` / `Skill` / `Skill`
-[//]: <> * **Skill 4** - `Skill` / `Skill` / `Skill` 
-[//]: <> * **Skill 5** - `Skill`
-[//]: <> * **Skill 6** - `Skill` / `Skill` 
     
     
 ## Achievements
