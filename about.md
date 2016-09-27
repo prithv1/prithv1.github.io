@@ -10,7 +10,9 @@ Previously, I have worked with [Dr. K. Madhava Krishna](http://faculty.iiit.ac.i
 
 I also find Theoretical Physics to be fascinating. I've had the privilege to work with [Dr. Soumitra Sengupta](http://www.iacs.res.in/theoph/tpssg/) on f(R) gravity. Our quasi-static journey towards a unified theory, joining Quantum Mechanics and General Relativity, is a rewarding one. My interest in this specific branch of physics originated from trying to study and understand Differential Geometry in my early undergrad days.
 
-I occasionally play the percussion instrument [Tabla](https://en.wikipedia.org/wiki/Tabla). I am very passionate about movies. I love to break them down shot-by-shot and analyze them. Every single frame is important.  
+I occasionally play the percussion instrument [Tabla](https://en.wikipedia.org/wiki/Tabla). I am very passionate about movies. I love to break them down shot-by-shot and analyze them. Every single frame is important. 
+
+Have a look at my [Resume](/images/resume.pdf). 
 
 
 
