@@ -12,9 +12,6 @@ I am currently working as a Research Assistant in the Computer Vision Machine Le
 	* **Institute** -  Delhi Technological University (Formerly DCE)
 	* **CPI** - 81.30
 
-## Roles
-
-Founder, ABC Organisation
 
 ## Skills
 
