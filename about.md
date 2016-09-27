@@ -14,21 +14,12 @@ I am currently working as a Research Assistant in the Computer Vision Machine Le
 
 ## Positions
 
-* [**Research Assistant (June 2016 - Present)**](#)  <img src="/images/vt_logo.jpg" style="float:right;width:100px;height:90px;">
+* <img src="/images/vt_logo.jpg" style="float:left;width:100px;height:90px;">[**Research Assistant (June 2016 - Present)**](#)  
 	* [CVMLP Lab](https://filebox.ece.vt.edu/~parikh/CVL.html), Virginia Tech
-
-
-
-
-
 
 
 * [**Research Intern (June 2015 - Aug 2015)**](#)  <img src="/images/vt_logo.jpg" style="float:right;width:100px;height:90px;">
 	* [CVMLP Lab](https://filebox.ece.vt.edu/~parikh/CVL.html), Virginia Tech 
-
-
-
-
 
 
 * [**Research Intern (Dec 2015 - Jan 2015)**](#)  <img src="/images/iiit_logo.png" style="float:right;width:90px;height:90px;">
