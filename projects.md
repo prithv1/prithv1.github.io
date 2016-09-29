@@ -47,13 +47,13 @@ I worked under the guidance of [Dr. R. K. Sinha](http://spie.org/profile/rsinha)
 
 ## Publications
 
-1. DTU AUV ROBOSUB Journal, AUVSI Journal 2013
+1. [DTU AUV ROBOSUB Journal, AUVSI Journal 2013](https://higherlogicdownload.s3.amazonaws.com/AUVSI/fb9a8da0-2ac8-42d1-a11e-d58c1e158347/UploadedImages/2013%20RoboSub/Delhi%20Tech%20Paper.pdf)
  
 2. Passive Source Linear Localization Algorithms using Range Approximation Methods, IOTA IEEE DTU 2014
 
 ## ArXiv
 
-1. Counting Everyday Objects in Everyday Scenes
+1. [Counting Everyday Objects in Everyday Scenes](https://arxiv.org/abs/1604.03505)
 	
 	*Prithvijit Chattopadhyay*, *Ramakrishna Vedantam*, Ramprasaath RS, Dhruv Batra, Devi Parikh
 
