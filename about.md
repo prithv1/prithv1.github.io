@@ -12,9 +12,6 @@ I also find Theoretical Physics to be fascinating. I've had the privilege to wor
 
 I occasionally play the percussion instrument [Tabla](https://en.wikipedia.org/wiki/Tabla). I am very passionate about movies. I love to break them down shot-by-shot and analyze them. Every single frame is important. 
 
-Have a look at my [Resume](/images/resume.pdf). 
-
-
 
 ## Education
 
