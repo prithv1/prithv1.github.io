@@ -6,7 +6,7 @@ permalink: /projects/
 <img src="/images/counting.png" style="width:624px;height:240px;">
 
 ### [Counting Everyday Objects in Everyday Scenes](https://arxiv.org/abs/1604.03505)
-**Prithvijit Chattopadhyay**, **Ramakrishna Vedantam**, **Ramprasaath Selvaraju**, **Devi Parikh**, **Dhruv Batra** 
+**Prithvijit Chattopadhyay**, **Ramakrishna Vedantam**, **Ramprasaath R. Selvaraju**, **Dhruv Batra**, **Devi Parikh** 
 <br/>
 I worked under the guidance of [Dr. Devi Parikh](https://filebox.ece.vt.edu/~parikh) and [Dr. Dhruv Batra](https://filebox.ece.vt.edu/~dbatra)
 <br/>
