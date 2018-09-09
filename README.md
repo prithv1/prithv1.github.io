@@ -1,3 +1,3 @@
-# deshraj.xyz
+# prithv1.github.io
 
-For more details, visit <a href="http://deshraj.xyz">http://deshraj.xyz</a>
+For more details, visit <a href="http://prithv1.github.io">http://prithv1.github.io</a>
