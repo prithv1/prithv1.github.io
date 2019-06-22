@@ -1,221 +1,286 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Prithvijit Chattopadhyay</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,‌​100italic,300,300ita‌​lic,400italic,500,50‌​0italic,700,700itali‌​c,900italic,900' rel='stylesheet' type='text/css'>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.0.0/bootstrap-social.min.css" />
-
-  <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-</head>
-<style type="text/css">
-.blinking-cursor {
-  font-weight: 200;
-  font-size: 20px;
-  color: #2E3D48;
-  -webkit-animation: 1s blink step-end infinite;
-  -moz-animation: 1s blink step-end infinite;
-  -ms-animation: 1s blink step-end infinite;
-  -o-animation: 1s blink step-end infinite;
-  animation: 1s blink step-end infinite;
-}
-
-@keyframes "blink" {
-  from, to {
-    color: transparent;
-  }
-  50% {
-    color: white;
-  }
-}
-
-@-moz-keyframes blink {
-  from, to {
-    color: transparent;
-  }
-  50% {
-    color: white;
-  }
-}
-
-@-webkit-keyframes "blink" {
-  from, to {
-    color: transparent;
-  }
-  50% {
-    color: white;
-  }
-}
-
-@-ms-keyframes "blink" {
-  from, to {
-    color: transparent;
-  }
-  50% {
-    color: white;
-  }
-}
-
-@-o-keyframes "blink" {
-  from, to {
-    color: transparent;
-  }
-  50% {
-    color: white;
-  }
-}
-
-body{
-  background: white;
-  color: black;
-  font-weight: 400;
-  font-family: 'Avenir', sans-serif;
-  padding-top: 70px;
-}
-
-.title_bar_text{
-  margin-left: 15px;
-  color: white;
-}
-
-h1,h2,h3, h4{
-  font-weight: 300;
-}
-.content_heading{
-  margin-left: 5px;
-}
-.content{
-  margin-left: 30px;
-  font-size: 16px;
-}
-.section_heading{
-  padding-top: 40px;
-}
-img{
-  vertical-align: middle !important;
-}
-
-p{
-  font-size: 16px;
-}
-#news_list li, #achievements_list li{
-  font-size: 16px;
-  font-weight: 300;
-}
-
-.contact_div{
-  margin-bottom: 30px;
-}
-
-.project_list{
-  margin-bottom: 20px;
-}
-.panel{
-  margin-bottom: 0px;
-}
-.navbar-right li{
-  color: white;
-}
-.thumb {
-    margin: 20px 0;
-    border: 1px solid #808080;
-}
-.conf{
-  color: blue;
-  font-weight: 500;
-}
-.white-text{
-  color: white;
-}
-
-a:not(.navbar-brand):not(.btn-social-icon):not(.github-button):not(.link-btn){
-  text-decoration: none;
-  border-bottom: 1px solid #ccc;
-  color: inherit;
-}
-
-a:hover:not(.btn-social-icon):not(.github-button):not(.link-btn) {
-  color:#ffcc00 !important;
-  /*border-bottom: none;*/
-}
-
-</style>
-<body>
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand active" href="/">Prithvijit Chattopadhyay</a>
-      </div>
-
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li><a target="_blank" href="http://github.com/prithv1">Github</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <!-- <li><a href="#projects">Projects</a></li> -->
-          <li><a href="#publications">Publications</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#achievements">Achievements</a></li>
-          <li><a href="/static/docs/prithv1_resume.pdf" target="_blank">CV</a></li>
-          <li><a href="https://scholar.google.com/citations?user=rIK7AMkAAAAJ&hl=en" target="_blank">Google Scholar</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <div class="container">
-    <div id="about"></div>
-    <div id="news"></div>
-    <div id="achievements"></div>
-    <div id="publications"></div>
-    <!-- <div id="projects"></div> -->
-    <div id="experience"></div>
-    <div id="education"></div>
-    <!-- <div id="skills"></div> -->
-    <div id="contact"></div>
-  </div>
-
-  <div class="panel">
-    <div class="panel-footer" align="center">This <a href="http://deshraj.xyz/">guy</a> makes a nice webpage.</div>
-  </div>
-
-  <script type="text/javascript">
-    $( document ).ready(function() {
-      $("#about").load("templates/about.html"); 
-      $("#news").load("templates/news.html"); 
-      $("#experience").load("templates/experience.html"); 
-      $("#publications").load("templates/publications.html"); 
-      // $("#projects").load("templates/projects.html"); 
-      $("#skills").load("templates/skills.html"); 
-      $("#education").load("templates/education.html"); 
-      $("#achievements").load("templates/achievements.html"); 
-      $("#contact").load("templates/contact.html"); 
-    });
-  </script>
-
+<!DOCTYPE HTML>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- DELETE THIS SCRIPT if you use this HTML, otherwise my analytics will track your page -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7580334-2"></script>
   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-    ga('create', 'UA-53104159-7', 'auto');
-    ga('send', 'pageview');
-
+    gtag('config', 'UA-7580334-2');
   </script>
-  <!-- Place this tag in your head or just before your close body tag. -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
 
+  <title>Prithvijit Chattopadhyay</title>
+  
+  <meta name="author" content="Prithvijit Chattopadhyay">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="icon" type="image/png" href="images/seal_icon.png">
+</head>
+
+<body>
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr style="padding:0px">
+      <td style="padding:0px">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr style="padding:0px">
+            <td style="padding:2.5%;width:63%;vertical-align:middle">
+              <p style="text-align:center">
+                <name>Prithvijit Chattopadhyay</name>
+              </p>
+              <p> I am a first year computer science PhD
+              student at Georgia Tech, advised by <a href="https://www.cc.gatech.edu/~judy/">Prof. Judy Hoffman</a>. I also work closely with <a href="https://filebox.ece.vt.edu/~parikh/">Prof. Devi Parikh</a> and <a href="https://filebox.ece.vt.edu/~dbatra/">Prof. Dhruv Batra</a>. I recently earned 
+              my Masters in Computer Science (focus on Machine Learning) from Georgia Tech, advised by <a href="https://filebox.ece.vt.edu/~parikh/">Prof. Devi Parikh</a>. Prior to joining Georgia Tech, I was working as a Research Assistant in the Computer Vision Machine Learning and Perception Lab (CVMLP) at Virginia Tech, advised by <a href="https://filebox.ece.vt.edu/~parikh/">Prof. Devi Parikh</a> and <a href="https://filebox.ece.vt.edu/~dbatra/">Prof. Dhruv Batra</a>. I earned my Bachelors in Electrical Engineering in 2016 from Delhi Technological University, India.
+              </p>
+
+              <p class="content">In the past couple of years, I have had the fortune to intern / conduct research at <a href="https://www.microsoft.com/en-us/research/group/deep-learning-group/">Deep Learning Group, Microsoft Research Redmond</a> (Summer 2018) mentored by <a href="https://www.microsoft.com/en-us/research/people/hpalangi/">Hamid Palangi</a>; <a href="http://robotics.iiit.ac.in/">Robotics Research Lab, IIIT Hyderabad</a> (Winter 2014) mentored by <a href="http://faculty.iiit.ac.in/~mkrishna/">Dr. K. Madhava Krishna</a> and <a href="http://www.iacs.res.in/">Indian Association for the Cultivation of Science (IACS), Kolkata</a> (Summer 2014) mentored by <a href="http://mailweb.iacs.res.in/theoph/tpssg/">Dr. Soumitra Sengupta</a> on a diverse set of topics - ranging from vision & language to robotics to theoretical physics.</p>
+
+              <!-- <p class="content">Previously, I have worked with <a href="http://faculty.iiit.ac.in/~mkrishna/">Dr. K. Madhava Krishna</a> on problems relating to Robot Vision and Navigation at Robotics Research Lab, IIIT Hyderabad. My interest in robotics stemmed from being a part of Autonomous Underwater Vehicle Team in my undergrad days. I specifically worked on Underwater Acoustics and Control System problems relating to the bot.</p>
+
+              <p class="content">I also find Theoretical Physics to be fascinating. I’ve had the privilege to work with <a href="http://mailweb.iacs.res.in/theoph/tpssg/">Dr. Soumitra Sengupta</a> on f(R) gravity. Our quasi-static journey towards a unified theory, joining Quantum Mechanics and General Relativity, is definitely a rewarding one. My interest in this specific branch of physics originated from trying to study Differential Geometry in my early undergrad days.</p>  -->
+
+              <p class="content">I occasionally play the percussion instrument Tabla. I am very passionate about movies. I love to break them down shot-by-shot and analyze them. Every single frame is important.</p>
+
+              <p style="text-align:center">
+                <a href="mailto:prithvijit3@gatech.edu">Email</a> &nbsp/&nbsp
+                <a href="data/prithv1_resume.pdf">CV</a> &nbsp/&nbsp
+                <a href="https://scholar.google.com/citations?user=rIK7AMkAAAAJ&hl=en">Google Scholar</a> &nbsp/&nbsp
+                <a href="https://www.linkedin.com/in/prithvijit-chattopadhyay-260b2b54/"> LinkedIn </a> &nbsp/&nbsp
+                <a href="https://github.com/prithv1"> Github </a> &nbsp/&nbsp
+                <a href="https://twitter.com/prithvijitch"> Twitter </a> &nbsp/&nbsp
+                <a href="https://www.instagram.com/prithv12/?hl=en"> Instagram </a>
+              </p>
+            </td>
+            <td style="padding:2.5%;width:40%;max-width:40%">
+              <a href="images/prithv1.png"><img style="width:100%;max-width:100%" alt="profile photo" src="images/prithv1-circ.png" class="hoverZoomLink"></a>
+            </td>
+          </tr>
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <heading>Research</heading>
+              <p>
+                The problems that I work on lie at the intersection of Computer Vision, Machine Learning and Natural Language Processing. Specifically, I am interested in developing AI systems that
+              </p>
+              <p class="content">
+              <ul>
+                <li>can <b><i>perceive and reason</i></b> based on multimodal sensory information</li>
+                <li>are <b><i>interpretable</i></b> so that predictions made by such systems can be explained</li>
+                <li>are <b><i>transferable</i></b> so that they can be adapted across different domains with ease and limited supervision</li>
+              </ul>
+              </p>
+              <p> 
+                Representative papers are <span class="highlight">listed below</span>.
+              </p>
+
+            </td>
+          </tr>
+        </tbody></table>
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <tr>
+            <td>
+              <heading>News</heading>
+              <ul>
+                <li> Serving as a reviewer for <a href="http://cvpr2018.thecvf.com/">CVPR 2018</a>, <a href="https://eccv2018.org/">ECCV 2018</a>, <a href="https://nips.cc/">NeurIPS 2018</a>, <a href="https://iclr.cc/">ICLR 2019</a>, <a href="https://icml.cc/Conferences/2019">ICML 2019</a>, <a href="http://www.acl2019.org/EN/index.xhtml">ACL 2019</a>, <a href="https://nips.cc/">NeurIPS 2019</a>.</li>
+                <li><strong>[May 2019]</strong> Presented our work on Discovery of Decision States through Intrinsic Control at the <a href="https://tarl2019.github.io">Task-Agnostic Reinforcement Learning (TARL) Workshop</a> at ICLR 2019.</li>
+                <li><strong>[May 2019]</strong> Completed my Masters in Computer Science (focus on Machine Learning) with a thesis centered on <a href="https://smartech.gatech.edu/handle/1853/61308">Evaluating Visual Conversational Agents in the Context of Human-AI Cooperative Games</a>!</li>
+                <li><strong>[Feb 2019]</strong> Our technical report describing <a href="http://evalai.cloudcv.org/">EvalAI</a> - an open source platform to evaluate and compare AI algorithms at scale - is out on <a href="https://arxiv.org/pdf/1902.03570.pdf"> ArXiv</a>!</li>
+                <li><strong>[Dec 2018]</strong> Presented our work <a href="https://arxiv.org/abs/1808.02861">interpretable zero-shot learning</a> at the <a href="https://sites.google.com/view/continual2018/home?authuser=0">Continual Learning </a> and <a href="https://nips2018vigil.github.io/">Visually Grounded Interaction and Language (ViGIL)</a> workshops at NeurIPS 2018.</li>
+                <li><strong>[Aug 2018]</strong> Our paper titled <a href="https://arxiv.org/pdf/1810.12366.pdf">'Do explanation modalities make VQA models more predictable to a human?'</a></a> was accepted in <a href="http://emnlp2018.org/">EMNLP, 2018</a>!</li>
+                <li><strong>[July 2018]</strong> Our paper titled <a href="https://arxiv.org/abs/1808.02861">'Choose Your Neuron: Incorporating Domain Knowledge through Neuron-Importance'</a> was accepted in <a href="https://eccv2018.org/">ECCV, 2018</a>!</li>
+                <li><strong>[Apr 2018]</strong> I was awarded the College of Computing's MS Research Award at Georgia Tech!</li>
+                <li><strong>[Feb 2018]</strong> I'll intern in the Deep Learning Group at <a href="https://www.microsoft.com/en-us/research/group/deep-learning-group/">Microsoft Research, Redmond</a> in summer 2018.</li>
+                <li><strong>[Aug 2017]</strong> Our paper titled <a href="https://arxiv.org/abs/1708.05122">'Evaluating Visual Conversational Agents via Cooperative Human-AI Games'</a> was accepted in <a href="https://www.humancomputation.com/2017/">HCOMP 2017</a> as an oral!</li>
+                <li><strong>[July 2017]</strong> I will be joining Georgia Tech as a Masters of Computer Science student in Fall 2017.</li>
+                <li><strong>[May 2017]</strong> I will be presenting <a href="https://arxiv.org/abs/1604.03505">'Counting Everyday Objects in Everyday Scenes'</a> at the <a href="http://www.ldv.co/visionsummit/">LDV Vision Summit, 2017</a>.</li>
+                <li><strong>[Mar 2017]</strong> Our paper titled <a href="https://arxiv.org/abs/1704.00717">'It Takes Two to Tango: Towards Theory of AI's Mind'</a> is out on ArXiv!</li>
+                <li><strong>[Feb 2017]</strong> Our paper titled <a href="https://arxiv.org/abs/1604.03505">'Counting Everyday Objects in Everyday Scenes'</a> was accepted in <a href="http://cvpr2017.thecvf.com/"> CVPR 2017 </a> as a spotlight!</li>
+                <li><strong>[Feb 2017]</strong> Our team built <a href="https://devpost.com/software/filterai">FilterAI</a> - an image retrival engine - and won <a href="http://www.vthacks.com/">VT Hacks 2017</a>, a <a href="https://mlh.io/"> Major League Hacking Event</a>!</li>
+                <li><strong>[Dec 2016]</strong> <a href="https://arxiv.org/abs/1604.03505">'Counting Everyday Objects in Everyday Scenes'</a></a> received an <a href="https://aws.amazon.com/blogs/publicsector/call-for-computer-vision-research-proposals-with-new-amazon-bin-image-data-set/"> Amazon Academic Research Award</a>, 2016!</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <tr>
+            <td>
+              <heading>Achievements</heading>
+              <ul>
+                <li>Recognized as an <a href="https://iclr.cc/Conferences/2019/Awards">outstanding reviewer</a> for ICLR 2019!</li>
+                <li>Recognized to be among the top 20 percent highest scoring reviewers for NeurIPS 2018!</li>
+                <li>Awarded the College of Computing's MS Research Award at Georgia Tech!</li>
+                <li>Our team won <a href="http://www.vthacks.com/">VT Hacks 2017</a>, a <a href="https://mlh.io/"> Major League Hacking Event</a>, 2017!</li>
+                <li>Our undergraduate team, DTU-AUV, qualified for the semi-finals at <a href="http://www.auvsifoundation.org/2014-robosub-teams">AUVSI Robosub 2014</a>!</li>
+                <li>Awarded Merit Scholarships from 2012-2014 for undergraduate academic performance!</li>
+                <li>Selected for <a href="http://kvpy.iisc.ernet.in/main/index.htm">KVPY</a> and <a href="http://www.inspire-dst.gov.in/fellowship.html">INSPIRE</a> Fellowships, 2012 for undergraduate studies in basic sciences!</li>
+                <li>Placed among the top 1 percent students in the country in <a href="http://www.indapt.org/index.php/inphoipho">INPhO</a> 2012!</li>
+                <li>Selected for rigorous mathematical training camps conducted by mathematicians from Bhabha Atomic Research Center (<a href="http://www.barc.gov.in/">BARC</a>) and Indian Institute of Science (<a href="http://www.iisc.ac.in/">IISc</a>) in 2012!</li>
+                <li>Selected for <a href="http://www.csirhrdg.res.in/cpyls.htm">CSIR Programme on Youth Leadership in Science</a>, 2010!</li>
+
+              </ul>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+          <tr>
+            <td>
+              <heading>Publications</heading>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <!-- <heading>Publications</heading> -->
+          <tr>
+            <td width="30%"><img src="images/evalai_teaser.png" alt="3DSP" width="200" height="160" style="border-style: none">
+            <td valign="top" width="70%">
+              <a href="https://arxiv.org/pdf/1902.03570">
+                      <papertitle>EvalAI: Towards Better Evaluation Systems for AI Agents</papertitle>
+              </a>
+            <br>
+            Deshraj Yadav,
+            Rishabh Jain,
+            Harsh Agrawal,
+            <strong>Prithvijit Chattopadhyay</strong>,
+            Taranjeet Singh,
+            Akash Jain,
+            Shiv Baran Singh,
+            Stefan Lee,
+            Dhruv Batra
+            <br>
+              <em>arxiv Preprint</em>, 2019<br>
+              <a href="https://arxiv.org/pdf/1902.03570">arxiv</a> /
+              <a href="https://github.com/Cloud-CV/EvalAI">code</a>
+              <!-- <p align="justify">Individual neurons in convolutional neural networks supervised for image-level classification tasks have been shown to implicitly learn semantically meaningful concepts ranging from simple textures and shapes to whole or partial objects – forming a “dictionary” of concepts acquired through the learning process. In this work we introduce a simple, efficient zero-shot learning approach based on this observation. Our approach, which we call Neuron Importance-Aware Weight Transfer (NIWT), learns to map domain knowledge about novel “unseen” classes onto this dictionary of learned concepts and then optimizes for network parameters that can effectively combine these concepts – essentially learning classifiers by discovering and composing learned semantic concepts in deep networks. Our approach shows improvements over previous approaches on the CUBirds and AWA2 generalized zero-shot learning benchmarks. We demonstrate our approach on a diverse set of semantic inputs as external domain knowledge including attributes and natural language captions. Moreover by learning inverse mappings, NIWT can provide visual and textual explanations for the predictions made by the newly learned classifiers and provide neuron names.</p>  -->
+            </td>
+          </tr>
+
+          <tr>
+            <td width="30%"><img src="images/NIWT_teaser.png" alt="3DSP" width="200" height="160" style="border-style: none">
+            <td valign="top" width="70%">
+              <a href="https://arxiv.org/abs/1808.02861">
+                      <papertitle>Choose Your Neuron: Incorporating Domain-Knowledge through Neuron-Importance</papertitle>
+              </a>
+            <br>
+            Ramprasaath R. Selvaraju<sup>*</sup>,
+            <strong>Prithvijit Chattopadhyay</strong><sup>*</sup>,
+            Mohamed Elhoseiny,
+            Tilak Sharma,
+            Dhruv Batra,
+            Devi Parikh,
+            Stefan Lee
+            <br>
+              <em>ECCV</em>, 2018; <a href="https://sites.google.com/view/continual2018/home?authuser=0"><em>Continual Learning Workshop, NeurIPS</em> 2018</a>; <a href="https://nips2018vigil.github.io/"><em>Visually Grounded Interaction and Language (ViGIL) Workshop, NeurIPS</em> 2018</a><br>
+              <a href="https://arxiv.org/abs/1808.02861">arxiv</a> /
+              <a href="https://mlatgt.blog/2018/09/05/choose-your-neuron-incorporating-domain-knowledge-through-neuron-importance/">blogpost</a> /
+              <a href="https://github.com/ramprs/neuron-importance-zsl">code</a>
+              <!-- <p align="justify">Individual neurons in convolutional neural networks supervised for image-level classification tasks have been shown to implicitly learn semantically meaningful concepts ranging from simple textures and shapes to whole or partial objects – forming a “dictionary” of concepts acquired through the learning process. In this work we introduce a simple, efficient zero-shot learning approach based on this observation. Our approach, which we call Neuron Importance-Aware Weight Transfer (NIWT), learns to map domain knowledge about novel “unseen” classes onto this dictionary of learned concepts and then optimizes for network parameters that can effectively combine these concepts – essentially learning classifiers by discovering and composing learned semantic concepts in deep networks. Our approach shows improvements over previous approaches on the CUBirds and AWA2 generalized zero-shot learning benchmarks. We demonstrate our approach on a diverse set of semantic inputs as external domain knowledge including attributes and natural language captions. Moreover by learning inverse mappings, NIWT can provide visual and textual explanations for the predictions made by the newly learned classifiers and provide neuron names.</p>  -->
+            </td>
+          </tr>
+
+          <tr>
+            <td width="30%"><img src="images/explanations_predictable.png" alt="3DSP" width="185" height="180" style="border-style: none">
+            <td valign="top" width="70%">
+              <a href="https://arxiv.org/pdf/1810.12366">
+                      <papertitle>Do explanation modalities make VQA Models more predictable to a human?</papertitle>
+              </a>
+            <br>
+            Arjun Chandrasekaran<sup>*</sup>,
+            Viraj Prabhu<sup>*</sup>,
+            Deshraj Yadav<sup>*</sup>,
+            <strong>Prithvijit Chattopadhyay</strong><sup>*</sup>,
+            Devi Parikh
+            <br>
+              <em>EMNLP</em>, 2018
+              <br>
+              <a href="https://arxiv.org/pdf/1810.12366">arxiv</a>
+              <!-- <p align="justify">Individual neurons in convolutional neural networks supervised for image-level classification tasks have been shown to implicitly learn semantically meaningful concepts ranging from simple textures and shapes to whole or partial objects – forming a “dictionary” of concepts acquired through the learning process. In this work we introduce a simple, efficient zero-shot learning approach based on this observation. Our approach, which we call Neuron Importance-Aware Weight Transfer (NIWT), learns to map domain knowledge about novel “unseen” classes onto this dictionary of learned concepts and then optimizes for network parameters that can effectively combine these concepts – essentially learning classifiers by discovering and composing learned semantic concepts in deep networks. Our approach shows improvements over previous approaches on the CUBirds and AWA2 generalized zero-shot learning benchmarks. We demonstrate our approach on a diverse set of semantic inputs as external domain knowledge including attributes and natural language captions. Moreover by learning inverse mappings, NIWT can provide visual and textual explanations for the predictions made by the newly learned classifiers and provide neuron names.</p>  -->
+            </td>
+          </tr>
+
+          <tr>
+            <td width="30%"><img src="images/eval_visdial.png" alt="3DSP" width="180" height="220" style="border-style: none">
+            <td valign="top" width="70%">
+              <a href="https://arxiv.org/abs/1708.05122">
+                      <papertitle>Evaluating Visual Conversational Agents via Cooperative Human-AI Games</papertitle>
+              </a>
+            <br>
+            <strong>Prithvijit Chattopadhyay</strong><sup>*</sup>,
+            Deshraj Yadav<sup>*</sup>,
+            Viraj Prabhu, 
+            Arjun Chandrasekaran,
+            Abhishek Das,
+            Stefan Lee,
+            Dhruv Batra,
+            Devi Parikh
+            <br>
+              <em>HCOMP</em>, 2018<br>
+              <a href="https://arxiv.org/abs/1708.05122">arxiv</a> /
+              <a href="https://github.com/GT-Vision-Lab/GuessWhich">code</a>
+              <!-- <p align="justify">Individual neurons in convolutional neural networks supervised for image-level classification tasks have been shown to implicitly learn semantically meaningful concepts ranging from simple textures and shapes to whole or partial objects – forming a “dictionary” of concepts acquired through the learning process. In this work we introduce a simple, efficient zero-shot learning approach based on this observation. Our approach, which we call Neuron Importance-Aware Weight Transfer (NIWT), learns to map domain knowledge about novel “unseen” classes onto this dictionary of learned concepts and then optimizes for network parameters that can effectively combine these concepts – essentially learning classifiers by discovering and composing learned semantic concepts in deep networks. Our approach shows improvements over previous approaches on the CUBirds and AWA2 generalized zero-shot learning benchmarks. We demonstrate our approach on a diverse set of semantic inputs as external domain knowledge including attributes and natural language captions. Moreover by learning inverse mappings, NIWT can provide visual and textual explanations for the predictions made by the newly learned classifiers and provide neuron names.</p>  -->
+            </td>
+          </tr>
+
+          <tr>
+            <td width="30%"><img src="images/toaim.png" alt="3DSP" width="200" height="120" style="border-style: none">
+            <td valign="top" width="70%">
+              <a href="https://arxiv.org/abs/1704.00717">
+                      <papertitle>It Takes Two to Tango: Towards Theory of AI's Mind</papertitle>
+              </a>
+            <br>
+            Arjun Chandrasekaranu<sup>*</sup>,
+            Deshraj Yadav<sup>*</sup>,
+            <strong>Prithvijit Chattopadhyay</strong><sup>*</sup>,
+            Viraj Prabhu<sup>*</sup>,
+            Devi Parikh
+            <br>
+              <em>Chalearn Looking at People Workshop, CVPR</em>, 2017<br>
+              <a href="https://arxiv.org/abs/1704.00717">arxiv</a> /
+              <a href="https://github.com/deshraj/TOAIM">code</a>
+              <!-- <p align="justify">Individual neurons in convolutional neural networks supervised for image-level classification tasks have been shown to implicitly learn semantically meaningful concepts ranging from simple textures and shapes to whole or partial objects – forming a “dictionary” of concepts acquired through the learning process. In this work we introduce a simple, efficient zero-shot learning approach based on this observation. Our approach, which we call Neuron Importance-Aware Weight Transfer (NIWT), learns to map domain knowledge about novel “unseen” classes onto this dictionary of learned concepts and then optimizes for network parameters that can effectively combine these concepts – essentially learning classifiers by discovering and composing learned semantic concepts in deep networks. Our approach shows improvements over previous approaches on the CUBirds and AWA2 generalized zero-shot learning benchmarks. We demonstrate our approach on a diverse set of semantic inputs as external domain knowledge including attributes and natural language captions. Moreover by learning inverse mappings, NIWT can provide visual and textual explanations for the predictions made by the newly learned classifiers and provide neuron names.</p>  -->
+            </td>
+          </tr>
+
+          <tr>
+            <td width="30%"><img src="images/counting_task_img.jpg" alt="3DSP" width="200" height="120" style="border-style: none">
+            <td valign="top" width="70%">
+              <a href="https://arxiv.org/abs/1604.03505">
+                      <papertitle>Counting Everyday Objects in Everyday Scenes</papertitle>
+              </a>
+            <br>
+            <strong>Prithvijit Chattopadhyay</strong><sup>*</sup>,
+            Ramakrishna Vedantam<sup>*</sup>,
+            Ramprasaath R. Selvaraju,
+            Dhruv Batra,
+            Devi Parikh
+            <br>
+              <em>CVPR</em>, 2017<br>
+              <a href="https://arxiv.org/abs/1604.03505">arxiv</a> /
+              <a href="https://github.com/prithv1/cvpr2017_counting">code</a>
+              <!-- <p align="justify">Individual neurons in convolutional neural networks supervised for image-level classification tasks have been shown to implicitly learn semantically meaningful concepts ranging from simple textures and shapes to whole or partial objects – forming a “dictionary” of concepts acquired through the learning process. In this work we introduce a simple, efficient zero-shot learning approach based on this observation. Our approach, which we call Neuron Importance-Aware Weight Transfer (NIWT), learns to map domain knowledge about novel “unseen” classes onto this dictionary of learned concepts and then optimizes for network parameters that can effectively combine these concepts – essentially learning classifiers by discovering and composing learned semantic concepts in deep networks. Our approach shows improvements over previous approaches on the CUBirds and AWA2 generalized zero-shot learning benchmarks. We demonstrate our approach on a diverse set of semantic inputs as external domain knowledge including attributes and natural language captions. Moreover by learning inverse mappings, NIWT can provide visual and textual explanations for the predictions made by the newly learned classifiers and provide neuron names.</p>  -->
+            </td>
+          </tr>
+
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:0px">
+                  <hr>
+                  <p align="center"> 
+                  <font>Design stolen from <a href="https://jonbarron.info/">here</a> and <a href="https://abhoi.github.io/">here</a></font>
+                  </p>
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+      </td>
+    </tr>
+  </table>
 </body>
+
 </html>
