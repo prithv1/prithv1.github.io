@@ -161,7 +161,7 @@
             Devi Parikh,
             Abhishek Das
             <br>
-              <em>EMNLP</em>, 2019 
+              <em>EMNLP</em>, 2019 <font color="red">(Poster)</font>; <a href="https://visualqa.org/workshop.html"><em>Visual Question Answering and Dialog Workshop, CVPR</em> 2019</a> <font color="red">(Poster)</font>
               <!-- <font color="red">(Poster)</font> -->
               <br>
               <a href="https://arxiv.org/abs/1909.10470">arxiv</a> /
@@ -172,10 +172,10 @@
 
 
           <tr>
-            <td width="30%"><img src="images/dsvic_teaser_vertical.png" alt="3DSP" width="200" height="250" style="border-style: none">
+            <td width="30%"><img src="images/ds_vic_new.png" alt="3DSP" width="230" height="200" style="border-style: none">
             <td valign="top" width="70%">
               <a href="https://arxiv.org/abs/1907.10580">
-                      <papertitle>Unsupervised Discovery of Decision States for Transfer in Reinforcement Learning
+                      <papertitle>DS-VIC: Unsupervised Discovery of Decision States for Transfer in RL
 </papertitle>
               </a>
             <br>
@@ -190,7 +190,7 @@
               <em>arxiv Preprint</em>, 2019; <a href="https://tarl2019.github.io/"><em>Task-Agnostic RL (TARL) Workshop, ICLR</em> 2019</a> <font color="red">(Poster)</font><br>
               <a href="https://arxiv.org/abs/1907.10580">arxiv</a> /
               <a href="https://tarl2019.github.io/assets/papers/modhe2019unsupervised.pdf">TARL'19 Preliminary Version</a>
-              <p align="justify">We present a hierarchical reinforcement learning (HRL) / options framework for identifying <i>decision states</i>. Informally speaking, these are states considered important by the agent's policy e.g., for navigation, decision states would be crossroads or doors where an agent needs to make strategic decisions. While previous work (most notably Goyal et. al., 2019) discovers decision states in a task/goal specific (or 'supervised') manner, we do so in a goal-independent (or 'unsupervised') manner, i.e. entirely without any goal or extrinsic rewards and show that our approach leads to more sample efficient transfer.</p> 
+              <p align="justify">We learn to identify decision states, namely the parsimonious set of states where decisions meaningfully affect the future states an agent can reach in an environment. We utilize the VIC framework, which maximizes an agent's 'empowerment', i.e. the ability to reliably reach a diverse set of states -- and formulate a sandwich bound on the empowerment objective that allows identification of <i>decision states</i>. Unlike previous work, our decision states are discovered without extrinsic rewards -- simply by interacting with the world. Our results show that our decision states are: (1) often interpretable, and (2) lead to better exploration on downstream goal-driven tasks in partially observable environments.</p> 
             </td>
           </tr>
 
