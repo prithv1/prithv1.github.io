@@ -385,7 +385,7 @@
         </p>
 
         <p class="paper" style="padding: 20px;">
-          <a href="files/data/AUGCAL__ArXiv_24.pdf">
+          <a href="https://arxiv.org/pdf/2312.06106.pdf">
             <span class="title" style="font-weight:400">
               <font color="brown">AUGCAL: Improving Sim2Real Adaptation by Uncertainty Calibration
                 on Augmented Synthetic Images</font>
@@ -400,7 +400,11 @@
             style="display: block; margin: 0 auto; max-width: 90%; height: auto;">
           <span align="justify"><b>TL;DR, </b>Mispredictions made by Sim2Real adaptation methods on real data can often
             be attributed to “miscalibration” – often caused by overconfident predictions. We propose a simple patch,
-            AugCal, to improve uncertainty calibration of existing Sim2Real adaptation methods.
+            AugCal, to improve uncertainty calibration of existing Sim2Real adaptation methods. Given a base Sim2Real
+            adaptation algorithm,at training time, AugCal involves replacing vanilla "Sim" images with strongly
+            augmented views (Aug intervention) and additionally optimizing for a training time calibration loss on
+            augmented "Sim" predictions (Cal intervention). Through our experiments, we empirically show the efficacy of
+            AugCal across multiple adaptation methods, backbones, tasks and shifts.
           </span>
           <span>
             <a class="button" href="files/data/AUGCAL__ArXiv_24.pdf" target="_blank">[PDF]</a>
