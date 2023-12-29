@@ -29,7 +29,7 @@
       </div>
       <div>
         <h1>Prithvijit Chattopadhyay</h1>
-        <p>prithvijit3 [at] gatech [dot] edu</p>
+        <p><a href="mailto:prithvijit3@gatech.edu">prithvijit3 [at] gatech [dot] edu</a></p>
         <p>
           <a href="https://github.com/prithv1">Github</a> |
           <a href="https://scholar.google.com/citations?user=rIK7AMkAAAAJ&hl=en">Google Scholar</a> |
@@ -76,7 +76,7 @@
           <li><b>Ensuring Reliability</b> - While maintaining performance is important, practical deployment also
             requires ensuring reliable (confidence-calibrated) predictions under changing conditions. Some of my work
             has also focused on designing patches that ensure adaptation methods <a
-              href="files/data/AUGCAL__ArXiv_24.pdf">make
+              href="https://arxiv.org/pdf/2312.06106.pdf">make
               calibrated and reliable
               predictions under distribution shifts.</a></li>
         </ul>
@@ -201,6 +201,22 @@
           moreText.style.display = "inline";
         }
       }
+      function toggleContent(sectionId, dotsId, moreId, btnId) {
+        var dots = document.getElementById(dotsId);
+        var moreText = document.getElementById(moreId);
+        var btnText = document.getElementById(btnId);
+
+        // Check for the "none" value explicitly
+        if (window.getComputedStyle(dots).display === "none") {
+          dots.style.display = "inline";
+          btnText.innerHTML = "Read More";
+          moreText.style.display = "none";
+        } else {
+          dots.style.display = "none";
+          btnText.innerHTML = "Read Less";
+          moreText.style.display = "inline";
+        }
+      }
     </script>
 
     <div>
@@ -255,10 +271,14 @@
                   <li>Selected for <a href="http://www.csirhrdg.res.in/cpyls.htm">CSIR Programme on Youth Leadership in
                       Science</a>, 2010!</li>
                 </span>
-                <a onclick="myFunction()" id="myBtn" class="uline">
+                <a onclick="toggleContent('achievements', 'dots', 'more', 'myBtn');" id="myBtn" class="uline">
+                  <div style='text-align: center; display: inline;'>
+                    <h4 style="text-align: left; margin: 0; padding: 5px 0; display: inline;">Read More</h4>
+                  </div>
+                  <!-- <a onclick="myFunction()" id="myBtn" class="uline">
                   <div style='text-align: center;'>
                     <h4>Read More</h4>
-                  </div>
+                  </div> -->
                 </a>
               </ul>
             </td>
@@ -339,10 +359,14 @@
                       href="https://aws.amazon.com/blogs/publicsector/call-for-computer-vision-research-proposals-with-new-amazon-bin-image-data-set/">
                       Amazon Academic Research Award</a>, 2016!</li>
                 </span>
-                <a onclick="myFunction2()" id="myBtn2" class="uline">
+                <a onclick="toggleContent('news', 'dots2', 'more2', 'myBtn2');" id="myBtn2" class="uline">
+                  <div style='text-align: center; display: inline;'>
+                    <h4 style="text-align: left; margin: 0; padding: 5px 0; display: inline;">Read More</h4>
+                  </div>
+                  <!-- <a onclick="myFunction2()" id="myBtn2" class="uline">
                   <div style='text-align: center;'>
                     <h4>Read More</h4>
-                  </div>
+                  </div> -->
                 </a>
               </ul>
             </td>
@@ -350,6 +374,17 @@
         </table>
       </div>
     </div>
+
+    <script>
+      function toggleDescription(divId) {
+        var description = document.getElementById(divId);
+        if (description.style.display === 'none' || description.style.display === '') {
+          description.style.display = 'block';
+        } else {
+          description.style.display = 'none';
+        }
+      }
+    </script>
 
     <div id="research">
       <h2>Research</h2>
@@ -365,24 +400,33 @@
             Judy Hoffman, <u>Prithvijit
               Chattopadhyay</u></span>
           <span>
-            <font color="red"><i>ArXiv</i>, 2023
-          </span></font>
-          <img src="files/images/skyscenes.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
-          <span align="justify"><b>TL;DR, </b>We introduce SkyScenes, a large-scale synthetic dataset of densely
-            annotated aerial images captured from Unmanned Aerial Vehicle (UAV) perspectives. We carefully curate
-            SkyScenes images from CARLA to comprehensively capture diversity across layout (urban and rural maps),
-            weather conditions, times of day, pitch angles and altitudes with corresponding semantic, instance and depth
-            annotations. Through our experiments using SkyScenes, we show that (1) Models trained on SkyScenes
-            generalize well to different real-world scenarios, (2) augmenting training on real images with SkyScenes
-            data can improve real-world performance, (3) controlled variations in SkyScenes can offer insights into how
-            models respond to changes in viewpoint conditions, and (4) additionally incorporating other sensor
-            modalities (depth) can improve aerial scene understanding.
+            <font color="red"><i>ArXiv</i> 2023</font>
           </span>
           <span>
             <a class="button" href="https://arxiv.org/pdf/2312.06719.pdf" target="_blank">[PDF]</a>
             <a class="button" href="https://huggingface.co/datasets/hoffman-lab/SkyScenes" target="_blank">[Data]</a>
+            <a class="button" onclick="toggleDescription('skyscenes');">[TL;DR]</a>
           </span>
+          <img src="files/images/skyscenes.png" alt="Thumbnail"
+            style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
+          <span id="skyscenes" style="display: none;" align="justify"><b>TL;DR, </b><i>We introduce SkyScenes, a
+              large-scale synthetic dataset
+              of densely
+              annotated aerial images captured from Unmanned Aerial Vehicle (UAV) perspectives. We carefully curate
+              SkyScenes images from CARLA to comprehensively capture diversity across layout (urban and rural maps),
+              weather conditions, times of day, pitch angles and altitudes with corresponding semantic, instance and
+              depth
+              annotations. Through our experiments using SkyScenes, we show that (1) Models trained on SkyScenes
+              generalize well to different real-world scenarios, (2) augmenting training on real images with SkyScenes
+              data can improve real-world performance, (3) controlled variations in SkyScenes can offer insights into
+              how
+              models respond to changes in viewpoint conditions, and (4) additionally incorporating other sensor
+              modalities (depth) can improve aerial scene understanding.</i>
+          </span>
+          <!-- <span>
+            <a class="button" href="https://arxiv.org/pdf/2312.06719.pdf" target="_blank">[PDF]</a>
+            <a class="button" href="https://huggingface.co/datasets/hoffman-lab/SkyScenes" target="_blank">[Data]</a>
+          </span> -->
         </p>
 
         <p class="paper" style="padding: 20px;">
@@ -394,22 +438,28 @@
           </a>
           <span><u>Prithvijit Chattopadhyay</u>, Bharat Goyal, Boglarka Ecsedi, Viraj Prabhu, Judy Hoffman</span>
           <span>
-            <font color="red"><i>Workshop on Uncertainty Quantification for Computer Vision, ICCV</i>, 2023 (Extended
-              Abstract)
-          </span></font>
-          <img src="files/images/augcal.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 90%; height: auto;">
-          <span align="justify"><b>TL;DR, </b>Mispredictions made by Sim2Real adaptation methods on real data can often
-            be attributed to “miscalibration” – often caused by overconfident predictions. We propose a simple patch,
-            AugCal, to improve uncertainty calibration of existing Sim2Real adaptation methods. Given a base Sim2Real
-            adaptation algorithm,at training time, AugCal involves replacing vanilla "Sim" images with strongly
-            augmented views (Aug intervention) and additionally optimizing for a training time calibration loss on
-            augmented "Sim" predictions (Cal intervention). Through our experiments, we empirically show the efficacy of
-            AugCal across multiple adaptation methods, backbones, tasks and shifts.
+            <font color="red"><i>Workshop on Uncertainty Quantification for Computer Vision, ICCV</i> 2023 (Extended
+              Abstract)</font>
           </span>
           <span>
             <a class="button" href="https://arxiv.org/pdf/2312.06106.pdf" target="_blank">[PDF]</a>
+            <a class="button" onclick="toggleDescription('augcal');">[TL;DR]</a>
           </span>
+          <img src="files/images/augcal.png" alt="Thumbnail"
+            style="display: block; margin: 0 auto; max-width: 90%; height: auto;">
+          <span id="augcal" style="display: none;" align="justify"><b>TL;DR, </b><i>Mispredictions made by Sim2Real
+              adaptation methods on real data can often
+              be attributed to “miscalibration” – often caused by overconfident predictions. We propose a simple patch,
+              AugCal, to improve uncertainty calibration of existing Sim2Real adaptation methods. Given a base Sim2Real
+              adaptation algorithm, at training time, AugCal involves replacing vanilla "Sim" images with strongly
+              augmented views (Aug intervention) and additionally optimizing for a training time calibration loss on
+              augmented "Sim" predictions (Cal intervention). Through our experiments, we empirically show the efficacy
+              of
+              AugCal across multiple adaptation methods, backbones, tasks and shifts.</i>
+          </span>
+          <!-- <span>
+            <a class="button" href="https://arxiv.org/pdf/2312.06106.pdf" target="_blank">[PDF]</a>
+          </span> -->
         </p>
 
         <p class="paper" style="padding: 20px;">
@@ -424,23 +474,34 @@
             <u>Prithvijit Chattopadhyay</u>, Adrien Bardes, Mark Ibrahim, Judy Hoffman, Rama Chellappa, Andrew Gordon
             Wilson, Tom Goldstein</span>
           <span>
-            <font color="red"><i>NeurIPS Datasets and Benchmarks</i>, 2023
-          </span></font>
-          <img src="files/images/bob.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
-          <span align="justify"><b>TL;DR, </b>Most neural network based computer vision systems are built on a backbone,
-            a pretrained or randomly initialized feature extractor. Several years ago, the default option was an
-            ImageNet-trained convolutional neural network. However, the recent past has seen the emergence of countless
-            backbones pretrained using various algorithms and datasets. We benchmark a diverse suite of pretrained
-            models across a diverse set of computer vision tasks ranging from classification to object detection to OOD
-            generalization and more. Our Battle of Backbones (BoB) sheds light on promising directions for the research
-            community to advance computer vision by illuminating strengths and weakness of existing backbones through a
-            comprehensive analysis conducted on 1500 training runs.
+            <font color="red"><i>NeurIPS Datasets and Benchmarks</i> 2023</font>
           </span>
           <span>
             <a class="button" href="https://arxiv.org/pdf/2310.19909.pdf" target="_blank">[PDF]</a>
             <a class="button" href="https://github.com/hsouri/Battle-of-the-Backbones" target="_blank">[Code]</a>
+            <a class="button" onclick="toggleDescription('bob');">[TL;DR]</a>
           </span>
+          <img src="files/images/bob.png" alt="Thumbnail"
+            style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
+          <span id="bob" style="display: none;" align="justify"><b>TL;DR, </b><i>Most neural network based computer
+              vision
+              systems are built on a backbone,
+              a pretrained or randomly initialized feature extractor. Several years ago, the default option was an
+              ImageNet-trained convolutional neural network. However, the recent past has seen the emergence of
+              countless
+              backbones pretrained using various algorithms and datasets. We benchmark a diverse suite of pretrained
+              models across a diverse set of computer vision tasks ranging from classification to object detection to
+              OOD
+              generalization and more. Our Battle of Backbones (BoB) sheds light on promising directions for the
+              research
+              community to advance computer vision by illuminating strengths and weakness of existing backbones through
+              a
+              comprehensive analysis conducted on 1500 training runs.</i>
+          </span>
+          <!-- <span>
+            <a class="button" href="https://arxiv.org/pdf/2310.19909.pdf" target="_blank">[PDF]</a>
+            <a class="button" href="https://github.com/hsouri/Battle-of-the-Backbones" target="_blank">[Code]</a>
+          </span> -->
         </p>
 
 
@@ -457,21 +518,28 @@
             <u>Prithvijit Chattopadhyay</u>,
             Judy Hoffman</span>
           <span>
-            <font color="red"><i>NeurIPS</i>, 2023
-          </span></font>
-          <img src="files/images/lance.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
-          <span align="justify"><b>TL;DR, </b>We propose an automated algorithm to stress-test a trained visual model by
-            generating language-guided counterfactual test images (LANCE). Our method leverages
-            recent progress in large language modeling and text-based image editing to augment an IID test set with a
-            suite of diverse, realistic, and challenging test images
-            without altering model weights.
+            <font color="red"><i>NeurIPS</i> 2023</font>
           </span>
           <span>
             <a class="button" href="https://arxiv.org/pdf/2305.19164.pdf" target="_blank">[PDF]</a>
             <a class="button" href="https://github.com/virajprabhu/LANCE" target="_blank">[code]</a>
             <a class="button" href="https://virajprabhu.github.io//lance-web/" target="_blank">[project page]</a>
+            <a class="button" onclick="toggleDescription('lance');">[TL;DR]</a>
           </span>
+          <img src="files/images/lance.png" alt="Thumbnail"
+            style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
+          <span id="lance" style="display: none;" align="justify"><b>TL;DR, </b><i>We propose an automated algorithm to
+              stress-test a trained visual model by
+              generating language-guided counterfactual test images (LANCE). Our method leverages
+              recent progress in large language modeling and text-based image editing to augment an IID test set with a
+              suite of diverse, realistic, and challenging test images
+              without altering model weights.</i>
+          </span>
+          <!-- <span>
+            <a class="button" href="https://arxiv.org/pdf/2305.19164.pdf" target="_blank">[PDF]</a>
+            <a class="button" href="https://github.com/virajprabhu/LANCE" target="_blank">[code]</a>
+            <a class="button" href="https://virajprabhu.github.io//lance-web/" target="_blank">[project page]</a>
+          </span> -->
         </p>
 
         <p class="paper" style="padding: 20px;">
@@ -485,21 +553,31 @@
             <u>Prithvijit Chattopadhyay</u>,
             Judy Hoffman</span>
           <span>
-            <font color="red"><i>ICCV</i>, 2023
-          </span></font>
-          <img src="files/images/lsr.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
-          <span align="justify"><b>TL;DR, </b>Robustness to natural distribution shifts has seen remarkable progress
-            thanks to recent pre-training strategies combined with better fine-tuning methods. However, such fine-tuning
-            assumes access to large amounts of labelled data, and the extent to which the observations hold when the
-            amount of training data is not as high remains unknown. We address this gap by performing the first in-depth
-            study of robustness to various natural distribution shifts in different low-shot regimes: spanning datasets,
-            architectures, pre-trained initializations, and state-of-the-art robustness interventions.
+            <font color="red"><i>ICCV</i> 2023</font>
           </span>
           <span>
             <a class="button" href="https://arxiv.org/pdf/2304.11263.pdf" target="_blank">[PDF]</a>
             <a class="button" href="https://github.com/Aaditya-Singh/Low-Shot-Robustness/" target="_blank">[code]</a>
+            <a class="button" onclick="toggleDescription('lsr');">[TL;DR]</a>
           </span>
+          <img src="files/images/lsr.png" alt="Thumbnail"
+            style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
+          <span id="lsr" style="display: none;" align="justify"><b>TL;DR, </b><i>Robustness to natural distribution
+              shifts
+              has seen remarkable progress
+              thanks to recent pre-training strategies combined with better fine-tuning methods. However, such
+              fine-tuning
+              assumes access to large amounts of labelled data, and the extent to which the observations hold when the
+              amount of training data is not as high remains unknown. We address this gap by performing the first
+              in-depth
+              study of robustness to various natural distribution shifts in different low-shot regimes: spanning
+              datasets,
+              architectures, pre-trained initializations, and state-of-the-art robustness interventions.</i>
+          </span>
+          <!-- <span>
+            <a class="button" href="https://arxiv.org/pdf/2304.11263.pdf" target="_blank">[PDF]</a>
+            <a class="button" href="https://github.com/Aaditya-Singh/Low-Shot-Robustness/" target="_blank">[code]</a>
+          </span> -->
         </p>
 
         <p class="paper" style="padding: 20px;">
@@ -514,25 +592,33 @@
             Vivek Vijaykumar,
             Judy Hoffman</span>
           <span>
-            <font color="red"><i>ICCV</i>, 2023
-          </span></font>
+            <font color="red"><i>ICCV</i> 2023</font>
+          </span>
+          <span>
+            <a class="button" href="https://arxiv.org/pdf/2212.00979.pdf" target="_blank">[PDF]</a>
+            <a class="button" href="https://github.com/prithv1/PASTA" target="_blank">[code]</a>
+            <a class="button" onclick="toggleDescription('pasta');">[TL;DR]</a>
+          </span>
           <img src="files/images/pasta.png" alt="Thumbnail"
             style="width: 100%; max-width: 2000px; height: auto; margin-right: 10px;">
           <!-- <center><img src="./files/images/pasta.png" alt="3DSP" width="700" height="300" style="border-style: none;"></center> -->
           <!-- <span align="justify">PASTA is a simple and effective frequency domain augmentation strategy to improve out-of-the-box synthetic-to-real (syn-to-real) generalization performance. PASTA involves perturbing the amplitude spectra of the synthetic images in the Fourier domain to generate augmented views. We find that synthetic images tend to be less diverse in their high-frequency components compared to real ones. Based on this observation, we design PASTA to perturb the amplitude spectrums in a structured manner such that high-frequency components are perturbed relatively more than the low-frequency ones (as outlined in the figure above). For the tasks of semantic segmentation (GTAV→Real), object detection (Sim10K→Real), and object recognition (VisDA-C Syn→Real), across a total of 5 syn-to-real shifts, we find that PASTA either outperforms or is consistently competitive with more complex state-of-the-art methods while being complementary to other generalization approaches.
           </span> -->
-          <span align="justify"><b>TL;DR, </b>PASTA is a simple and effective frequency domain augmentation strategy to
-            improve out-of-the-box synthetic-to-real (syn-to-real) generalization performance. PASTA involves perturbing
-            the amplitude spectra of the synthetic images in the Fourier domain in a structured manner to generate
-            augmented views. For the tasks of semantic segmentation (GTAV→Real), object detection (Sim10K→Real), and
-            object recognition (VisDA-C Syn→Real), across a total of 5 syn-to-real shifts, we find that PASTA either
-            outperforms or is consistently competitive with more complex state-of-the-art methods while being
-            complementary to other generalization approaches.
+          <span id="pasta" style="display: none;" align="justify"><b>TL;DR, </b><i>PASTA is a simple and effective
+              frequency
+              domain augmentation strategy to
+              improve out-of-the-box synthetic-to-real (syn-to-real) generalization performance. PASTA involves
+              perturbing
+              the amplitude spectra of the synthetic images in the Fourier domain in a structured manner to generate
+              augmented views. For the tasks of semantic segmentation (GTAV→Real), object detection (Sim10K→Real), and
+              object recognition (VisDA-C Syn→Real), across a total of 5 syn-to-real shifts, we find that PASTA either
+              outperforms or is consistently competitive with more complex state-of-the-art methods while being
+              complementary to other generalization approaches.</i>
           </span>
-          <span>
+          <!-- <span>
             <a class="button" href="https://arxiv.org/pdf/2212.00979.pdf" target="_blank">[PDF]</a>
             <a class="button" href="https://github.com/prithv1/PASTA" target="_blank">[code]</a>
-          </span>
+          </span> -->
         </p>
 
         <p class="paper" style="padding: 20px;">
@@ -547,27 +633,36 @@
             Roozbeh Mottaghi,
             Ani Kembhavi</span>
           <span>
-            <font color="red"><i>ICCV</i>, 2021
-          </span></font>
+            <font color="red"><i>ICCV</i> 2021</font>
+          </span>
           <span>
             <font color="blue"><b>Oral presentation</b></font>
-          </span>
-          <img src="files/images/robustnav.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
-          <!-- <center><img src="./files/images/robustnav.png" alt="3DSP" width="500" height="350" style="border-style: none;"></center> -->
-          <span align="justify"><b>TL;DR, </b>As an attempt towards assessing the robustness of embodied navigation
-            agents, we
-            propose RobustNav, a framework to quantify the performance of embodied navigation agents when
-            exposed to a wide variety of visual – affecting RGB inputs – and dynamics – affecting transition
-            dynamics – corruptions. We find that standard end-to-end RL policies significantly underperform (or
-            fail) in the presence of visual or dynamics corruptions, warranting more research in this direction.
           </span>
           <span>
             <a class="button" href="https://arxiv.org/pdf/2106.04531.pdf" target="_blank">[PDF]</a>
             <a class="button" href="https://github.com/allenai/robustnav" target="_blank">[code]</a>
             <a class="button" href="https://prior.allenai.org/projects/robustnav" target="_blank">[project page]</a>
             <a class="button" href="https://www.youtube.com/watch?v=wqVGsuUbm48" target="_blank">[video]</a>
+            <a class="button" onclick="toggleDescription('robustnav');">[TL;DR]</a>
           </span>
+          <img src="files/images/robustnav.png" alt="Thumbnail"
+            style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
+          <!-- <center><img src="./files/images/robustnav.png" alt="3DSP" width="500" height="350" style="border-style: none;"></center> -->
+          <span id="robustnav" style="display: none;" align="justify"><b>TL;DR, </b><i>As an attempt towards assessing
+              the
+              robustness of embodied navigation
+              agents, we
+              propose RobustNav, a framework to quantify the performance of embodied navigation agents when
+              exposed to a wide variety of visual – affecting RGB inputs – and dynamics – affecting transition
+              dynamics – corruptions. We find that standard end-to-end RL policies significantly underperform (or
+              fail) in the presence of visual or dynamics corruptions, warranting more research in this direction.</i>
+          </span>
+          <!-- <span>
+            <a class="button" href="https://arxiv.org/pdf/2106.04531.pdf" target="_blank">[PDF]</a>
+            <a class="button" href="https://github.com/allenai/robustnav" target="_blank">[code]</a>
+            <a class="button" href="https://prior.allenai.org/projects/robustnav" target="_blank">[project page]</a>
+            <a class="button" href="https://www.youtube.com/watch?v=wqVGsuUbm48" target="_blank">[video]</a>
+          </span> -->
         </p>
 
 
@@ -584,28 +679,34 @@
             Daniel Bolya,
             Judy Hoffman</span>
           <span>
-            <font color="red"><i>Adversarial Robustness in the Real World (AROW) ECCV</i>, 2020
-          </span></font>
+            <font color="red"><i>Adversarial Robustness in the Real World (AROW), ECCV</i> 2020</font>
+          </span>
           <span>
             <font color="blue"><b>NVIDIA Best Paper Runner Up</b></font>
-          </span>
-          <img src="files/images/relative_likelihood_landscapes.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
-          <!-- <center><img src="./files/images/likelihood_landscapes_fig.png" alt="3DSP" width="700" height="250" style="border-style: none;"></center> -->
-          <span align="justify"><b>TL;DR, </b>Convolutional Neural Networks (CNNs) have been shown to be vulnerable to
-            adversarial examples, which are known to locate in subspaces close to where normal data lies but are
-            not naturally occurring and have low probability. In this work, we investigate the potential effect
-            defense techniques have on the geometry of the likelihood landscape - likelihood of the input images
-            under the trained model. We first propose a way to visualize the likelihood landscape by leveraging
-            an energy-based model interpretation of discriminative classifiers. Then we introduce a measure to
-            quantify the flatness of the likelihood landscape. We observe that a subset of adversarial defense
-            techniques results in a similar effect of flattening the likelihood landscape. We further explore
-            directly regularizing towards a flat landscape for adversarial robustness.
           </span>
           <span>
             <a class="button" href="https://arxiv.org/pdf/2008.11300.pdf" target="_blank">[PDF]</a>
             <a class="button" href="https://www.youtube.com/watch?v=RuLY6UNIeOs" target="_blank">[video]</a>
+            <a class="button" onclick="toggleDescription('lls');">[TL;DR]</a>
           </span>
+          <img src="files/images/relative_likelihood_landscapes.png" alt="Thumbnail"
+            style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
+          <!-- <center><img src="./files/images/likelihood_landscapes_fig.png" alt="3DSP" width="700" height="250" style="border-style: none;"></center> -->
+          <span id="lls" style="display: none;" align="justify"><b>TL;DR, </b><i>Convolutional Neural Networks (CNNs)
+              have been shown to be vulnerable to
+              adversarial examples, which are known to locate in subspaces close to where normal data lies but are
+              not naturally occurring and have low probability. In this work, we investigate the potential effect
+              defense techniques have on the geometry of the likelihood landscape - likelihood of the input images
+              under the trained model. We first propose a way to visualize the likelihood landscape by leveraging
+              an energy-based model interpretation of discriminative classifiers. Then we introduce a measure to
+              quantify the flatness of the likelihood landscape. We observe that a subset of adversarial defense
+              techniques results in a similar effect of flattening the likelihood landscape. We further explore
+              directly regularizing towards a flat landscape for adversarial robustness.</i>
+          </span>
+          <!-- <span>
+            <a class="button" href="https://arxiv.org/pdf/2008.11300.pdf" target="_blank">[PDF]</a>
+            <a class="button" href="https://www.youtube.com/watch?v=RuLY6UNIeOs" target="_blank">[video]</a>
+          </span> -->
         </p>
 
         <p class="paper" style="padding: 20px;">
@@ -619,26 +720,35 @@
             Yogesh Balaji,
             Judy Hoffman</span>
           <span>
-            <font color="red"><i>ECCV</i>, 2020</font>
+            <font color="red"><i>ECCV</i> 2020</font>
           </span>
-          <span><i>Visual Learning with Limited Labels (LwLL) CVPR,</i> 2020</span>
-          <img src="files/images/DMG_approach.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
-          <!-- <center><img src="./files/images/DMG_approach.png" alt="3DSP" width="500" height="350" style="border-style: none;"></center> -->
-          <span align="justify"><b>TL;DR, </b>We introduce Domain-specific Masks for Generalization, a model for
-            improving both
-            in-domain and out-of-domain generalization performance. To produce a model which best generalizes
-            to both seen and unseen domains, we propose learning domain specific masks (encouraged
-            to learn a balance of domain-invariant and domain-specific features) enabling a model to
-            benefit from the predictive power of specialized features while retaining the universal
-            applicability of domain-invariant features. We demonstrate competitive performance compared to naive
-            baselines and state-of-the-art methods on both PACS and DomainNet.
+          <span>
+            <font color="red"><i>Visual Learning with Limited Labels (LwLL), CVPR</i> 2020</font>
           </span>
           <span>
             <a class="button" href="https://arxiv.org/pdf/2008.12839.pdf" target="_blank">[PDF]</a>
             <a class="button" href="https://github.com/prithv1/DMG/tree/master" target="_blank">[code]</a>
             <a class="button" href="https://www.youtube.com/watch?v=u4YQdV8dJWM" target="_blank">[video]</a>
+            <a class="button" onclick="toggleDescription('dmg');">[TL;DR]</a>
           </span>
+          <img src="files/images/DMG_approach.png" alt="Thumbnail"
+            style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
+          <!-- <center><img src="./files/images/DMG_approach.png" alt="3DSP" width="500" height="350" style="border-style: none;"></center> -->
+          <span id="dmg" style="display: none;" align="justify"><b>TL;DR, </b><i>We introduce Domain-specific Masks for
+              Generalization, a model for
+              improving both
+              in-domain and out-of-domain generalization performance. To produce a model which best generalizes
+              to both seen and unseen domains, we propose learning domain specific masks (encouraged
+              to learn a balance of domain-invariant and domain-specific features) enabling a model to
+              benefit from the predictive power of specialized features while retaining the universal
+              applicability of domain-invariant features. We demonstrate competitive performance compared to naive
+              baselines and state-of-the-art methods on both PACS and DomainNet.</i>
+          </span>
+          <!-- <span>
+            <a class="button" href="https://arxiv.org/pdf/2008.12839.pdf" target="_blank">[PDF]</a>
+            <a class="button" href="https://github.com/prithv1/DMG/tree/master" target="_blank">[code]</a>
+            <a class="button" href="https://www.youtube.com/watch?v=u4YQdV8dJWM" target="_blank">[video]</a>
+          </span> -->
         </p>
 
         <p class="paper" style="padding: 20px;">
@@ -654,29 +764,36 @@
             Devi Parikh,
             Abhishek Das</span>
           <span>
-            <font color="red"><i>EMNLP</i>, 2019</font>
+            <font color="red"><i>EMNLP</i> 2019</font>
           </span>
           <span>
             <font color="red"><i>Visual Question Answering and Dialog Workshop,
-                CVPR,</i> 2019</font>
+                CVPR</i> 2019</font>
             </font>
+          </span>
+          <span>
+            <a class="button" href="https://arxiv.org/pdf/1909.10470.pdf" target="_blank">[PDF]</a>
+            <a class="button" href="https://github.com/vmurahari3/visdial-diversity" target="_blank">[code]</a>
+            <a class="button" onclick="toggleDescription('visdiv');">[TL;DR]</a>
           </span>
           <img src="files/images/diverse_dialog.png" alt="Thumbnail"
             style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
 
           <!-- <center><img src="./files/images/visdial_div_teaser.jpg" alt="3DSP" width="550" height="350" style="border-style: none;"></center> -->
-          <span align="justify"><b>TL;DR, </b>While generative visual dialog models trained with self-talk based RL
-            perform
-            better at the associated downstream task, they suffer from repeated interactions -- resulting in
-            saturation in improvements as the number of rounds increase. To counter this, we devise a simple
-            auxiliary objective that incentivizes Q-Bot to ask diverse questions, thus reducing repetitions and
-            in turn enabling A-Bot to explore a larger state space during RL i.e., be exposed to more visual
-            concepts to talk about, and varied questions to answer.
+          <span id="visdiv" style="display: none;" align="justify"><b>TL;DR, </b><i>While generative visual dialog
+              models
+              trained with self-talk based RL
+              perform
+              better at the associated downstream task, they suffer from repeated interactions -- resulting in
+              saturation in improvements as the number of rounds increase. To counter this, we devise a simple
+              auxiliary objective that incentivizes Q-Bot to ask diverse questions, thus reducing repetitions and
+              in turn enabling A-Bot to explore a larger state space during RL i.e., be exposed to more visual
+              concepts to talk about, and varied questions to answer.</i>
           </span>
-          <span>
+          <!-- <span>
             <a class="button" href="https://arxiv.org/pdf/1909.10470.pdf" target="_blank">[PDF]</a>
             <a class="button" href="https://github.com/vmurahari3/visdial-diversity" target="_blank">[code]</a>
-          </span>
+          </span> -->
         </p>
 
         <p class="paper" style="padding: 20px;">
@@ -693,29 +810,33 @@
             Dhruv Batra,
             Ramakrishna Vedantam</span>
           <span>
-            <font color="red"><i>IJCAI</i>, 2020</font>
+            <font color="red"><i>IJCAI</i> 2020</font>
           </span>
           <span>
-            <font color="red"><i>Workshop on Task Agnostic Reinforcement Learning (TARL) ICLR</i>, 2019</font>
+            <font color="red"><i>Workshop on Task Agnostic Reinforcement Learning (TARL), ICLR</i> 2019</font>
+          </span>
+          <span>
+            <a class="button" href="https://arxiv.org/pdf/1907.10580.pdf" target="_blank">[PDF]</a>
+            <a class="button" onclick="toggleDescription('irvic');">[TL;DR]</a>
           </span>
           <img src="files/images/irvic.png" alt="Thumbnail"
             style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
 
           <!-- <center><img src="./files/images/irvic.png" alt="3DSP" width="700" height="250" style="border-style: none;"></center> -->
-          <span align="justify"><b>TL;DR, </b>We propose a novel framework to identify subgoals useful for exploration
-            in sequential decision
-            making tasks under partial observability. We utilize
-            the variational intrinsic control framework (Gregor et.al., 2016) which maximizes empowerment –
-            the ability to reliably reach a diverse set of states
-            and show how to identify sub-goals as states with
-            high necessary option information through an information theoretic regularizer. Despite being discovered
-            without explicit goal supervision, our subgoals provide better exploration and sample complexity on
-            challenging grid-world navigation tasks
-            compared to supervised counterparts in prior work.
+          <span id="irvic" style="display: none;" align="justify"><b>TL;DR, </b><i>We propose a novel framework to
+              identify
+              subgoals useful for exploration
+              in sequential decision
+              making tasks under partial observability. We utilize
+              the variational intrinsic control framework (Gregor et.al., 2016) which maximizes empowerment –
+              the ability to reliably reach a diverse set of states
+              and show how to identify sub-goals as states with
+              high necessary option information through an information theoretic regularizer. Despite being discovered
+              without explicit goal supervision, our subgoals provide better exploration and sample complexity on
+              challenging grid-world navigation tasks
+              compared to supervised counterparts in prior work.</i>
           </span>
-          <span>
-            <a class="button" href="https://arxiv.org/pdf/1907.10580.pdf" target="_blank">[PDF]</a>
-          </span>
+
         </p>
 
         <p class="paper" style="padding: 20px;">
@@ -734,24 +855,30 @@
             Stefan Lee,
             Dhruv Batra</span>
           <span>
-            <font color="red"><i>Workshop on AI Systems, SOSP</i>, 2019</font>
+            <font color="red"><i>Workshop on AI Systems, SOSP</i> 2019</font>
+          </span>
+          <span>
+            <a class="button" href="https://arxiv.org/pdf/1902.03570.pdf" target="_blank">[PDF]</a>
+            <a class="button" href="https://github.com/Cloud-CV/EvalAI" target="_blank">[code]</a>
+            <a class="button" onclick="toggleDescription('evalai');">[TL;DR]</a>
           </span>
           <img src="files/images/evalai_teaser.png" alt="Thumbnail"
             style="display: block; margin: 0 auto; max-width: 50%; height: auto;">
 
           <!-- <center><img src="./files/images/evalai_teaser.png" alt="3DSP" width="500" height="350" style="border-style: none;"></center> -->
-          <span align="justify"><b>TL;DR, </b>We introduce EvalAI, an open source platform for evaluating and comparing
-            machine
-            learning (ML) and artificial intelligence algorithms (AI) at scale. EvalAI is built to provide a
-            scalable solution to the research community to fulfill the critical need of evaluating machine
-            learning models and agents acting in an environment against annotations or with a human-in-the-loop.
-            This will help researchers, students, and data scientists to create, collaborate, and participate in
-            AI challenges organized around the globe.
+          <span id="evalai" style="display: none;" align="justify"><b>TL;DR, </b><i>We introduce EvalAI, an open source
+              platform for evaluating and comparing
+              machine
+              learning (ML) and artificial intelligence algorithms (AI) at scale. EvalAI is built to provide a
+              scalable solution to the research community to fulfill the critical need of evaluating machine
+              learning models and agents acting in an environment against annotations or with a human-in-the-loop.
+              This will help researchers, students, and data scientists to create, collaborate, and participate in
+              AI challenges organized around the globe.</i>
           </span>
-          <span>
+          <!-- <span>
             <a class="button" href="https://arxiv.org/pdf/1902.03570.pdf" target="_blank">[PDF]</a>
             <a class="button" href="https://github.com/Cloud-CV/EvalAI" target="_blank">[code]</a>
-          </span>
+          </span> -->
         </p>
 
         <!-- <p class="paper" style="padding: 20px;">
@@ -809,22 +936,10 @@
             <font color="red"><i>ECCV</i>, 2018</font>
           </span>
           <span>
-            <font color="red"><i>Continual Learning Workshop NeurIPS</i>, 2018</font>
+            <font color="red"><i>Continual Learning Workshop, NeurIPS</i> 2018</font>
           </span>
           <span>
-            <font color="red"><i>Visually Grounded Interaction and Language (ViGIL) Workshop NeurIPS</i>, 2018</font>
-          </span>
-          <img src="files/images/niwt_method.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
-
-          <!-- <center><img src="./files/images/NIWT_teaser.png" alt="3DSP" width="350" height="250" style="border-style: none;"></center> -->
-          <span align="justify"><b>TL;DR, </b>We introduce a simple, efficient zero-shot learning approach -- NIWT --
-            based on
-            the observation that individual neurons in CNNs have been shown to implicitly learn a dictionary of
-            semantically meaningful concepts (simple textures and shapes to whole or partial objects). NIWT
-            learns to map domain knowledge about "unseen" classes onto this dictionary of learned concepts and
-            optimizes for network parameters that can effectively combine these concepts - essentially learning
-            classifiers by discovering and composing learned semantic concepts in deep networks.
+            <font color="red"><i>Visually Grounded Interaction and Language (ViGIL) Workshop, NeurIPS</i> 2018</font>
           </span>
           <span>
             <a class="button" href="https://arxiv.org/pdf/1808.02861.pdf" target="_blank">[PDF]</a>
@@ -832,7 +947,28 @@
             <a class="button"
               href="https://mlatgt.blog/2018/09/05/choose-your-neuron-incorporating-domain-knowledge-through-neuron-importance/"
               target="_blank">[article]</a>
+            <a class="button" onclick="toggleDescription('niwt');">[TL;DR]</a>
           </span>
+          <img src="files/images/niwt_method.png" alt="Thumbnail"
+            style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
+
+          <!-- <center><img src="./files/images/NIWT_teaser.png" alt="3DSP" width="350" height="250" style="border-style: none;"></center> -->
+          <span id="niwt" style="display: none;" align="justify"><b>TL;DR, </b><i>We introduce a simple, efficient
+              zero-shot learning approach -- NIWT --
+              based on
+              the observation that individual neurons in CNNs have been shown to implicitly learn a dictionary of
+              semantically meaningful concepts (simple textures and shapes to whole or partial objects). NIWT
+              learns to map domain knowledge about "unseen" classes onto this dictionary of learned concepts and
+              optimizes for network parameters that can effectively combine these concepts - essentially learning
+              classifiers by discovering and composing learned semantic concepts in deep networks.</i>
+          </span>
+          <!-- <span>
+            <a class="button" href="https://arxiv.org/pdf/1808.02861.pdf" target="_blank">[PDF]</a>
+            <a class="button" href="https://github.com/ramprs/neuron-importance-zsl" target="_blank">[code]</a>
+            <a class="button"
+              href="https://mlatgt.blog/2018/09/05/choose-your-neuron-incorporating-domain-knowledge-through-neuron-importance/"
+              target="_blank">[article]</a>
+          </span> -->
         </p>
 
         <p class="paper" style="padding: 20px;">
@@ -848,20 +984,23 @@
             <u>Prithvijit Chattopadhyay</u><sup>*</sup>,
             Devi Parikh</span>
           <span>
-            <font color="red"><i>EMNLP</i>, 2018</font>
+            <font color="red"><i>EMNLP</i> 2018</font>
+          </span>
+          <span>
+            <a class="button" href="https://arxiv.org/pdf/1810.12366.pdf" target="_blank">[PDF]</a>
+            <a class="button" onclick="toggleDescription('visexp');">[TL;DR]</a>
           </span>
           <img src="files/images/explanations_predictable.png" alt="Thumbnail"
             style="display: block; margin: 0 auto; max-width: 50%; height: auto;">
           <!-- <center><img src="./files/images/explanations_predictable.png" alt="3DSP" width="350" height="350" style="border-style: none;"></center> -->
-          <span align="justify"><b>TL;DR, </b>A rich line of research attempts to make deep neural networks more
-            transparent by
-            generating human-interpretable 'explanations' of their decision process, especially for interactive
-            tasks like Visual Question Answering (VQA). In this work, we analyze if existing explanations indeed
-            make a VQA model -- its responses as well as failures -- more predictable to a human.
+          <span id="visexp" style="display: none;" align="justify"><b>TL;DR, </b><i>A rich line of research attempts to
+              make deep neural networks more
+              transparent by
+              generating human-interpretable 'explanations' of their decision process, especially for interactive
+              tasks like Visual Question Answering (VQA). In this work, we analyze if existing explanations indeed
+              make a VQA model -- its responses as well as failures -- more predictable to a human.</i>
           </span>
-          <span>
-            <a class="button" href="https://arxiv.org/pdf/1810.12366.pdf" target="_blank">[PDF]</a>
-          </span>
+
         </p>
 
         <p class="paper" style="padding: 20px;">
@@ -880,24 +1019,31 @@
             Dhruv Batra,
             Devi Parikh</span>
           <span>
-            <font color="red"><i>HCOMP</i>, 2017</font>
+            <font color="red"><i>HCOMP</i> 2017</font>
           </span>
           <span>
             <font color="blue"><b>Oral presentation</b></font>
           </span>
-          <img src="files/images/eval_visdial.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 40%; height: auto;">
-          <!-- <center><img src="./files/images/eval_visdial.png" alt="3DSP" width="300" height="400" style="border-style: none;"></center> -->
-          <span align="justify"><b>TL;DR, </b>We design a cooperative game - GuessWhich - to measure human-AI team
-            performance in
-            the specific context of the AI being a visual conversational agent. GuessWhich involves live
-            interaction between the human and the AI and is designed to gauge the extent to which progress in
-            isolated metrics for AI (& AI-AI teams) transfers to human-AI collaborative scenarios.
-          </span>
           <span>
             <a class="button" href="https://arxiv.org/pdf/1708.05122.pdf" target="_blank">[PDF]</a>
             <a class="button" href="https://github.com/GT-Vision-Lab/GuessWhich" target="_blank">[code]</a>
+            <a class="button" onclick="toggleDescription('gw');">[TL;DR]</a>
           </span>
+          <img src="files/images/eval_visdial.png" alt="Thumbnail"
+            style="display: block; margin: 0 auto; max-width: 40%; height: auto;">
+          <!-- <center><img src="./files/images/eval_visdial.png" alt="3DSP" width="300" height="400" style="border-style: none;"></center> -->
+          <span id="gw" style="display: none;" align="justify"><b>TL;DR, </b><i>We design a cooperative game -
+              GuessWhich -
+              to measure human-AI team
+              performance in
+              the specific context of the AI being a visual conversational agent. GuessWhich involves live
+              interaction between the human and the AI and is designed to gauge the extent to which progress in
+              isolated metrics for AI (& AI-AI teams) transfers to human-AI collaborative scenarios.</i>
+          </span>
+          <!-- <span>
+            <a class="button" href="https://arxiv.org/pdf/1708.05122.pdf" target="_blank">[PDF]</a>
+            <a class="button" href="https://github.com/GT-Vision-Lab/GuessWhich" target="_blank">[code]</a>
+          </span> -->
         </p>
 
         <p class="paper" style="padding: 20px;">
@@ -912,22 +1058,29 @@
             Viraj Prabhu<sup>*</sup>,
             Devi Parikh</span>
           <span>
-            <font color="red"><i>Chalearn Looking at People Workshop CVPR</i>, 2017</font>
-          </span>
-          <img src="files/images/toaim.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
-          <!-- <center><img src="./files/images/toaim.png" alt="3DSP" width="500" height="300" style="border-style: none;"></center> -->
-          <span align="justify"><b>TL;DR, </b>To effectively leverage the progress in Artificial Intelligence (AI) to
-            make our
-            lives more productive, it is important for humans and AI to work well together in a team. In this
-            work, we argue that for human-AI teams to be effective, in addition to making AI more accurate and
-            human-like, humans must also develop a theory of AI's mind (ToAIM) - get to know its strengths,
-            weaknesses, beliefs, and quirks.
+            <font color="red"><i>Chalearn Looking at People Workshop, CVPR</i> 2017</font>
           </span>
           <span>
             <a class="button" href="https://arxiv.org/pdf/1704.00717.pdf" target="_blank">[PDF]</a>
             <a class="button" href="https://github.com/deshraj/TOAIM" target="_blank">[code]</a>
+            <a class="button" onclick="toggleDescription('toaim');">[TL;DR]</a>
           </span>
+          <img src="files/images/toaim.png" alt="Thumbnail"
+            style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
+          <!-- <center><img src="./files/images/toaim.png" alt="3DSP" width="500" height="300" style="border-style: none;"></center> -->
+          <span id="toaim" style="display: none;" align="justify"><b>TL;DR, </b><i>To effectively leverage the progress
+              in
+              Artificial Intelligence (AI) to
+              make our
+              lives more productive, it is important for humans and AI to work well together in a team. In this
+              work, we argue that for human-AI teams to be effective, in addition to making AI more accurate and
+              human-like, humans must also develop a theory of AI's mind (ToAIM) - get to know its strengths,
+              weaknesses, beliefs, and quirks.</i>
+          </span>
+          <!-- <span>
+            <a class="button" href="https://arxiv.org/pdf/1704.00717.pdf" target="_blank">[PDF]</a>
+            <a class="button" href="https://github.com/deshraj/TOAIM" target="_blank">[code]</a>
+          </span> -->
         </p>
 
         <p class="paper" style="padding: 20px;">
@@ -942,26 +1095,32 @@
             Dhruv Batra,
             Devi Parikh</span>
           <span>
-            <font color="red"><i>CVPR</i>, 2017</font>
+            <font color="red"><i>CVPR</i> 2017</font>
           </span>
           <span>
             <font color="blue"><b>Spotlight presentation</b></font>
+          </span>
+          <span>
+            <a class="button" href="https://arxiv.org/pdf/1604.03505.pdf" target="_blank">[PDF]</a>
+            <a class="button" href="https://github.com/prithv1/cvpr2017_counting" target="_blank">[code]</a>
+            <a class="button" onclick="toggleDescription('counting');">[TL;DR]</a>
           </span>
           <img src="files/images/seq_sub.png" alt="Thumbnail"
             style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
 
           <!-- <center><img src="./files/images/counting_task_img.jpg" alt="3DSP" width="500" height="300" style="border-style: none;"></center> -->
-          <span align="justify"><b>TL;DR, </b>We study the numerosity of object classes in natural, everyday images and
-            build
-            dedicated models for counting designed to tackle the large variance in counts, appearances, and
-            scales of objects found in natural scenes. We propose a contextual counting approach inspired by the
-            phenomenon of subitizing - the ability of humans to make quick assessments of counts given a
-            perceptual signal, for small count values.
+          <span id="counting" style="display: none;" align="justify"><b>TL;DR, </b><i>We study the numerosity of object
+              classes in natural, everyday images and
+              build
+              dedicated models for counting designed to tackle the large variance in counts, appearances, and
+              scales of objects found in natural scenes. We propose a contextual counting approach inspired by the
+              phenomenon of subitizing - the ability of humans to make quick assessments of counts given a
+              perceptual signal, for small count values.</i>
           </span>
-          <span>
+          <!-- <span>
             <a class="button" href="https://arxiv.org/pdf/1604.03505.pdf" target="_blank">[PDF]</a>
             <a class="button" href="https://github.com/prithv1/cvpr2017_counting" target="_blank">[code]</a>
-          </span>
+          </span> -->
         </p>
 
 
@@ -973,6 +1132,15 @@
     <div id="projects">
       <h2>Projects</h2>
       <div>
+        <p class="paper">
+          <span class="title" style="font-weight:400">Investigating Visual Dialog Models for Goal-Driven Self-Talk
+          </span>
+          <span>Prithvijit Chattopadhyay (advised by Devi Parikh)</span>
+          <span>2019</span>
+          <span>
+            <a class="button" href="files/data/Mini_Project_2_Fall_19_Report.pdf" target="_blank">[Report PDF]</a>
+          </span>
+        </p>
 
         <p class="paper">
           <span class="title" style="font-weight:400">Exploring Weak-Supervision and Generative Models for Semantic
