@@ -1,1325 +1,1568 @@
 <!DOCTYPE html>
-<!-- saved from url=(0014)about:internet -->
-<html>
+<html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prithvijit Chattopadhyay</title>
+    <meta name="description" content="Prithvijit Chattopadhyay - Research Scientist, NVIDIA Cosmos Lab.">
 
-  <title>Prithvijit Chattopadhyay</title>
-  <meta name="description" content="">
-  <link href="./files/css" rel="stylesheet" type="text/css">
-  <link href="./files/css(1)" rel="stylesheet" type="text/css">
-  <link href="./files/css(2)" rel="stylesheet" type="text/css">
-  <link href="./files/font-awesome.min.css" rel="stylesheet">
+    <!-- Inter + JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./files/style.css">
-  <link rel="canonical" href="http://localhost:4000/">
-  <link rel="alternate" type="application/rss+xml" title="Shiori Sagawa" href="http://localhost:4000/feed.xml">
+    <style>
+        :root {
+            --bg: #fafafa;
+            --fg: #0a0a0a;
+            --muted: #525c66;
+            --accent: #2563eb;
+            --line: #e6e6e6;
+            --highlight: #4b1010;
+        }
+        :root[data-theme="dark"] {
+            --bg: #0e1116;
+            --fg: #e6edf3;
+            --muted: #8d96a0;
+            --accent: #58a6ff;
+            --line: #21262d;
+            --highlight: #f87171;
+        }
+        html { color-scheme: light dark; }
+        body { transition: background-color 0.2s ease, color 0.2s ease; }
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--line);
+            color: var(--muted);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 4px 10px;
+            margin-left: 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: color 0.15s, border-color 0.15s;
+        }
+        .theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+        section[id], a[id] { scroll-margin-top: 80px; }
+
+        /* Active nav link */
+        header.top nav a.active { color: var(--accent); }
+
+        /* Pub filter pills */
+        .pub-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 0 0 24px;
+        }
+        .tag-pill {
+            background: none;
+            border: 1px solid var(--line);
+            color: var(--muted);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 999px;
+            transition: color 0.15s, border-color 0.15s, background-color 0.15s;
+        }
+        .tag-pill:hover { color: var(--accent); border-color: var(--accent); }
+        .tag-pill.active {
+            color: var(--bg);
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+        .pub.is-hidden { display: none; }
+
+        /* Layout: main column + right rail */
+        .layout {
+            display: grid;
+            max-width: 1240px;
+            margin: 0 auto;
+            grid-template-columns: minmax(0, 880px) 240px;
+            gap: 64px;
+            align-items: start;
+        }
+        .layout > .container {
+            max-width: none;
+            margin: 0;
+            padding-left: 32px;
+            padding-right: 0;
+        }
+        .sidebar {
+            padding-top: 80px;
+            padding-right: 32px;
+            min-width: 0;
+        }
+        .sidebar-rail {
+            position: sticky;
+            top: 88px;
+        }
+        .rail-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 8px;
+            margin: 0 0 14px;
+            font-weight: 600;
+        }
+        .rail-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.45;
+        }
+        .rail-list li {
+            display: grid;
+            grid-template-columns: 36px 1fr;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--line);
+        }
+        .rail-list li:last-child { border-bottom: none; }
+        .rail-year {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--muted);
+            padding-top: 1px;
+            letter-spacing: 0.04em;
+        }
+        .rail-text { color: var(--fg); }
+        .rail-text a { color: var(--fg); text-decoration: none; }
+        .rail-text a:hover { color: var(--accent); }
+        .rail-foot {
+            margin-top: 14px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+        }
+        .rail-foot a { color: var(--muted); }
+        .rail-foot a:hover { color: var(--accent); }
+        .rail-title.stacked { margin-top: 32px; }
+        .rail-mentees {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .rail-mentees li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--line);
+            font-size: 13px;
+            line-height: 1.4;
+        }
+        .rail-mentees li:last-child { border-bottom: none; }
+        .rail-mentees .name { color: var(--fg); font-weight: 600; display: block; }
+        .rail-mentees .place {
+            color: var(--muted);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            display: block;
+            margin-top: 2px;
+            letter-spacing: 0.02em;
+        }
+        .rail-press {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .rail-press li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--line);
+            font-size: 13px;
+            line-height: 1.4;
+        }
+        .rail-press li:last-child { border-bottom: none; }
+        .rail-press a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+        }
+        .rail-press .source {
+            display: block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10.5px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+        .rail-press .headline { color: var(--fg); display: block; }
+        .rail-press a:hover .headline { color: var(--accent); }
+
+        @media (max-width: 1100px) {
+            .layout {
+                grid-template-columns: 1fr;
+                max-width: 880px;
+            }
+            .layout > .container {
+                padding-left: 32px;
+                padding-right: 32px;
+            }
+            .sidebar { display: none; }
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            background: var(--bg);
+            color: var(--fg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        p { margin: 0 0 14px; color: var(--fg); }
+
+        /* Sticky header */
+        header.top {
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            background: var(--bg);
+            border-bottom: 1px solid var(--line);
+            padding: 14px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        header.top .brand { color: var(--fg); font-weight: 600; }
+        header.top .brand a { color: var(--fg); }
+        header.top nav a {
+            color: var(--fg);
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        header.top nav a:hover { color: var(--accent); text-decoration: none; }
+
+        /* Container */
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 60px 32px;
+        }
+
+        /* Hero */
+        .hero {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 64px;
+        }
+        .hero img {
+            width: 220px;
+            height: 220px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+            transition: box-shadow 0.4s ease;
+        }
+        :root[data-theme="dark"] .hero img {
+            box-shadow: 0 0 40px 0 rgba(88, 166, 255, 0.16);
+        }
+        .hero h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin: 0 0 6px;
+            letter-spacing: -0.02em;
+            color: var(--fg);
+        }
+        .hero .role {
+            color: var(--muted);
+            font-size: 17px;
+            margin: 0 0 4px;
+        }
+        .hero .role a { color: var(--accent); }
+        .hero .role-award {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--muted);
+            letter-spacing: 0.04em;
+            margin: 0 0 4px;
+            padding-left: 12px;
+        }
+        .hero .role-award a { color: var(--muted); }
+        .hero .role-award a:hover { color: var(--accent); }
+        .hero .role-advisor {
+            font-size: 13px;
+            color: var(--muted);
+            margin: 0 0 2px;
+            padding-left: 12px;
+        }
+        .hero .role-advisor a { color: var(--muted); }
+        .hero .role-advisor a:hover { color: var(--accent); }
+        .hero .email {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        .hero .email a { color: var(--accent); }
+        .hero .meta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 10px;
+        }
+        .hero .meta a {
+            color: var(--accent);
+            text-decoration: none;
+            margin-right: 14px;
+        }
+        .hero .meta a:hover { text-decoration: underline; }
+
+        /* Section + headings */
+        section { margin-bottom: 56px; }
+        .section-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 8px;
+            margin: 0 0 20px;
+        }
+
+        .section-note {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        /* Toggle link */
+        .toggle-link {
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--accent);
+            text-transform: lowercase;
+            letter-spacing: 0.02em;
+        }
+        .toggle-link:hover { text-decoration: underline; }
+
+        .inline-toggle {
+            cursor: pointer;
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-underline-offset: 3px;
+        }
+        .inline-toggle:hover { text-decoration-style: solid; }
+
+        /* Affiliation strip */
+        .affiliation-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            align-items: flex-end;
+            margin-top: 16px;
+        }
+        .affiliation-strip .aff { text-align: center; }
+        .affiliation-strip .aff img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+        .affiliation-strip .aff p {
+            margin: 6px 0 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        /* News list */
+        ul.news-list,
+        ul.achievements-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        ul.news-list li {
+            display: grid;
+            grid-template-columns: 130px 1fr;
+            gap: 20px;
+            margin-bottom: 10px;
+            font-size: 15px;
+            align-items: baseline;
+        }
+        ul.news-list li > .news-date,
+        ul.news-list li > .news-date-red {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: var(--muted);
+            font-weight: 500;
+        }
+        ul.news-list li > .news-date-red {
+            color: var(--highlight);
+        }
+        /* News items lacking a date span (e.g. the reviewing line) */
+        ul.news-list li.nodate {
+            grid-template-columns: 1fr;
+        }
+        .text-red { color: var(--highlight); }
+
+        /* Achievements list */
+        ul.achievements-list {
+            font-size: 15px;
+        }
+        ul.achievements-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        ul.achievements-list li::before {
+            content: "›";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--muted);
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+        }
+
+        /* Publications */
+        .pub {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 24px;
+            margin-bottom: 32px;
+            align-items: start;
+        }
+        .pub img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid var(--line);
+            display: block;
+        }
+        .pub-title {
+            font-weight: 600;
+            font-size: 17px;
+            line-height: 1.4;
+            letter-spacing: -0.01em;
+            margin-bottom: 4px;
+            color: var(--fg);
+        }
+        .pub-title a { color: var(--fg); }
+        .pub-title a:hover { color: var(--accent); text-decoration: none; }
+        .pub-venue {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 6px;
+        }
+        .pub-authors {
+            color: var(--muted);
+            font-size: 14.5px;
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+        .pub-authors .author.sx,
+        .pub-authors .me {
+            color: var(--fg);
+            font-weight: 600;
+        }
+        .pub-highlight {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--highlight);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 6px;
+        }
+        .pub-links {
+            margin-top: 6px;
+        }
+        .pub-links a,
+        .pub-links .toggle-link {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--accent);
+            margin-right: 12px;
+            text-decoration: none;
+            text-transform: none;
+        }
+        .pub-links a:hover,
+        .pub-links .toggle-link:hover { text-decoration: underline; }
+        .paper-tldr {
+            display: none;
+            margin-top: 10px;
+            text-align: justify;
+            color: var(--muted);
+            font-size: 14.5px;
+            line-height: 1.55;
+            border-left: 2px solid var(--line);
+            padding: 6px 0 6px 14px;
+        }
+
+        /* Theses / Projects (no thumbnail) */
+        .entry {
+            margin-bottom: 22px;
+        }
+        .entry .pub-title { font-size: 16px; }
+
+        /* Footer */
+        #footer {
+            border-top: 1px solid var(--line);
+            padding: 30px 32px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        #footer a { color: var(--accent); }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            header.top {
+                padding: 12px 16px;
+                font-size: 13px;
+                flex-wrap: wrap;
+                gap: 6px;
+            }
+            header.top nav a { margin-left: 14px; font-size: 13px; }
+
+            .container { padding: 36px 18px; }
+
+            .hero {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+                margin-bottom: 40px;
+            }
+            .hero img { width: 140px; height: 140px; }
+            .hero h1 { font-size: 26px; }
+            .hero .role { font-size: 15px; }
+
+            .pub {
+                grid-template-columns: 120px 1fr;
+                gap: 16px;
+            }
+
+            ul.news-list li {
+                grid-template-columns: 100px 1fr;
+                gap: 12px;
+            }
+
+            .affiliation-strip { gap: 18px; }
+            .affiliation-strip .aff img { height: 48px; }
+        }
+
+        @media (max-width: 480px) {
+            .pub {
+                grid-template-columns: 1fr;
+            }
+            .pub img { max-width: 200px; }
+
+            ul.news-list li {
+                grid-template-columns: 1fr;
+                gap: 2px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <div class="wrapper">
-    <div class="home" style="margin-top:40px">
-      <div>
-        <img alt="image" style="width:180px;float:right;margin-bottom:20px;margin-right:20px;"
-          src="./files/prithv1-circ.png">
-      </div>
-      <div>
-        <h1>Prithvijit Chattopadhyay</h1>
-        <p><a href="mailto:prithvijitchattopadhyay@gmail.com">Email</a></p>
-        <p>
-          <a href="https://github.com/prithv1">Github</a> |
-          <a href="https://scholar.google.com/citations?user=rIK7AMkAAAAJ&hl=en">Google Scholar</a> |
-          <a href="https://www.semanticscholar.org/author/Prithvijit-Chattopadhyay/40424000">Semantic Scholar</a> |
-          <a href="./files/data/CV.pdf">CV</a> |
-          <a href="https://twitter.com/prithvijitch">Twitter</a> |
-          <a href="https://www.linkedin.com/in/prithvijit-chattopadhyay-260b2b54/">LinkedIn</a>
-        </p>
-      </div>
-    </div>
+    <a name="Home" id="home"></a>
 
-    <div style="clear:left">
-      <h2>BIO</h2>
-      <div>
-        <p>I am a Research Scientist at NVIDIA in the Deep Imagination Research group, where I work on NVIDIA Cosmos suite of world foundation models. At the moment, I am interested in enabling spatial understanding, reasoning and forecasting through multimodal understanding (VLMs) or generation (world-model) models. 
-        </p>
-        <p>
-          I earned my Ph.D. in Computer
-          Science in August 2024 at Georgia Tech, where I was
-          advised
-          by <a href="https://www.cc.gatech.edu/~judy/">Prof. Judy Hoffman</a>. During my Ph.D., I broadly worked on
-          distribution shift problems
-          in computer vision.
-          My doctoral thesis (<a
-            href="https://repository.gatech.edu/entities/publication/06d25907-f11f-4bc2-ac0b-9869d6722177">here</a>) was
-          focused on utilizing synthetic data to train robust and reliable vision models.
-        </p>
-        <span>
-          <a class="button" onclick="toggleDescription('past');">[Past Life]</a>
-        </span>
-        <span id="past" style="display: none;" align="justify">
-          <p><b>Past Life: </b>Before this, I earned my Masters in Computer Science (awarded <a
-              href="https://www.cc.gatech.edu/annual-awards-and-honors-past-recipients">M.S. Research Award</a>) in
-            Spring
-            2019 from
-            Georgia Tech, advised by <a href="https://filebox.ece.vt.edu/~parikh/">Prof. Devi Parikh</a> and <a
-              href="https://filebox.ece.vt.edu/~dbatra/">Prof. Dhruv Batra</a>, where I worked on a host of
-            vision-language
-            & ML problems – <a href="https://arxiv.org/pdf/1704.00717.pdf">exploring human-AI teams</a> to <a
-              href="https://arxiv.org/pdf/1810.12366.pdf">evaluate explanations</a>, <a
-              href="https://arxiv.org/pdf/1909.10470.pdf">improving
-              responses of</a> & <a href="https://arxiv.org/pdf/1708.05122.pdf">developing cooperative testing for
-              conversational agents</a>, <a href="https://arxiv.org/pdf/1808.02861.pdf">zero-shot transfer</a>, <a
-              href="https://arxiv.org/pdf/1907.10580.pdf">state
-              abstraction in RL</a> and <a href="https://arxiv.org/pdf/1604.03505.pdf">scene-understanding.</a> I earned
-            my
-            Bachelors in Electrical Engineering in 2016 from Delhi Technological University, India, where I worked on
-            developing (now outdated) autonomous underwater vehicles (AUVs).</p>
-          <p>In past years, I have had the fortune to conduct research at <a href="https://prior.allenai.org/">PRIOR,
-              Allen Institute of Artificial Intelligence</a> (Summer 2022, Summer 2020) mentored by <a
-              href="https://anikem.github.io/">Ani Kembhavi</a> & <a href="https://roozbehm.info/">Roozbeh Mottaghi</a>;
-            <a href="https://www.microsoft.com/en-us/research/group/deep-learning-group/">Deep Learning Group, Microsoft
-              Research Redmond</a> (Summer 2018) mentored by <a
-              href="https://www.microsoft.com/en-us/research/people/hpalangi/">Hamid Palangi</a>; <a
-              href="http://robotics.iiit.ac.in/">Robotics Research Lab, IIIT Hyderabad</a> (Winter 2014) mentored by <a
-              href="http://faculty.iiit.ac.in/~mkrishna/">Dr. K. Madhava Krishna</a> and <a
-              href="http://www.iacs.res.in/">Indian Association for the Cultivation of Science (IACS), Kolkata</a>
-            (Summer
-            2014) mentored by <a href="http://mailweb.iacs.res.in/theoph/tpssg/">Dr. Soumitra Sengupta</a> on a diverse
-            set of topics - ranging from embodied AI, vision & language to physics.
-          </p>
-        </span>
-        <p>I also actively participate in reviewing for top computer vision and machine learning conferences & workshops
-          (have accumulated a few reviewer awards - <a
-            href="https://cvpr2023.thecvf.com/Conferences/2023/OutstandingReviewers">CVPR 2023</a>, <a
-            href="https://cvpr2022.thecvf.com/outstanding-reviewers">CVPR 2022</a>, <a
-            href="http://cvpr2021.thecvf.com/node/184">CVPR 2021</a>, <a
-            href="https://iclr.cc/Conferences/2022/Reviewers">ICLR 2022</a>, <a
-            href="https://paperswithcode.com/rc2021">MLRC 2021</a>, <a
-            href="files/data/Prithvijit%20Chattopadhyay_ICML_Certificate.pdf">ICML 2020</a>, <a
-            href="https://nips.cc/Conferences/2019/Reviewers">NeurIPS 2019</a>, <a
-            href="https://iclr.cc/Conferences/2019/Awards">ICLR 2019</a>, NeurIPS 2018 - in the process).</p>
-
-      </div>
-    </div>
-
-    <div class="image123">
-      <div style="float:left;margin-right:20px;">
-        <img src="./files/images/dtu.png" height="100px" width="100" />
-        <p style="text-align:center;font-size:10px;" font size="1">2012-2016</p>
-      </div>
-      <div style="float:left;margin-right:20px;">
-        <img src="./files/images/iiit_logo.png" height="100" width="100" />
-        <p style="text-align:center;font-size:10px;">Winter 2014</p>
-      </div>
-      <div style="float:left;margin-right:20px;">
-        <img src="./files/images/vt.jpg" height="100" width="100" />
-        <p style="text-align:center;font-size:10px;">2016-2017</p>
-      </div>
-      <div style="float:left;margin-right:20px;">
-        <img src="./files/images/gt.png" height="100" width="100" />
-        <p style="text-align:center;font-size:10px;">2017-2024</p>
-      </div>
-      <div style="float:left;margin-right:20px;">
-        <img src="./files/images/msr_logo.jpg" height="100" width="100" />
-        <p style="text-align:center;font-size:10px;">Summer 2018</p>
-      </div>
-      <div style="float:left;margin-right:20px;">
-        <img src="./files/images/ai2_logo.png" height="100" width="100" />
-        <p style="text-align:center;font-size:10px;">Summer 2020, 2022</p>
-      </div>
-    </div>
-
-    <br></br>
-
-    <script type="text/javascript">
-      function myFunction() {
-        var dots = document.getElementById("dots");
-        var moreText = document.getElementById("more");
-        var btnText = document.getElementById("myBtn");
-
-        if (dots.style.display === "none") {
-          dots.style.display = "inline";
-          btnText.innerHTML = "Read More";
-          moreText.style.display = "none";
-        } else {
-          dots.style.display = "none";
-          btnText.innerHTML = "Read Less";
-          moreText.style.display = "inline";
-        }
-      }
-      function myFunction2() {
-        var dots = document.getElementById("dots2");
-        var moreText = document.getElementById("more2");
-        var btnText = document.getElementById("myBtn2");
-
-        if (dots.style.display === "none") {
-          dots.style.display = "inline";
-          btnText.innerHTML = "Read More";
-          moreText.style.display = "none";
-        } else {
-          dots.style.display = "none";
-          btnText.innerHTML = "Read Less";
-          moreText.style.display = "inline";
-        }
-      }
-      function toggleContent(sectionId, dotsId, moreId, btnId) {
-        var dots = document.getElementById(dotsId);
-        var moreText = document.getElementById(moreId);
-        var btnText = document.getElementById(btnId);
-
-        // Check for the "none" value explicitly
-        if (window.getComputedStyle(dots).display === "none") {
-          dots.style.display = "inline";
-          btnText.innerHTML = "Read More";
-          moreText.style.display = "none";
-        } else {
-          dots.style.display = "none";
-          btnText.innerHTML = "Read Less";
-          moreText.style.display = "inline";
-        }
-      }
-    </script>
-
-    <div>
-      <h2>Achievements</h2>
-      <div>
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td>
-              <ul>
-                <li>Accepted to <a href="https://iccv2023.thecvf.com/call.for.participation-363200-2-30-32.php">ICCV
-                    2023 Doctoral Consortium</a>!</li>
-                <li>Recognized as an <a
-                    href="https://cvpr2023.thecvf.com/Conferences/2023/OutstandingReviewers">outstanding reviewer
-                  </a> for CVPR 2023!</li>
-                <li>Recognized as an <a href="https://cvpr2022.thecvf.com/outstanding-reviewers">outstanding reviewer
-                  </a> for CVPR 2022!</li>
-                <li>Recognized as a <a href="https://iclr.cc/Conferences/2022/Reviewers">highlighted reviewer
-                  </a> for ICLR 2022!</li>
-                <li>Recognized as an <a href="http://cvpr2021.thecvf.com/node/184">outstanding reviewer
-                  </a> for CVPR 2021!</li>
-                <li>Recognized as an <a href="https://paperswithcode.com/rc2021">outstanding reviewer
-                  </a> for ML Reproducibility Challenge 2021!</li>
-                <li>Recognized to be among the <a href="./files/data/Prithvijit Chattopadhyay_ICML_Certificate.pdf">top
-                    33
-                    percent reviewers</a> for ICML 2020!</li>
-                <li><a href="https://arxiv.org/abs/2008.11300">Likelihood Landscapes</a> received the NVIDIA Best
-                  Runner Up paper award at AROW, ECCV 2020!</li>
-                <li>Awarded the <a href="https://www.cc.gatech.edu/annual-awards-and-honors-past-recipients">College of
-                    Computing's Rising Star Doctoral Student Research Award (formerly known as the CS7001 Research
-                    Award)</a> at Georgia Tech!</li>
-                <span id="dots">...</span><span id="more" style="display: none;">
-                  <li>Recognized as one of the <a href="https://nips.cc/Conferences/2019/Reviewers">best reviewers</a>
-                    for NeurIPS 2019!</li>
-                  <li>Recognized as an <a href="https://iclr.cc/Conferences/2019/Awards">outstanding reviewer</a> for
-                    ICLR 2019!</li>
-                  <li>Recognized to be among the top 30 percent highest scoring reviewers for NeurIPS 2018!</li>
-                  <li>Awarded the <a href="https://www.cc.gatech.edu/annual-awards-and-honors-past-recipients">College
-                      of Computing's MS Research Award</a> at Georgia Tech!</li>
-                  <li>Our team won <a href="http://www.vthacks.com/">VT Hacks 2017</a>, a <a href="https://mlh.io/">
-                      Major League Hacking Event</a>, 2017!</li>
-                  <li>Our undergraduate team, DTU-AUV, qualified for the semi-finals at <a
-                      href="http://www.auvsifoundation.org/2014-robosub-teams">AUVSI Robosub 2014</a>!</li>
-                  <li>Awarded Merit Scholarships from 2012-2014 for undergraduate academic performance!</li>
-                  <li>Selected for <a href="http://kvpy.iisc.ernet.in/main/index.htm">KVPY</a> and <a
-                      href="http://www.inspire-dst.gov.in/fellowship.html">INSPIRE</a> Fellowships, 2012 for
-                    undergraduate studies in basic sciences!</li>
-                  <li>Placed among the top 1 percent students in the country in <a
-                      href="http://www.indapt.org/index.php/inphoipho">INPhO</a> 2012!</li>
-                  <li>Selected for rigorous mathematical training camps conducted by mathematicians from Bhabha Atomic
-                    Research Center (<a href="http://www.barc.gov.in/">BARC</a>) and Indian Institute of Science (<a
-                      href="http://www.iisc.ac.in/">IISc</a>) in 2012!</li>
-                  <li>Selected for <a href="http://www.csirhrdg.res.in/cpyls.htm">CSIR Programme on Youth Leadership in
-                      Science</a>, 2010!</li>
-                </span>
-                <a onclick="toggleContent('achievements', 'dots', 'more', 'myBtn');" id="myBtn" class="uline">
-                  <div style='text-align: center; display: inline;'>
-                    <h4 style="text-align: left; margin: 0; padding: 5px 0; display: inline;">Read More</h4>
-                  </div>
-                  <!-- <a onclick="myFunction()" id="myBtn" class="uline">
-                  <div style='text-align: center;'>
-                    <h4>Read More</h4>
-                  </div> -->
-                </a>
-              </ul>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-
-    <div>
-      <h2>News</h2>
-      <div>
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td>
-              <ul>
-                <li>August 2024: Started at NVIDIA as a Research Scientist.</li>
-                <li>July 2024: Successfully defended my dissertation (<a
-                    href="https://www.dropbox.com/scl/fi/co3o2ywsne37onz8o3wuq/Ph.D.-Defense-Talk.pdf?rlkey=vwzgi7u50flyblaubmtjnnu2m&st=o1m7pm9e&dl=0">slides
-                    here</a>, <a href="https://repository.gatech.edu/bitstreams/ceb11068-ce8d-40e1-8931-101e3d797e5a/download">dissertation here</a>)!</li>
-                <li>July 2024: SkyScenes accepted to ECCV 2024 (updated preprint coming soon).</li>
-                <li>Dec 2023: We'll be presenting two main conference papers (<a
-                    href="https://arxiv.org/pdf/2310.19909.pdf">Battle-of-the-Backbones</a>, <a
-                    href="https://arxiv.org/pdf/2305.19164.pdf">LANCE</a>) at NeurIPS 2023.</li>
-                <li>Aug 2023: I'll be presenting two main conference papers (<a
-                    href="https://arxiv.org/abs/2212.00979">Sim2Real Generalization</a>, <a
-                    href="https://arxiv.org/abs/2304.11263">Low-Shot Robustness</a>) and an extended abstract on
-                  calibration under domain shifts at ICCV 2023.</li>
-                <li>Jan 2023: Invited talk on "Reliable Computer Vision" at Machine Perception, Google Research.</li>
-                <li>May 2022: I'll be interning in the <a href="https://prior.allenai.org/">PRIOR Team</a> at Allen
-                  Institute for Artificial Intelligence.</li>
-                <li>May 2020: I'll be interning in the <a href="https://prior.allenai.org/">PRIOR Team</a> at Allen
-                  Institute for Artificial Intelligence.</li>
-                <li> Serving as a reviewer for <a href="http://cvpr2018.thecvf.com/">CVPR 2018-23</a>,
-                  <a href="https://www.icra2022.org/">ICRA 2021-22</a>,
-                  <a href="https://eccv2018.org/">ECCV 2018</a>, <a href="https://nips.cc/">NeurIPS 2018-23</a>, <a
-                    href="https://iclr.cc/">ICLR 2019-22</a>, <a href="https://icml.cc/Conferences/2020">ICML
-                    2019-20</a>, <a href="http://www.acl2019.org/EN/index.xhtml">ACL 2019</a>.
-                </li>
-                <span id="dots2">...</span><span id="more2" style="display: none;">
-                  <li>May 2019: Presented our work on Discovery of Decision States through Intrinsic Control at the <a
-                      href="https://tarl2019.github.io">Task-Agnostic Reinforcement Learning (TARL) Workshop</a> at ICLR
-                    2019.</li>
-                  <li>May 2019:<font color="red"><strong> Completed my Masters in Computer Science (focus on Machine
-                        Learning)</font> </strong> with a thesis centered on <a
-                      href="https://smartech.gatech.edu/handle/1853/61308">Evaluating Visual Conversational Agents in
-                      the Context of Human-AI Cooperative Games</a>!</li>
-                  <li>Feb 2019: Our technical report describing <a href="http://evalai.cloudcv.org/">EvalAI</a> - an
-                    open source platform to evaluate and compare AI algorithms at scale - is out on <a
-                      href="https://arxiv.org/pdf/1902.03570.pdf"> ArXiv</a>!</li>
-                  <li>Dec 2018: Presented our work <a href="https://arxiv.org/abs/1808.02861">interpretable zero-shot
-                      learning</a> at the <a
-                      href="https://sites.google.com/view/continual2018/home?authuser=0">Continual Learning </a> and <a
-                      href="https://nips2018vigil.github.io/">Visually Grounded Interaction and Language (ViGIL)</a>
-                    workshops at NeurIPS 2018.</li>
-                  <li>Aug 2018: Our paper titled <a href="https://arxiv.org/pdf/1810.12366.pdf">'Do explanation
-                      modalities make VQA models more predictable to a human?'</a></a> was accepted in <a
-                      href="http://emnlp2018.org/">EMNLP, 2018</a>!</li>
-                  <li>Jul 2018: Our paper titled <a href="https://arxiv.org/abs/1808.02861">'Choose Your Neuron:
-                      Incorporating Domain Knowledge through Neuron-Importance'</a> was accepted in <a
-                      href="https://eccv2018.org/">ECCV, 2018</a>!</li>
-                  <li>Apr 2018: I was awarded the College of Computing's MS Research Award at Georgia Tech!</li>
-                  <li>Feb 2018: I'll intern in the Deep Learning Group at <a
-                      href="https://www.microsoft.com/en-us/research/group/deep-learning-group/">Microsoft Research,
-                      Redmond</a> in summer 2018.</li>
-                  <li>Aug 2017: Our paper titled <a href="https://arxiv.org/abs/1708.05122">'Evaluating Visual
-                      Conversational Agents via Cooperative Human-AI Games'</a> was accepted in <a
-                      href="https://www.humancomputation.com/2017/">HCOMP 2017</a> as an oral!</li>
-                  <li>Jul 2017: I will be joining Georgia Tech as a Masters of Computer Science student in Fall 2017.
-                  </li>
-                  <li>May 2017: I will be presenting <a href="https://arxiv.org/abs/1604.03505">'Counting Everyday
-                      Objects in Everyday Scenes'</a> at the <a href="http://www.ldv.co/visionsummit/">LDV Vision
-                      Summit, 2017</a>.</li>
-                  <li>Mar 2017: Our paper titled <a href="https://arxiv.org/abs/1704.00717">'It Takes Two to Tango:
-                      Towards Theory of AI's Mind'</a> is out on ArXiv!</li>
-                  <li>Feb 2017: Our paper titled <a href="https://arxiv.org/abs/1604.03505">'Counting Everyday Objects
-                      in Everyday Scenes'</a> was accepted in <a href="http://cvpr2017.thecvf.com/"> CVPR 2017 </a> as a
-                    spotlight!</li>
-                  <li>Feb 2017: Our team built <a href="https://devpost.com/software/filterai">FilterAI</a> - an image
-                    retrival engine - and won <a href="http://www.vthacks.com/">VT Hacks 2017</a>, a <a
-                      href="https://mlh.io/"> Major League Hacking Event</a>!</li>
-                  <li>Dec 2016: <a href="https://arxiv.org/abs/1604.03505">'Counting Everyday Objects in Everyday
-                      Scenes'</a></a> received an <a
-                      href="https://aws.amazon.com/blogs/publicsector/call-for-computer-vision-research-proposals-with-new-amazon-bin-image-data-set/">
-                      Amazon Academic Research Award</a>, 2016!</li>
-                </span>
-                <a onclick="toggleContent('news', 'dots2', 'more2', 'myBtn2');" id="myBtn2" class="uline">
-                  <div style='text-align: center; display: inline;'>
-                    <h4 style="text-align: left; margin: 0; padding: 5px 0; display: inline;">Read More</h4>
-                  </div>
-                  <!-- <a onclick="myFunction2()" id="myBtn2" class="uline">
-                  <div style='text-align: center;'>
-                    <h4>Read More</h4>
-                  </div> -->
-                </a>
-              </ul>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
+    <header class="top">
+        <span class="brand"><a href="#Home">Prithvijit Chattopadhyay</a></span>
+        <nav>
+            <a href="#about" data-section="about">About</a>
+            <a href="#news" data-section="news">News</a>
+            <a href="#pub" data-section="pub">Research</a>
+            <a href="#home" data-section="home">Home</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">dark</button>
+        </nav>
+    </header>
 
     <script>
-      function toggleDescription(divId) {
-        var description = document.getElementById(divId);
-        if (description.style.display === 'none' || description.style.display === '') {
-          description.style.display = 'block';
-        } else {
-          description.style.display = 'none';
-        }
-      }
+        (function () {
+            var saved = localStorage.getItem('theme');
+            var theme = saved || 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
     </script>
 
-    <div id="research">
-      <h2>Research</h2>
-      <div>
-        <p class="paper" style="padding: 20px;">
-          <a href="https://arxiv.org/pdf/2501.03575">
-            <span class="title" style="font-weight:400">
-              <font color="brown">Cosmos-Embed1: A Joint Video-Text Embedding Model for Physical AI</font>
-            </span>
-          </a>
-          <span>NVIDIA (<u>Prithvijit Chattopadhyay</u>: Core Contributor)</span>
-          <span>
-            <font color="red"><i>Huggingface</i> 2025</font>
-          </span>
-          <span>
-            <a class="button" href="https://research.nvidia.com/labs/dir/cosmos-embed1/" target="_blank">[Project Page]</a>
-            <a class="button" href="https://huggingface.co/collections/nvidia/cosmos-embed1-6833be2c9575cb89d6901504" target="_blank">[Huggingface]</a>
-            <a class="button" onclick="toggleDescription('Cosmos-Embed1');">[TL;DR]</a>
-          </span>
-          <p></p>
-          <img src="files/images/cosmos_embed1.gif" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 95%; height: auto;">
-          <span id="Cosmos-Embed1" style="display: none;" align="justify"><b>TL;DR, </b><i>Cosmos Embed1 is a joint video-text embedder tailored for physical AI. Multi-modal embeddings, particularly joint video-text embedders, are critical for physical AI development pipelines. They enable essential data curation tasks including text-to-video search, inverse video search, semantic deduplication, and targeted filtering. Additionally, these embeddings can also serve as representations to condition on for downstream physical AI models. While existing video-text embedders perform well in general domains, they underperform substantially on physical AI tasks. To bridge this gap, we introduce Cosmos Embed1, a joint video-text embedder specifically tailored for physical AI applications.</i>
-          </span>
-        </p>
-        <p class="paper" style="padding: 20px;">
-          <a href="https://arxiv.org/pdf/2501.03575">
-            <span class="title" style="font-weight:400">
-              <font color="brown">Cosmos-Reason1: From Physical Common Sense To Embodied Reasoning</font>
-            </span>
-          </a>
-          <span>NVIDIA (<u>Prithvijit Chattopadhyay</u>: Core Contributor)</span>
-          <span>
-            <font color="red"><i>ArXiv</i> 2025</font>
-          </span>
-          <span>
-            <a class="button" href="https://research.nvidia.com/labs/dir/cosmos-reason1/" target="_blank">[Project Page]</a>
-            <a class="button" href="https://www.youtube.com/watch?v=Eu25r-yisPc" target="_blank">[Video]</a>
-            <a class="button" href="https://arxiv.org/pdf/2501.03575" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/nvidia-cosmos/cosmos-reason1" target="_blank">[Code]</a>
-            <a class="button" href="https://huggingface.co/collections/nvidia/cosmos-reason1-67c9e926206426008f1da1b7" target="_blank">[Huggingface]</a>
-            <a class="button" onclick="toggleDescription('Cosmos-Reason');">[TL;DR]</a>
-          </span>
-          <p></p>
-          <img src="files/images/cosmos_reason1.gif" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 95%; height: auto;">
-          <span id="Cosmos-Reason" style="display: none;" align="justify"><b>TL;DR, </b><i>Physical AI systems need to perceive, understand, and perform complex actions in the physical world. In this paper, we present the Cosmos-Reason1 models that can understand the physical world and generate appropriate embodied decisions (e.g., next step action) in natural language through long chain-of-thought reasoning processes. We begin by defining key capabilities for Physical AI reasoning, with a focus on physical common sense and embodied reasoning. To represent physical common sense, we use a hierarchical ontology that captures fundamental knowledge about space, time, and physics. For embodied reasoning, we rely on a two-dimensional ontology that generalizes across different physical embodiments. Building on these capabilities, we develop two multimodal large language models, Cosmos-Reason1-8B and Cosmos-Reason1-56B. We curate data and train our models in four stages: vision pre-training, general supervised fine-tuning (SFT), Physical AI SFT, and Physical AI reinforcement learning (RL) as the post-training. To evaluate our models, we build comprehensive benchmarks for physical common sense and embodied reasoning according to our ontologies. Evaluation results show that Physical AI SFT and reinforcement learning bring significant improvements.</i>
-          </span>
-        </p>
-        <p class="paper" style="padding: 20px;">
-          <a href="https://arxiv.org/pdf/2501.03575">
-            <span class="title" style="font-weight:400">
-              <font color="brown">Cosmos-Predict1: Cosmos World Foundation Model Platform for Physical AI</font>
-            </span>
-          </a>
-          <span>NVIDIA (<u>Prithvijit Chattopadhyay</u>: Core Contributor)</span>
-          <span>
-            <font color="red"><i>ArXiv</i> 2025</font>
-          </span>
-          <span>
-            <font color="blue"><b>Best of AI & Best of CES Winner, CES 2025</b></font>
-          </span>
-          <span>
-            <a class="button" href="https://research.nvidia.com/labs/dir/cosmos1/" target="_blank">[Project Page]</a>
-            <a class="button" href="https://www.youtube.com/watch?v=9Uch931cDx8&ab_channel=NVIDIA" target="_blank">[Video]</a>
-            <a class="button" href="https://arxiv.org/pdf/2501.03575" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/NVIDIA/Cosmos" target="_blank">[Code]</a>
-            <a class="button" href="https://huggingface.co/collections/nvidia/cosmos-6751e884dc10e013a0a0d8e6" target="_blank">[Models]</a>
-            <a class="button" href="https://www.wired.com/story/nvidia-cosmos-ai-helps-robots-self-driving-cars/" target="_blank">[Press]</a>
-            <a class="button" onclick="toggleDescription('Cosmos');">[TL;DR]</a>
-          </span>
-          <p></p>
-          <img src="files/images/cosmos_sample.gif" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 95%; height: auto;">
-          <span id="Cosmos" style="display: none;" align="justify"><b>TL;DR, </b><i>Physical AI needs to be trained digitally first. It needs a digital twin of itself, the policy model, and a
-            digital twin of the world, the world model. In this paper, we present the Cosmos World Foundation Model
-            Platform to help developers build customized world models for their Physical AI setups. We position
-            a world foundation model as a general-purpose world model that can be fine-tuned into customized
-            world models for downstream applications. Our platform covers a video curation pipeline, pre-trained
-            world foundation models, examples of post-training of pre-trained world foundation models, and video
-            tokenizers. To help Physical AI builders solve the most critical problems of our society, we make our
-            platform open-source and our models open-weight with permissive licenses.</i>
-          </span>
-          <!-- <span>
-            <a class="button" href="https://arxiv.org/pdf/2312.06719.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://huggingface.co/datasets/hoffman-lab/SkyScenes" target="_blank">[Data]</a>
-          </span> -->
-        </p>
-        <p class="paper" style="padding: 20px;">
-          <a href="https://arxiv.org/pdf/2312.06719.pdf">
-            <span class="title" style="font-weight:400">
-              <font color="brown">SkyScenes: A Synthetic Dataset for
-                Aerial Scene Understanding</font>
-            </span>
-          </a>
-          <span>Sahil Khose<sup>*</sup>, Anisha Pal<sup>*</sup>, Aayushi Agarwal<sup>*</sup>, Deepanshi<sup>*</sup>,
-            Judy Hoffman, <u>Prithvijit
-              Chattopadhyay</u></span>
-          <span>
-            <font color="red"><i>ECCV</i> 2024</font>
-          </span>
-          <span>
-            <a class="button" href="https://arxiv.org/pdf/2312.06719.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://huggingface.co/datasets/hoffman-lab/SkyScenes" target="_blank">[Data]</a>
-            <a class="button" onclick="toggleDescription('skyscenes');">[TL;DR]</a>
-          </span>
-          <img src="files/images/skyscenes.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
-          <span id="skyscenes" style="display: none;" align="justify"><b>TL;DR, </b><i>We introduce SkyScenes, a
-              large-scale synthetic dataset
-              of densely
-              annotated aerial images captured from Unmanned Aerial Vehicle (UAV) perspectives. We carefully curate
-              SkyScenes images from CARLA to comprehensively capture diversity across layout (urban and rural maps),
-              weather conditions, times of day, pitch angles and altitudes with corresponding semantic, instance and
-              depth
-              annotations. Through our experiments using SkyScenes, we show that (1) Models trained on SkyScenes
-              generalize well to different real-world scenarios, (2) augmenting training on real images with SkyScenes
-              data can improve real-world performance, (3) controlled variations in SkyScenes can offer insights into
-              how
-              models respond to changes in viewpoint conditions, and (4) additionally incorporating other sensor
-              modalities (depth) can improve aerial scene understanding.</i>
-          </span>
-          <!-- <span>
-            <a class="button" href="https://arxiv.org/pdf/2312.06719.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://huggingface.co/datasets/hoffman-lab/SkyScenes" target="_blank">[Data]</a>
-          </span> -->
-        </p>
+    <div class="layout">
+    <div class="container">
 
-        <p class="paper" style="padding: 20px;">
-          <a href="https://arxiv.org/pdf/2312.06106.pdf">
-            <span class="title" style="font-weight:400">
-              <font color="brown">AUGCAL: Improving Sim2Real Adaptation by Uncertainty Calibration
-                on Augmented Synthetic Images</font>
-            </span>
-          </a>
-          <span><u>Prithvijit Chattopadhyay</u>, Bharat Goyal, Boglarka Ecsedi, Viraj Prabhu, Judy Hoffman</span>
-          <span>
-            <font color="red"><i>ICLR</i> 2024</font>
-          </span>
-          <span>
-            <font color="red"><i>Workshop on Uncertainty Quantification for Computer Vision, ICCV</i> 2023 (Extended
-              Abstract)</font>
-          </span>
-          <span>
-            <a class="button" href="https://arxiv.org/pdf/2312.06106.pdf" target="_blank">[PDF]</a>
-            <a class="button" onclick="toggleDescription('augcal');">[TL;DR]</a>
-          </span>
-          <img src="files/images/augcal.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 90%; height: auto;">
-          <span id="augcal" style="display: none;" align="justify"><b>TL;DR, </b><i>Mispredictions made by Sim2Real
-              adaptation methods on real data can often
-              be attributed to “miscalibration” – often caused by overconfident predictions. We propose a simple patch,
-              AugCal, to improve uncertainty calibration of existing Sim2Real adaptation methods. Given a base Sim2Real
-              adaptation algorithm, at training time, AugCal involves replacing vanilla "Sim" images with strongly
-              augmented views (Aug intervention) and additionally optimizing for a training time calibration loss on
-              augmented "Sim" predictions (Cal intervention). Through our experiments, we empirically show the efficacy
-              of
-              AugCal across multiple adaptation methods, backbones, tasks and shifts.</i>
-          </span>
-          <!-- <span>
-            <a class="button" href="https://arxiv.org/pdf/2312.06106.pdf" target="_blank">[PDF]</a>
-          </span> -->
-        </p>
+        <!-- Hero -->
+        <section class="hero">
+            <img src="./files/prithv1-circ.png" alt="Prithvijit Chattopadhyay">
+            <div>
+                <h1>Prithvijit Chattopadhyay</h1>
+                <p class="role">Research Scientist, <a href="https://research.nvidia.com/labs/cosmos-lab/">NVIDIA Cosmos Lab</a></p>
+                <p class="role">Ph.D., Georgia Tech (2019&ndash;2024)</p>
+                <p class="role-advisor">advised by <a href="https://jhoffman.github.io/">Judy Hoffman</a></p>
+                <p class="role-award">&#9733; <a href="https://www.cc.gatech.edu/annual-awards-and-honors-past-recipients">Rising Star Doctoral Student Award</a></p>
+                <p class="role">M.S., Georgia Tech (2017&ndash;2019)</p>
+                <p class="role-advisor">advised by <a href="https://deviparikh.com/">Devi Parikh</a></p>
+                <p class="role-award">&#9733; <a href="https://www.cc.gatech.edu/annual-awards-and-honors-past-recipients">M.S. Research Award</a></p>
+                <p class="meta">
+                    <a href="mailto:prithvijitchattopadhyay@gmail.com">email</a><a href="https://scholar.google.com/citations?user=rIK7AMkAAAAJ&hl=en">scholar</a><a href="https://www.semanticscholar.org/author/Prithvijit-Chattopadhyay/40424000">semantic scholar</a><a href="https://github.com/prithv1">github</a><a href="./files/data/CV.pdf">cv</a><a href="https://twitter.com/prithvijitch">twitter</a><a href="https://www.linkedin.com/in/prithvijit-chattopadhyay-260b2b54/">linkedin</a>
+                </p>
+            </div>
+        </section>
 
-        <p class="paper" style="padding: 20px;">
-          <a href="https://openreview.net/pdf?id=10R6iX6JHm">
-            <span class="title" style="font-weight:400">
-              <font color="brown">We're Not Using Videos Effectively: An Updated Domain Adaptive Video Segmentation
-                Baseline</font>
-            </span>
-          </a>
-          <span>Simar Kareer, Vivek Vijaykumar, Harsh Maheshwari, <u>Prithvijit Chattopadhyay</u>, Judy
-            Hoffman, Viraj Prabhu</span>
-          <span>
-            <font color="red"><i>TMLR</i> 2024</font>
-          </span>
-          <span>
-            <a class="button" href="https://openreview.net/pdf?id=10R6iX6JHm" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/simarkareer/unifiedVideoDA" target="_blank">[Code]</a>
-            <a class="button" onclick="toggleDescription('videoda');">[TL;DR]</a>
-          </span>
-          <img src="files/images/video_da.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 90%; height: auto;">
-          <span id="videoda" style="display: none;" align="justify"><b>TL;DR, </b><i>Domain Adaptive Semantic
-              Segmentation (DAS) seeks to adapt a model trained on images
-              from a labeled source domain to an unlabeled target domain. Unlike the traditional Image-DAS settings, a
-              few Video-DAS works have sought to additionally leverage
-              the temporal signal present in videos on a
-              distinct set of benchmarks from Image-DAS, with minimal cross-benchmarking. We
-              address this gap by conducting experiments that reveal that (1) even after carefully controlling for data
-              and model architecture,
-              state-of-the-art Image-DAS methods (HRDA and HRDA+MIC) outperform Video-DAS methods on established
-              Video-DAS benchmarks (+14.5 mIoU on Viper→Cityscapes-Seq, +19.0 mIoU on Synthia-Seq→Cityscapes-Seq), and
-              (2)
-              naive combinations of Image-DAS and Video-DAS techniques only lead to marginal improvements across
-              datasets.</i>
-          </span>
-          <!-- <span>
-            <a class="button" href="https://arxiv.org/pdf/2312.06106.pdf" target="_blank">[PDF]</a>
-          </span> -->
-        </p>
+        <!-- About -->
+        <a name="About"></a>
+        <section id="about">
+            <h2 class="section-title">About</h2>
+            <p>
+                I am a Research Scientist at <a href="https://research.nvidia.com/labs/cosmos-lab/">NVIDIA Cosmos Lab</a>, where I work on world-foundation models: video-generation models for spatio-temporal forecasting and VLMs for understanding. My work spans model-design, pre-training, data curation and evaluation of large multi-modal foundation models.
+            </p>
+            <p>
+                I'm driven by challenging open-ended problems that stretch what I know. My latest obsessions <a class="inline-toggle" onclick="toggleDescription('obsessions');">are</a>.
+            </p>
+            <ol id="obsessions" class="obsessions" style="display: none;">
+                <li>Imbuing &amp; measuring physics adherence in world-models</li>
+                <li>Evaluating and constructing CoT in VLMs</li>
+            </ol>
+            <p>
+                My past work has spanned core computer vision (<a href="https://arxiv.org/abs/2008.12839">generalization</a>, <a href="https://arxiv.org/abs/2305.19164">robustness</a>, learning from limited <a href="https://arxiv.org/abs/1808.02861">supervision</a> or <a href="https://arxiv.org/abs/2212.00979">synthetic</a> <a href="https://arxiv.org/abs/2312.06106">data</a>), the intersection of <a href="https://arxiv.org/abs/1708.05122">computer</a> <a href="https://arxiv.org/abs/1604.03505">vision</a> and <a href="https://arxiv.org/abs/1704.00717">language</a>, and <a href="https://arxiv.org/abs/2106.04531">embodied</a> AI.
+            </p>
+            <p>
+                <a class="toggle-link" onclick="toggleDescription('past');">[Past Life]</a>
+            </p>
+            <div id="past" style="display: none; text-align: justify;">
+                <p><b>Past Life: </b>I earned my Ph.D. in Computer Science in August 2024 at Georgia Tech, where I was advised by <a href="https://www.cc.gatech.edu/~judy/">Prof. Judy Hoffman</a>. During my Ph.D., I broadly worked on distribution shift problems in computer vision. My doctoral thesis (<a href="https://repository.gatech.edu/entities/publication/06d25907-f11f-4bc2-ac0b-9869d6722177">here</a>) was focused on utilizing synthetic data to train robust and reliable vision models.</p>
+                <p>Before this, I earned my Masters in Computer Science (awarded <a href="https://www.cc.gatech.edu/annual-awards-and-honors-past-recipients">M.S. Research Award</a>) in Spring 2019 from Georgia Tech, advised by <a href="https://filebox.ece.vt.edu/~parikh/">Prof. Devi Parikh</a> and <a href="https://filebox.ece.vt.edu/~dbatra/">Prof. Dhruv Batra</a>, where I worked on a host of vision-language &amp; ML problems &mdash; <a href="https://arxiv.org/pdf/1704.00717.pdf">exploring human-AI teams</a> to <a href="https://arxiv.org/pdf/1810.12366.pdf">evaluate explanations</a>, <a href="https://arxiv.org/pdf/1909.10470.pdf">improving responses of</a> &amp; <a href="https://arxiv.org/pdf/1708.05122.pdf">developing cooperative testing for conversational agents</a>, <a href="https://arxiv.org/pdf/1808.02861.pdf">zero-shot transfer</a>, <a href="https://arxiv.org/pdf/1907.10580.pdf">state abstraction in RL</a> and <a href="https://arxiv.org/pdf/1604.03505.pdf">scene-understanding.</a> I earned my Bachelors in Electrical Engineering in 2016 from Delhi Technological University, India, where I worked on developing (now outdated) autonomous underwater vehicles (AUVs).</p>
+                <p>In past years, I have had the fortune to conduct research at <a href="https://prior.allenai.org/">PRIOR, Allen Institute of Artificial Intelligence</a> (Summer 2022, Summer 2020) mentored by <a href="https://anikem.github.io/">Ani Kembhavi</a> &amp; <a href="https://roozbehm.info/">Roozbeh Mottaghi</a>; <a href="https://www.microsoft.com/en-us/research/group/deep-learning-group/">Deep Learning Group, Microsoft Research Redmond</a> (Summer 2018) mentored by <a href="https://www.microsoft.com/en-us/research/people/hpalangi/">Hamid Palangi</a>; <a href="http://robotics.iiit.ac.in/">Robotics Research Lab, IIIT Hyderabad</a> (Winter 2014) mentored by <a href="http://faculty.iiit.ac.in/~mkrishna/">Dr. K. Madhava Krishna</a> and <a href="http://www.iacs.res.in/">Indian Association for the Cultivation of Science (IACS), Kolkata</a> (Summer 2014) mentored by <a href="http://mailweb.iacs.res.in/theoph/tpssg/">Dr. Soumitra Sengupta</a> on a diverse set of topics &mdash; ranging from embodied AI, vision &amp; language to physics.</p>
+            </div>
+            <p>I also actively participate in reviewing for top computer vision and machine learning conferences &amp; workshops (have accumulated a few reviewer awards &mdash; <a href="https://iccv.thecvf.com/Conferences/2025/ProgramCommittee">ICCV 2025</a>, <a href="https://cvpr2023.thecvf.com/Conferences/2023/OutstandingReviewers">CVPR 2023</a>, <a href="https://cvpr2022.thecvf.com/outstanding-reviewers">CVPR 2022</a>, <a href="http://cvpr2021.thecvf.com/node/184">CVPR 2021</a>, <a href="https://iclr.cc/Conferences/2022/Reviewers">ICLR 2022</a>, <a href="https://paperswithcode.com/rc2021">MLRC 2021</a>, <a href="files/data/Prithvijit%20Chattopadhyay_ICML_Certificate.pdf">ICML 2020</a>, <a href="https://nips.cc/Conferences/2019/Reviewers">NeurIPS 2019</a>, <a href="https://iclr.cc/Conferences/2019/Awards">ICLR 2019</a>, NeurIPS 2018 - in the process).</p>
+        </section>
 
-        <p class="paper" style="padding: 20px;">
-          <a href="https://arxiv.org/pdf/2310.19909.pdf">
-            <span class="title" style="font-weight:400">
-              <font color="brown">Battle of the Backbones: A Large-Scale Comparison of Pretrained
-                Models across Computer Vision Tasks</font>
-            </span>
-          </a>
-          <span>Micah Goldblum<sup>*</sup>, Hossein Souri<sup>*</sup>, Renkun Ni, Manli Shu, Viraj Uday Prabhu, Gowthami
-            Somepalli,
-            <u>Prithvijit Chattopadhyay</u>, Adrien Bardes, Mark Ibrahim, Judy Hoffman, Rama Chellappa, Andrew Gordon
-            Wilson, Tom Goldstein</span>
-          <span>
-            <font color="red"><i>NeurIPS Datasets and Benchmarks</i> 2023</font>
-          </span>
-          <span>
-            <a class="button" href="https://arxiv.org/pdf/2310.19909.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/hsouri/Battle-of-the-Backbones" target="_blank">[Code]</a>
-            <a class="button" onclick="toggleDescription('bob');">[TL;DR]</a>
-          </span>
-          <img src="files/images/bob.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
-          <span id="bob" style="display: none;" align="justify"><b>TL;DR, </b><i>Most neural network based computer
-              vision
-              systems are built on a backbone,
-              a pretrained or randomly initialized feature extractor. Several years ago, the default option was an
-              ImageNet-trained convolutional neural network. However, the recent past has seen the emergence of
-              countless
-              backbones pretrained using various algorithms and datasets. We benchmark a diverse suite of pretrained
-              models across a diverse set of computer vision tasks ranging from classification to object detection to
-              OOD
-              generalization and more. Our Battle of Backbones (BoB) sheds light on promising directions for the
-              research
-              community to advance computer vision by illuminating strengths and weakness of existing backbones through
-              a
-              comprehensive analysis conducted on 1500 training runs.</i>
-          </span>
-          <!-- <span>
-            <a class="button" href="https://arxiv.org/pdf/2310.19909.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/hsouri/Battle-of-the-Backbones" target="_blank">[Code]</a>
-          </span> -->
-        </p>
+        <!-- Affiliation strip -->
+        <section>
+            <h2 class="section-title">Affiliations</h2>
+            <div class="affiliation-strip">
+                <div class="aff">
+                    <img src="./files/images/dtu.png" alt="DTU">
+                    <p>2012-2016</p>
+                </div>
+                <div class="aff">
+                    <img src="./files/images/iiit_logo.png" alt="IIIT">
+                    <p>Winter 2014</p>
+                </div>
+                <div class="aff">
+                    <img src="./files/images/vt.jpg" alt="VT">
+                    <p>2016-2017</p>
+                </div>
+                <div class="aff">
+                    <img src="./files/images/gt.png" alt="Georgia Tech">
+                    <p>2017-2024</p>
+                </div>
+                <div class="aff">
+                    <img src="./files/images/msr_logo.jpg" alt="Microsoft Research">
+                    <p>Summer 2018</p>
+                </div>
+                <div class="aff">
+                    <img src="./files/images/ai2_logo.png" alt="AI2">
+                    <p>Summer 2020, 2022</p>
+                </div>
+                <div class="aff">
+                    <img src="./files/images/nvidia_logo.png" alt="NVIDIA">
+                    <p>2024&ndash;Present</p>
+                </div>
+            </div>
+        </section>
 
+        <!-- News -->
+        <a name="News"></a>
+        <section id="news">
+            <h2 class="section-title">News</h2>
+            <ul class="news-list">
+                <li><span class="news-date">Oct 2025</span><span>Joined the panel discussion at the <a href="https://riwm-2025.github.io/RIWM-2025/">Workshop on Reliable and Interactable World Models</a> (RIWM) at ICCV 2025.</span></li>
+                <li><span class="news-date">August 2024</span><span>Started at NVIDIA as a Research Scientist.</span></li>
+                <li><span class="news-date">July 2024</span><span>Successfully defended my dissertation (<a href="https://www.dropbox.com/scl/fi/co3o2ywsne37onz8o3wuq/Ph.D.-Defense-Talk.pdf?rlkey=vwzgi7u50flyblaubmtjnnu2m&st=o1m7pm9e&dl=0">slides here</a>, <a href="https://repository.gatech.edu/bitstreams/ceb11068-ce8d-40e1-8931-101e3d797e5a/download">dissertation here</a>)!</span></li>
+                <li><span class="news-date">July 2024</span><span>SkyScenes accepted to ECCV 2024 (updated preprint coming soon).</span></li>
+                <span id="dots2">...</span>
+                <span id="more2" style="display: none;">
+                    <li><span class="news-date">Dec 2023</span><span>We'll be presenting two main conference papers (<a href="https://arxiv.org/pdf/2310.19909.pdf">Battle-of-the-Backbones</a>, <a href="https://arxiv.org/pdf/2305.19164.pdf">LANCE</a>) at NeurIPS 2023.</span></li>
+                    <li><span class="news-date">Aug 2023</span><span>I'll be presenting two main conference papers (<a href="https://arxiv.org/abs/2212.00979">Sim2Real Generalization</a>, <a href="https://arxiv.org/abs/2304.11263">Low-Shot Robustness</a>) and an extended abstract on calibration under domain shifts at ICCV 2023.</span></li>
+                    <li><span class="news-date">Jan 2023</span><span>Invited talk on "Reliable Computer Vision" at Machine Perception, Google Research.</span></li>
+                    <li><span class="news-date">May 2022</span><span>I'll be interning in the <a href="https://prior.allenai.org/">PRIOR Team</a> at Allen Institute for Artificial Intelligence.</span></li>
+                    <li><span class="news-date">May 2020</span><span>I'll be interning in the <a href="https://prior.allenai.org/">PRIOR Team</a> at Allen Institute for Artificial Intelligence.</span></li>
+                    <li><span class="news-date">May 2019</span><span>Presented our work on Discovery of Decision States through Intrinsic Control at the <a href="https://tarl2019.github.io">Task-Agnostic Reinforcement Learning (TARL) Workshop</a> at ICLR 2019.</span></li>
+                    <li><span class="news-date news-date-red">May 2019</span><span class="text-red"><strong>Completed my Masters in Computer Science (focus on Machine Learning)</strong> with a thesis centered on <a href="https://smartech.gatech.edu/handle/1853/61308">Evaluating Visual Conversational Agents in the Context of Human-AI Cooperative Games</a>!</span></li>
+                    <li><span class="news-date">Feb 2019</span><span>Our technical report describing <a href="http://evalai.cloudcv.org/">EvalAI</a> &mdash; an open source platform to evaluate and compare AI algorithms at scale &mdash; is out on <a href="https://arxiv.org/pdf/1902.03570.pdf">ArXiv</a>!</span></li>
+                    <li><span class="news-date">Dec 2018</span><span>Presented our work <a href="https://arxiv.org/abs/1808.02861">interpretable zero-shot learning</a> at the <a href="https://sites.google.com/view/continual2018/home?authuser=0">Continual Learning</a> and <a href="https://nips2018vigil.github.io/">Visually Grounded Interaction and Language (ViGIL)</a> workshops at NeurIPS 2018.</span></li>
+                    <li><span class="news-date">Aug 2018</span><span>Our paper titled <a href="https://arxiv.org/pdf/1810.12366.pdf">'Do explanation modalities make VQA models more predictable to a human?'</a> was accepted in <a href="http://emnlp2018.org/">EMNLP, 2018</a>!</span></li>
+                    <li><span class="news-date">Jul 2018</span><span>Our paper titled <a href="https://arxiv.org/abs/1808.02861">'Choose Your Neuron: Incorporating Domain Knowledge through Neuron-Importance'</a> was accepted in <a href="https://eccv2018.org/">ECCV, 2018</a>!</span></li>
+                    <li><span class="news-date">Apr 2018</span><span>I was awarded the College of Computing's MS Research Award at Georgia Tech!</span></li>
+                    <li><span class="news-date">Feb 2018</span><span>I'll intern in the Deep Learning Group at <a href="https://www.microsoft.com/en-us/research/group/deep-learning-group/">Microsoft Research, Redmond</a> in summer 2018.</span></li>
+                    <li><span class="news-date">Aug 2017</span><span>Our paper titled <a href="https://arxiv.org/abs/1708.05122">'Evaluating Visual Conversational Agents via Cooperative Human-AI Games'</a> was accepted in <a href="https://www.humancomputation.com/2017/">HCOMP 2017</a> as an oral!</span></li>
+                    <li><span class="news-date">Jul 2017</span><span>I will be joining Georgia Tech as a Masters of Computer Science student in Fall 2017.</span></li>
+                    <li><span class="news-date">May 2017</span><span>I will be presenting <a href="https://arxiv.org/abs/1604.03505">'Counting Everyday Objects in Everyday Scenes'</a> at the <a href="http://www.ldv.co/visionsummit/">LDV Vision Summit, 2017</a>.</span></li>
+                    <li><span class="news-date">Mar 2017</span><span>Our paper titled <a href="https://arxiv.org/abs/1704.00717">'It Takes Two to Tango: Towards Theory of AI's Mind'</a> is out on ArXiv!</span></li>
+                    <li><span class="news-date">Feb 2017</span><span>Our paper titled <a href="https://arxiv.org/abs/1604.03505">'Counting Everyday Objects in Everyday Scenes'</a> was accepted in <a href="http://cvpr2017.thecvf.com/">CVPR 2017</a> as a spotlight!</span></li>
+                    <li><span class="news-date">Feb 2017</span><span>Our team built <a href="https://devpost.com/software/filterai">FilterAI</a> &mdash; an image retrieval engine &mdash; and won <a href="http://www.vthacks.com/">VT Hacks 2017</a>, a <a href="https://mlh.io/">Major League Hacking Event</a>!</span></li>
+                    <li><span class="news-date">Dec 2016</span><span><a href="https://arxiv.org/abs/1604.03505">'Counting Everyday Objects in Everyday Scenes'</a> received an <a href="https://aws.amazon.com/blogs/publicsector/call-for-computer-vision-research-proposals-with-new-amazon-bin-image-data-set/">Amazon Academic Research Award</a>, 2016!</span></li>
+                </span>
+            </ul>
+            <a class="toggle-link" onclick="toggleContent('news', 'dots2', 'more2', 'myBtn2');" id="myBtn2">[Read More]</a>
+        </section>
 
-        <p class="paper" style="padding: 20px;">
-          <a href="https://arxiv.org/pdf/2305.19164.pdf">
-            <span class="title" style="font-weight:400">
-              <font color="brown">LANCE: Stress-testing Visual Models by Generating
-                Language-guided
-                Counterfactual Images</font>
-            </span>
-          </a>
-          <span>Viraj Prabhu,
-            Sriram Yenamandra,
-            <u>Prithvijit Chattopadhyay</u>,
-            Judy Hoffman</span>
-          <span>
-            <font color="red"><i>NeurIPS</i> 2023</font>
-          </span>
-          <span>
-            <a class="button" href="https://arxiv.org/pdf/2305.19164.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/virajprabhu/LANCE" target="_blank">[code]</a>
-            <a class="button" href="https://virajprabhu.github.io//lance-web/" target="_blank">[project page]</a>
-            <a class="button" onclick="toggleDescription('lance');">[TL;DR]</a>
-          </span>
-          <img src="files/images/lance.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
-          <span id="lance" style="display: none;" align="justify"><b>TL;DR, </b><i>We propose an automated algorithm to
-              stress-test a trained visual model by
-              generating language-guided counterfactual test images (LANCE). Our method leverages
-              recent progress in large language modeling and text-based image editing to augment an IID test set with a
-              suite of diverse, realistic, and challenging test images
-              without altering model weights.</i>
-          </span>
-          <!-- <span>
-            <a class="button" href="https://arxiv.org/pdf/2305.19164.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/virajprabhu/LANCE" target="_blank">[code]</a>
-            <a class="button" href="https://virajprabhu.github.io//lance-web/" target="_blank">[project page]</a>
-          </span> -->
-        </p>
+        <!-- Research -->
+        <a name="Pub"></a>
+        <section id="pub">
+            <h2 class="section-title">Research</h2>
+            <p class="section-note">(* indicates equal contribution)</p>
 
-        <p class="paper" style="padding: 20px;">
-          <a href="https://arxiv.org/pdf/2304.11263.pdf">
-            <span class="title" style="font-weight:400">
-              <font color="brown">Benchmarking Low-Shot Robustness to Natural Distribution Shifts</font>
-            </span>
-          </a>
-          <span>Aaditya Singh,
-            Kartik Sarangmath,
-            <u>Prithvijit Chattopadhyay</u>,
-            Judy Hoffman</span>
-          <span>
-            <font color="red"><i>ICCV</i> 2023</font>
-          </span>
-          <span>
-            <a class="button" href="https://arxiv.org/pdf/2304.11263.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/Aaditya-Singh/Low-Shot-Robustness/" target="_blank">[code]</a>
-            <a class="button" onclick="toggleDescription('lsr');">[TL;DR]</a>
-          </span>
-          <img src="files/images/lsr.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
-          <span id="lsr" style="display: none;" align="justify"><b>TL;DR, </b><i>Robustness to natural distribution
-              shifts
-              has seen remarkable progress
-              thanks to recent pre-training strategies combined with better fine-tuning methods. However, such
-              fine-tuning
-              assumes access to large amounts of labelled data, and the extent to which the observations hold when the
-              amount of training data is not as high remains unknown. We address this gap by performing the first
-              in-depth
-              study of robustness to various natural distribution shifts in different low-shot regimes: spanning
-              datasets,
-              architectures, pre-trained initializations, and state-of-the-art robustness interventions.</i>
-          </span>
-          <!-- <span>
-            <a class="button" href="https://arxiv.org/pdf/2304.11263.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/Aaditya-Singh/Low-Shot-Robustness/" target="_blank">[code]</a>
-          </span> -->
-        </p>
+            <div class="pub-filters" role="tablist" aria-label="Filter publications by topic">
+                <button class="tag-pill active" data-filter="all">All</button>
+                <button class="tag-pill" data-filter="world-foundation-models">World Foundation Models</button>
+                <button class="tag-pill" data-filter="robustness">Robustness</button>
+                <button class="tag-pill" data-filter="vision-language">Vision-Language</button>
+                <button class="tag-pill" data-filter="embodied-ai">Embodied AI</button>
+            </div>
 
-        <p class="paper" style="padding: 20px;">
-          <a href="https://arxiv.org/pdf/2212.00979.pdf">
-            <span class="title" style="font-weight:400">
-              <font color="brown">PASTA: Proportional Amplitude Spectrum Training Augmentation for
-                Syn-to-Real Domain Generalization</font>
-            </span>
-          </a>
-          <span><u>Prithvijit Chattopadhyay</u><sup>*</sup>,
-            Kartik Sarangmath<sup>*</sup>,
-            Vivek Vijaykumar,
-            Judy Hoffman</span>
-          <span>
-            <font color="red"><i>ICCV</i> 2023</font>
-          </span>
-          <span>
-            <a class="button" href="https://arxiv.org/pdf/2212.00979.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/prithv1/PASTA" target="_blank">[code]</a>
-            <a class="button" onclick="toggleDescription('pasta');">[TL;DR]</a>
-          </span>
-          <img src="files/images/pasta.png" alt="Thumbnail"
-            style="width: 100%; max-width: 2000px; height: auto; margin-right: 10px;">
-          <!-- <center><img src="./files/images/pasta.png" alt="3DSP" width="700" height="300" style="border-style: none;"></center> -->
-          <!-- <span align="justify">PASTA is a simple and effective frequency domain augmentation strategy to improve out-of-the-box synthetic-to-real (syn-to-real) generalization performance. PASTA involves perturbing the amplitude spectra of the synthetic images in the Fourier domain to generate augmented views. We find that synthetic images tend to be less diverse in their high-frequency components compared to real ones. Based on this observation, we design PASTA to perturb the amplitude spectrums in a structured manner such that high-frequency components are perturbed relatively more than the low-frequency ones (as outlined in the figure above). For the tasks of semantic segmentation (GTAV→Real), object detection (Sim10K→Real), and object recognition (VisDA-C Syn→Real), across a total of 5 syn-to-real shifts, we find that PASTA either outperforms or is consistently competitive with more complex state-of-the-art methods while being complementary to other generalization approaches.
-          </span> -->
-          <span id="pasta" style="display: none;" align="justify"><b>TL;DR, </b><i>PASTA is a simple and effective
-              frequency
-              domain augmentation strategy to
-              improve out-of-the-box synthetic-to-real (syn-to-real) generalization performance. PASTA involves
-              perturbing
-              the amplitude spectra of the synthetic images in the Fourier domain in a structured manner to generate
-              augmented views. For the tasks of semantic segmentation (GTAV→Real), object detection (Sim10K→Real), and
-              object recognition (VisDA-C Syn→Real), across a total of 5 syn-to-real shifts, we find that PASTA either
-              outperforms or is consistently competitive with more complex state-of-the-art methods while being
-              complementary to other generalization approaches.</i>
-          </span>
-          <!-- <span>
-            <a class="button" href="https://arxiv.org/pdf/2212.00979.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/prithv1/PASTA" target="_blank">[code]</a>
-          </span> -->
-        </p>
+            <!-- Cosmos-Reason2 -->
+            <div class="pub" data-tags="world-foundation-models vision-language">
+                <img src="./files/images/cosmos_reason2.gif" alt="Cosmos-Reason2">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://huggingface.co/blog/nvidia/nvidia-cosmos-reason-2-brings-advanced-reasoning">Cosmos-Reason2: Advanced Reasoning for Physical AI</a>
+                    </div>
+                    <div class="pub-venue">Huggingface &middot; 2026</div>
+                    <div class="pub-authors">
+                        NVIDIA (<span class="author sx">Prithvijit Chattopadhyay</span>: Core Contributor)
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://huggingface.co/blog/nvidia/nvidia-cosmos-reason-2-brings-advanced-reasoning" target="_blank">[Blog]</a>
+                        <a href="https://huggingface.co/nvidia/Cosmos-Reason2-8B" target="_blank">[Huggingface]</a>
+                        <a class="toggle-link" onclick="toggleDescription('Cosmos-Reason2');">[TL;DR]</a>
+                    </div>
+                    <div id="Cosmos-Reason2" class="paper-tldr"><b>TL;DR, </b><i>Cosmos-Reason2 is an open, state-of-the-art reasoning vision-language model for Physical AI. Building on Cosmos-Reason1, it enables robots and AI agents to perceive, reason about, and act in the physical world through long chain-of-thought reasoning grounded in physics and common sense. The model adds OCR support, 2D/3D point localization, set-of-mark understanding, and trajectory-coordinate generation for robot vision-language-action (VLA) pipelines, topping the Physical AI Bench and Physical Reasoning leaderboards as the #1 open model for visual understanding.</i></div>
+                </div>
+            </div>
 
-        <p class="paper" style="padding: 20px;">
-          <a href="https://arxiv.org/pdf/2106.04531.pdf">
-            <span class="title" style="font-weight:400">
-              <font color="brown">RobustNav: Towards Benchmarking Robustness in Embodied
-                Navigation</font>
-            </span>
-          </a>
-          <span><u>Prithvijit Chattopadhyay</u>,
-            Judy Hoffman,
-            Roozbeh Mottaghi,
-            Ani Kembhavi</span>
-          <span>
-            <font color="red"><i>ICCV</i> 2021</font>
-          </span>
-          <span>
-            <font color="blue"><b>Oral presentation</b></font>
-          </span>
-          <span>
-            <a class="button" href="https://arxiv.org/pdf/2106.04531.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/allenai/robustnav" target="_blank">[code]</a>
-            <a class="button" href="https://prior.allenai.org/projects/robustnav" target="_blank">[project page]</a>
-            <a class="button" href="https://www.youtube.com/watch?v=wqVGsuUbm48" target="_blank">[video]</a>
-            <a class="button" onclick="toggleDescription('robustnav');">[TL;DR]</a>
-          </span>
-          <img src="files/images/robustnav.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
-          <!-- <center><img src="./files/images/robustnav.png" alt="3DSP" width="500" height="350" style="border-style: none;"></center> -->
-          <span id="robustnav" style="display: none;" align="justify"><b>TL;DR, </b><i>As an attempt towards assessing
-              the
-              robustness of embodied navigation
-              agents, we
-              propose RobustNav, a framework to quantify the performance of embodied navigation agents when
-              exposed to a wide variety of visual – affecting RGB inputs – and dynamics – affecting transition
-              dynamics – corruptions. We find that standard end-to-end RL policies significantly underperform (or
-              fail) in the presence of visual or dynamics corruptions, warranting more research in this direction.</i>
-          </span>
-          <!-- <span>
-            <a class="button" href="https://arxiv.org/pdf/2106.04531.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/allenai/robustnav" target="_blank">[code]</a>
-            <a class="button" href="https://prior.allenai.org/projects/robustnav" target="_blank">[project page]</a>
-            <a class="button" href="https://www.youtube.com/watch?v=wqVGsuUbm48" target="_blank">[video]</a>
-          </span> -->
-        </p>
+            <!-- DDRL -->
+            <div class="pub" data-tags="">
+                <img src="./files/images/ddrl.jpg" alt="DDRL">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://arxiv.org/abs/2512.04332">DDRL: Data-regularized Reinforcement Learning for Diffusion Models at Scale</a>
+                    </div>
+                    <div class="pub-venue">ArXiv &middot; 2025</div>
+                    <div class="pub-authors">
+                        Haotian Ye, Kaiwen Zheng, Jiashu Xu, Puheng Li, Huayu Chen, Jiaqi Han, Sheng Liu, Qinsheng Zhang, Hanzi Mao, Zekun Hao, <span class="author sx">Prithvijit Chattopadhyay</span>, Dinghao Yang, Liang Feng, Maosheng Liao, Junjie Bai, Ming-Yu Liu, James Zou, Stefano Ermon
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://research.nvidia.com/labs/dir/ddrl/" target="_blank">[Project Page]</a>
+                        <a href="https://arxiv.org/pdf/2512.04332" target="_blank">[PDF]</a>
+                        <a class="toggle-link" onclick="toggleDescription('DDRL');">[TL;DR]</a>
+                    </div>
+                    <div id="DDRL" class="paper-tldr"><b>TL;DR, </b><i>DDRL (Data-regularized Diffusion Reinforcement Learning) is an RL framework for aligning diffusion models with human preferences that uses forward KL divergence to anchor the policy to an off-policy data distribution. By combining reward maximization with diffusion-loss regularization, DDRL avoids the reward hacking &mdash; quality degradation, over-stylization, reduced diversity &mdash; common in prior diffusion-RL methods. Validated with over a million H100 GPU hours and ten thousand double-blind human evaluations on high-resolution video generation, it powers post-training for the Cosmos-Predict2.5 video foundation models.</i></div>
+                </div>
+            </div>
 
+            <!-- Cosmos-Predict2.5 -->
+            <div class="pub" data-tags="world-foundation-models">
+                <img src="./files/images/cosmos_predict25.gif" alt="Cosmos-Predict2.5">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://arxiv.org/abs/2511.00062">Cosmos-Predict2.5: A Flow-Based World Foundation Model for Physical AI</a>
+                    </div>
+                    <div class="pub-venue">ArXiv &middot; 2025</div>
+                    <div class="pub-authors">
+                        NVIDIA (<span class="author sx">Prithvijit Chattopadhyay</span>: Core Contributor)
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://research.nvidia.com/labs/cosmos-lab/cosmos-predict2.5/" target="_blank">[Project Page]</a>
+                        <a href="https://arxiv.org/abs/2511.00062" target="_blank">[PDF]</a>
+                        <a class="toggle-link" onclick="toggleDescription('Cosmos-Predict25');">[TL;DR]</a>
+                    </div>
+                    <div id="Cosmos-Predict25" class="paper-tldr"><b>TL;DR, </b><i>Cosmos-Predict2.5 is a flow-based world foundation model that unifies Text2World, Image2World, and Video2World generation in a single model for Physical AI. Released in 2B and 14B variants, it is trained on a curated corpus of ~200M video clips with reinforcement-learning post-training for improved fidelity. The platform supports general world simulation, multi-view autonomous-driving rollouts, and action-conditioned robot rollouts, outperforming prior Cosmos-Predict releases across benchmark evaluations.</i></div>
+                </div>
+            </div>
 
-        <p class="paper" style="padding: 20px;">
-          <a href="https://arxiv.org/pdf/2008.11300.pdf">
-            <span class="title" style="font-weight:400">
-              <font color="brown">Likelihood Landscapes: A Unifying Principle Behind Many
-                Adversarial Defenses</font>
-            </span>
-          </a>
-          <span>Fu Lin,
-            Rohit Mittapali,
-            <u>Prithvijit Chattopadhyay</u>,
-            Daniel Bolya,
-            Judy Hoffman</span>
-          <span>
-            <font color="red"><i>Adversarial Robustness in the Real World (AROW), ECCV</i> 2020</font>
-          </span>
-          <span>
-            <font color="blue"><b>NVIDIA Best Paper Runner Up</b></font>
-          </span>
-          <span>
-            <a class="button" href="https://arxiv.org/pdf/2008.11300.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://www.youtube.com/watch?v=RuLY6UNIeOs" target="_blank">[video]</a>
-            <a class="button" onclick="toggleDescription('lls');">[TL;DR]</a>
-          </span>
-          <img src="files/images/relative_likelihood_landscapes.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
-          <!-- <center><img src="./files/images/likelihood_landscapes_fig.png" alt="3DSP" width="700" height="250" style="border-style: none;"></center> -->
-          <span id="lls" style="display: none;" align="justify"><b>TL;DR, </b><i>Convolutional Neural Networks (CNNs)
-              have been shown to be vulnerable to
-              adversarial examples, which are known to locate in subspaces close to where normal data lies but are
-              not naturally occurring and have low probability. In this work, we investigate the potential effect
-              defense techniques have on the geometry of the likelihood landscape - likelihood of the input images
-              under the trained model. We first propose a way to visualize the likelihood landscape by leveraging
-              an energy-based model interpretation of discriminative classifiers. Then we introduce a measure to
-              quantify the flatness of the likelihood landscape. We observe that a subset of adversarial defense
-              techniques results in a similar effect of flattening the likelihood landscape. We further explore
-              directly regularizing towards a flat landscape for adversarial robustness.</i>
-          </span>
-          <!-- <span>
-            <a class="button" href="https://arxiv.org/pdf/2008.11300.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://www.youtube.com/watch?v=RuLY6UNIeOs" target="_blank">[video]</a>
-          </span> -->
-        </p>
+            <!-- Cosmos-Embed1 -->
+            <div class="pub" data-tags="world-foundation-models vision-language">
+                <img src="./files/images/cosmos_embed1.gif" alt="Cosmos-Embed1">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://arxiv.org/pdf/2501.03575">Cosmos-Embed1: A Joint Video-Text Embedding Model for Physical AI</a>
+                    </div>
+                    <div class="pub-venue">Huggingface &middot; 2025</div>
+                    <div class="pub-authors">
+                        NVIDIA (<span class="author sx">Prithvijit Chattopadhyay</span>: Core Contributor)
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://research.nvidia.com/labs/dir/cosmos-embed1/" target="_blank">[Project Page]</a>
+                        <a href="https://huggingface.co/collections/nvidia/cosmos-embed1-6833be2c9575cb89d6901504" target="_blank">[Huggingface]</a>
+                        <a class="toggle-link" onclick="toggleDescription('Cosmos-Embed1');">[TL;DR]</a>
+                    </div>
+                    <div id="Cosmos-Embed1" class="paper-tldr"><b>TL;DR, </b><i>Cosmos Embed1 is a joint video-text embedder tailored for physical AI. Multi-modal embeddings, particularly joint video-text embedders, are critical for physical AI development pipelines. They enable essential data curation tasks including text-to-video search, inverse video search, semantic deduplication, and targeted filtering. Additionally, these embeddings can also serve as representations to condition on for downstream physical AI models. While existing video-text embedders perform well in general domains, they underperform substantially on physical AI tasks. To bridge this gap, we introduce Cosmos Embed1, a joint video-text embedder specifically tailored for physical AI applications.</i></div>
+                </div>
+            </div>
 
-        <p class="paper" style="padding: 20px;">
-          <a href="https://arxiv.org/pdf/2008.12839.pdf">
-            <span class="title" style="font-weight:400">
-              <font color="brown">Learning to Balance Specificity and Invariance for In and Out of
-                Domain Generalization</font>
-            </span>
-          </a>
-          <span><u>Prithvijit Chattopadhyay</u>,
-            Yogesh Balaji,
-            Judy Hoffman</span>
-          <span>
-            <font color="red"><i>ECCV</i> 2020</font>
-          </span>
-          <span>
-            <font color="red"><i>Visual Learning with Limited Labels (LwLL), CVPR</i> 2020</font>
-          </span>
-          <span>
-            <a class="button" href="https://arxiv.org/pdf/2008.12839.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/prithv1/DMG/tree/master" target="_blank">[code]</a>
-            <a class="button" href="https://www.youtube.com/watch?v=u4YQdV8dJWM" target="_blank">[video]</a>
-            <a class="button" onclick="toggleDescription('dmg');">[TL;DR]</a>
-          </span>
-          <img src="files/images/DMG_approach.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
-          <!-- <center><img src="./files/images/DMG_approach.png" alt="3DSP" width="500" height="350" style="border-style: none;"></center> -->
-          <span id="dmg" style="display: none;" align="justify"><b>TL;DR, </b><i>We introduce Domain-specific Masks for
-              Generalization, a model for
-              improving both
-              in-domain and out-of-domain generalization performance. To produce a model which best generalizes
-              to both seen and unseen domains, we propose learning domain specific masks (encouraged
-              to learn a balance of domain-invariant and domain-specific features) enabling a model to
-              benefit from the predictive power of specialized features while retaining the universal
-              applicability of domain-invariant features. We demonstrate competitive performance compared to naive
-              baselines and state-of-the-art methods on both PACS and DomainNet.</i>
-          </span>
-          <!-- <span>
-            <a class="button" href="https://arxiv.org/pdf/2008.12839.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/prithv1/DMG/tree/master" target="_blank">[code]</a>
-            <a class="button" href="https://www.youtube.com/watch?v=u4YQdV8dJWM" target="_blank">[video]</a>
-          </span> -->
-        </p>
+            <!-- Cosmos-Reason1 -->
+            <div class="pub" data-tags="world-foundation-models vision-language">
+                <img src="./files/images/cosmos_reason1.gif" alt="Cosmos-Reason1">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://arxiv.org/pdf/2501.03575">Cosmos-Reason1: From Physical Common Sense To Embodied Reasoning</a>
+                    </div>
+                    <div class="pub-venue">ArXiv &middot; 2025</div>
+                    <div class="pub-authors">
+                        NVIDIA (<span class="author sx">Prithvijit Chattopadhyay</span>: Core Contributor)
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://research.nvidia.com/labs/dir/cosmos-reason1/" target="_blank">[Project Page]</a>
+                        <a href="https://www.youtube.com/watch?v=Eu25r-yisPc" target="_blank">[Video]</a>
+                        <a href="https://arxiv.org/pdf/2501.03575" target="_blank">[PDF]</a>
+                        <a href="https://github.com/nvidia-cosmos/cosmos-reason1" target="_blank">[Code]</a>
+                        <a href="https://huggingface.co/collections/nvidia/cosmos-reason1-67c9e926206426008f1da1b7" target="_blank">[Huggingface]</a>
+                        <a class="toggle-link" onclick="toggleDescription('Cosmos-Reason');">[TL;DR]</a>
+                    </div>
+                    <div id="Cosmos-Reason" class="paper-tldr"><b>TL;DR, </b><i>Physical AI systems need to perceive, understand, and perform complex actions in the physical world. In this paper, we present the Cosmos-Reason1 models that can understand the physical world and generate appropriate embodied decisions (e.g., next step action) in natural language through long chain-of-thought reasoning processes. We begin by defining key capabilities for Physical AI reasoning, with a focus on physical common sense and embodied reasoning. To represent physical common sense, we use a hierarchical ontology that captures fundamental knowledge about space, time, and physics. For embodied reasoning, we rely on a two-dimensional ontology that generalizes across different physical embodiments. Building on these capabilities, we develop two multimodal large language models, Cosmos-Reason1-8B and Cosmos-Reason1-56B. We curate data and train our models in four stages: vision pre-training, general supervised fine-tuning (SFT), Physical AI SFT, and Physical AI reinforcement learning (RL) as the post-training. To evaluate our models, we build comprehensive benchmarks for physical common sense and embodied reasoning according to our ontologies. Evaluation results show that Physical AI SFT and reinforcement learning bring significant improvements.</i></div>
+                </div>
+            </div>
 
-        <p class="paper" style="padding: 20px;">
-          <a href="https://arxiv.org/pdf/1909.10470.pdf">
-            <span class="title" style="font-weight:400">
-              <font color="brown">Improving Generative Visual Dialog by Answering Diverse
-                Questions</font>
-            </span>
-          </a>
-          <span>Vishvak Murahari,
-            <u>Prithvijit Chattopadhyay</u>,
-            Dhruv Batra,
-            Devi Parikh,
-            Abhishek Das</span>
-          <span>
-            <font color="red"><i>EMNLP</i> 2019</font>
-          </span>
-          <span>
-            <font color="red"><i>Visual Question Answering and Dialog Workshop,
-                CVPR</i> 2019</font>
-            </font>
-          </span>
-          <span>
-            <a class="button" href="https://arxiv.org/pdf/1909.10470.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/vmurahari3/visdial-diversity" target="_blank">[code]</a>
-            <a class="button" onclick="toggleDescription('visdiv');">[TL;DR]</a>
-          </span>
-          <img src="files/images/diverse_dialog.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
+            <!-- Cosmos-Predict1 -->
+            <div class="pub" data-tags="world-foundation-models">
+                <img src="./files/images/cosmos_sample.gif" alt="Cosmos-Predict1">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://arxiv.org/pdf/2501.03575">Cosmos-Predict1: Cosmos World Foundation Model Platform for Physical AI</a>
+                    </div>
+                    <div class="pub-venue">ArXiv &middot; 2025</div>
+                    <div class="pub-authors">
+                        NVIDIA (<span class="author sx">Prithvijit Chattopadhyay</span>: Core Contributor)
+                    </div>
+                    <div class="pub-highlight">Best of AI &amp; Best of CES Winner, CES 2025</div>
+                    <div class="pub-links">
+                        <a href="https://research.nvidia.com/labs/dir/cosmos1/" target="_blank">[Project Page]</a>
+                        <a href="https://www.youtube.com/watch?v=9Uch931cDx8&ab_channel=NVIDIA" target="_blank">[Video]</a>
+                        <a href="https://arxiv.org/pdf/2501.03575" target="_blank">[PDF]</a>
+                        <a href="https://github.com/NVIDIA/Cosmos" target="_blank">[Code]</a>
+                        <a href="https://huggingface.co/collections/nvidia/cosmos-6751e884dc10e013a0a0d8e6" target="_blank">[Models]</a>
+                        <a href="https://www.wired.com/story/nvidia-cosmos-ai-helps-robots-self-driving-cars/" target="_blank">[Press]</a>
+                        <a class="toggle-link" onclick="toggleDescription('Cosmos');">[TL;DR]</a>
+                    </div>
+                    <div id="Cosmos" class="paper-tldr"><b>TL;DR, </b><i>Physical AI needs to be trained digitally first. It needs a digital twin of itself, the policy model, and a digital twin of the world, the world model. In this paper, we present the Cosmos World Foundation Model Platform to help developers build customized world models for their Physical AI setups. We position a world foundation model as a general-purpose world model that can be fine-tuned into customized world models for downstream applications. Our platform covers a video curation pipeline, pre-trained world foundation models, examples of post-training of pre-trained world foundation models, and video tokenizers. To help Physical AI builders solve the most critical problems of our society, we make our platform open-source and our models open-weight with permissive licenses.</i></div>
+                </div>
+            </div>
 
-          <!-- <center><img src="./files/images/visdial_div_teaser.jpg" alt="3DSP" width="550" height="350" style="border-style: none;"></center> -->
-          <span id="visdiv" style="display: none;" align="justify"><b>TL;DR, </b><i>While generative visual dialog
-              models
-              trained with self-talk based RL
-              perform
-              better at the associated downstream task, they suffer from repeated interactions -- resulting in
-              saturation in improvements as the number of rounds increase. To counter this, we devise a simple
-              auxiliary objective that incentivizes Q-Bot to ask diverse questions, thus reducing repetitions and
-              in turn enabling A-Bot to explore a larger state space during RL i.e., be exposed to more visual
-              concepts to talk about, and varied questions to answer.</i>
-          </span>
-          <!-- <span>
-            <a class="button" href="https://arxiv.org/pdf/1909.10470.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/vmurahari3/visdial-diversity" target="_blank">[code]</a>
-          </span> -->
-        </p>
+            <!-- SkyScenes -->
+            <div class="pub" data-tags="robustness">
+                <img src="./files/images/skyscenes.png" alt="SkyScenes">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://arxiv.org/pdf/2312.06719.pdf">SkyScenes: A Synthetic Dataset for Aerial Scene Understanding</a>
+                    </div>
+                    <div class="pub-venue">ECCV &middot; 2024</div>
+                    <div class="pub-authors">
+                        Sahil Khose*, Anisha Pal*, Aayushi Agarwal*, Deepanshi*, Judy Hoffman, <span class="author sx">Prithvijit Chattopadhyay</span>
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/pdf/2312.06719.pdf" target="_blank">[PDF]</a>
+                        <a href="https://huggingface.co/datasets/hoffman-lab/SkyScenes" target="_blank">[Data]</a>
+                        <a class="toggle-link" onclick="toggleDescription('skyscenes');">[TL;DR]</a>
+                    </div>
+                    <div id="skyscenes" class="paper-tldr"><b>TL;DR, </b><i>We introduce SkyScenes, a large-scale synthetic dataset of densely annotated aerial images captured from Unmanned Aerial Vehicle (UAV) perspectives. We carefully curate SkyScenes images from CARLA to comprehensively capture diversity across layout (urban and rural maps), weather conditions, times of day, pitch angles and altitudes with corresponding semantic, instance and depth annotations. Through our experiments using SkyScenes, we show that (1) Models trained on SkyScenes generalize well to different real-world scenarios, (2) augmenting training on real images with SkyScenes data can improve real-world performance, (3) controlled variations in SkyScenes can offer insights into how models respond to changes in viewpoint conditions, and (4) additionally incorporating other sensor modalities (depth) can improve aerial scene understanding.</i></div>
+                </div>
+            </div>
 
-        <p class="paper" style="padding: 20px;">
-          <a href="https://arxiv.org/pdf/1907.10580.pdf">
-            <span class="title" style="font-weight:400">
-              <font color="brown">IR-VIC: Unsupervised Discovery of Sub-goals for Transfer in RL</font>
-            </span>
-          </a>
-          <span>Nirbhay Modhe,
-            <u>Prithvijit Chattopadhyay</u>,
-            Mohit Sharma,
-            Abhishek Das, </br>
-            Devi Parikh,
-            Dhruv Batra,
-            Ramakrishna Vedantam</span>
-          <span>
-            <font color="red"><i>IJCAI</i> 2020</font>
-          </span>
-          <span>
-            <font color="red"><i>Workshop on Task Agnostic Reinforcement Learning (TARL), ICLR</i> 2019</font>
-          </span>
-          <span>
-            <a class="button" href="https://arxiv.org/pdf/1907.10580.pdf" target="_blank">[PDF]</a>
-            <a class="button" onclick="toggleDescription('irvic');">[TL;DR]</a>
-          </span>
-          <img src="files/images/irvic.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
+            <!-- AUGCAL -->
+            <div class="pub" data-tags="robustness">
+                <img src="./files/images/augcal.png" alt="AUGCAL">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://arxiv.org/pdf/2312.06106.pdf">AUGCAL: Improving Sim2Real Adaptation by Uncertainty Calibration on Augmented Synthetic Images</a>
+                    </div>
+                    <div class="pub-venue">ICLR &middot; 2024</div>
+                    <div class="pub-authors">
+                        <span class="author sx">Prithvijit Chattopadhyay</span>, Bharat Goyal, Boglarka Ecsedi, Viraj Prabhu, Judy Hoffman
+                    </div>
+                    <div class="pub-venue">Workshop on Uncertainty Quantification for Computer Vision, ICCV 2023 (Extended Abstract)</div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/pdf/2312.06106.pdf" target="_blank">[PDF]</a>
+                        <a class="toggle-link" onclick="toggleDescription('augcal');">[TL;DR]</a>
+                    </div>
+                    <div id="augcal" class="paper-tldr"><b>TL;DR, </b><i>Mispredictions made by Sim2Real adaptation methods on real data can often be attributed to "miscalibration" &mdash; often caused by overconfident predictions. We propose a simple patch, AugCal, to improve uncertainty calibration of existing Sim2Real adaptation methods. Given a base Sim2Real adaptation algorithm, at training time, AugCal involves replacing vanilla "Sim" images with strongly augmented views (Aug intervention) and additionally optimizing for a training time calibration loss on augmented "Sim" predictions (Cal intervention). Through our experiments, we empirically show the efficacy of AugCal across multiple adaptation methods, backbones, tasks and shifts.</i></div>
+                </div>
+            </div>
 
-          <!-- <center><img src="./files/images/irvic.png" alt="3DSP" width="700" height="250" style="border-style: none;"></center> -->
-          <span id="irvic" style="display: none;" align="justify"><b>TL;DR, </b><i>We propose a novel framework to
-              identify
-              subgoals useful for exploration
-              in sequential decision
-              making tasks under partial observability. We utilize
-              the variational intrinsic control framework (Gregor et.al., 2016) which maximizes empowerment –
-              the ability to reliably reach a diverse set of states
-              and show how to identify sub-goals as states with
-              high necessary option information through an information theoretic regularizer. Despite being discovered
-              without explicit goal supervision, our subgoals provide better exploration and sample complexity on
-              challenging grid-world navigation tasks
-              compared to supervised counterparts in prior work.</i>
-          </span>
+            <!-- VideoDA -->
+            <div class="pub" data-tags="robustness">
+                <img src="./files/images/video_da.png" alt="Video DA">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://openreview.net/pdf?id=10R6iX6JHm">We're Not Using Videos Effectively: An Updated Domain Adaptive Video Segmentation Baseline</a>
+                    </div>
+                    <div class="pub-venue">TMLR &middot; 2024</div>
+                    <div class="pub-authors">
+                        Simar Kareer, Vivek Vijaykumar, Harsh Maheshwari, <span class="author sx">Prithvijit Chattopadhyay</span>, Judy Hoffman, Viraj Prabhu
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://openreview.net/pdf?id=10R6iX6JHm" target="_blank">[PDF]</a>
+                        <a href="https://github.com/simarkareer/unifiedVideoDA" target="_blank">[Code]</a>
+                        <a class="toggle-link" onclick="toggleDescription('videoda');">[TL;DR]</a>
+                    </div>
+                    <div id="videoda" class="paper-tldr"><b>TL;DR, </b><i>Domain Adaptive Semantic Segmentation (DAS) seeks to adapt a model trained on images from a labeled source domain to an unlabeled target domain. Unlike the traditional Image-DAS settings, a few Video-DAS works have sought to additionally leverage the temporal signal present in videos on a distinct set of benchmarks from Image-DAS, with minimal cross-benchmarking. We address this gap by conducting experiments that reveal that (1) even after carefully controlling for data and model architecture, state-of-the-art Image-DAS methods (HRDA and HRDA+MIC) outperform Video-DAS methods on established Video-DAS benchmarks (+14.5 mIoU on Viper&rarr;Cityscapes-Seq, +19.0 mIoU on Synthia-Seq&rarr;Cityscapes-Seq), and (2) naive combinations of Image-DAS and Video-DAS techniques only lead to marginal improvements across datasets.</i></div>
+                </div>
+            </div>
 
-        </p>
+            <!-- Battle of the Backbones -->
+            <div class="pub" data-tags="robustness">
+                <img src="./files/images/bob.png" alt="Battle of the Backbones">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://arxiv.org/pdf/2310.19909.pdf">Battle of the Backbones: A Large-Scale Comparison of Pretrained Models across Computer Vision Tasks</a>
+                    </div>
+                    <div class="pub-venue">NeurIPS Datasets and Benchmarks &middot; 2023</div>
+                    <div class="pub-authors">
+                        Micah Goldblum*, Hossein Souri*, Renkun Ni, Manli Shu, Viraj Uday Prabhu, Gowthami Somepalli, <span class="author sx">Prithvijit Chattopadhyay</span>, Adrien Bardes, Mark Ibrahim, Judy Hoffman, Rama Chellappa, Andrew Gordon Wilson, Tom Goldstein
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/pdf/2310.19909.pdf" target="_blank">[PDF]</a>
+                        <a href="https://github.com/hsouri/Battle-of-the-Backbones" target="_blank">[Code]</a>
+                        <a class="toggle-link" onclick="toggleDescription('bob');">[TL;DR]</a>
+                    </div>
+                    <div id="bob" class="paper-tldr"><b>TL;DR, </b><i>Most neural network based computer vision systems are built on a backbone, a pretrained or randomly initialized feature extractor. Several years ago, the default option was an ImageNet-trained convolutional neural network. However, the recent past has seen the emergence of countless backbones pretrained using various algorithms and datasets. We benchmark a diverse suite of pretrained models across a diverse set of computer vision tasks ranging from classification to object detection to OOD generalization and more. Our Battle of Backbones (BoB) sheds light on promising directions for the research community to advance computer vision by illuminating strengths and weakness of existing backbones through a comprehensive analysis conducted on 1500 training runs.</i></div>
+                </div>
+            </div>
 
-        <p class="paper" style="padding: 20px;">
-          <a href="https://arxiv.org/pdf/1902.03570.pdf">
-            <span class="title" style="font-weight:400">
-              <font color="brown">EvalAI: Towards Better Evaluation Systems for AI Agents</font>
-            </span>
-          </a>
-          <span>Deshraj Yadav,
-            Rishabh Jain,
-            Harsh Agrawal,
-            <u>Prithvijit Chattopadhyay</u>,
-            Taranjeet Singh, </br>
-            Akash Jain,
-            Shiv Baran Singh,
-            Stefan Lee,
-            Dhruv Batra</span>
-          <span>
-            <font color="red"><i>Workshop on AI Systems, SOSP</i> 2019</font>
-          </span>
-          <span>
-            <a class="button" href="https://arxiv.org/pdf/1902.03570.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/Cloud-CV/EvalAI" target="_blank">[code]</a>
-            <a class="button" onclick="toggleDescription('evalai');">[TL;DR]</a>
-          </span>
-          <img src="files/images/evalai_teaser.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 50%; height: auto;">
+            <!-- LANCE -->
+            <div class="pub" data-tags="robustness vision-language">
+                <img src="./files/images/lance.png" alt="LANCE">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://arxiv.org/pdf/2305.19164.pdf">LANCE: Stress-testing Visual Models by Generating Language-guided Counterfactual Images</a>
+                    </div>
+                    <div class="pub-venue">NeurIPS &middot; 2023</div>
+                    <div class="pub-authors">
+                        Viraj Prabhu, Sriram Yenamandra, <span class="author sx">Prithvijit Chattopadhyay</span>, Judy Hoffman
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/pdf/2305.19164.pdf" target="_blank">[PDF]</a>
+                        <a href="https://github.com/virajprabhu/LANCE" target="_blank">[Code]</a>
+                        <a href="https://virajprabhu.github.io//lance-web/" target="_blank">[Project Page]</a>
+                        <a class="toggle-link" onclick="toggleDescription('lance');">[TL;DR]</a>
+                    </div>
+                    <div id="lance" class="paper-tldr"><b>TL;DR, </b><i>We propose an automated algorithm to stress-test a trained visual model by generating language-guided counterfactual test images (LANCE). Our method leverages recent progress in large language modeling and text-based image editing to augment an IID test set with a suite of diverse, realistic, and challenging test images without altering model weights.</i></div>
+                </div>
+            </div>
 
-          <!-- <center><img src="./files/images/evalai_teaser.png" alt="3DSP" width="500" height="350" style="border-style: none;"></center> -->
-          <span id="evalai" style="display: none;" align="justify"><b>TL;DR, </b><i>We introduce EvalAI, an open source
-              platform for evaluating and comparing
-              machine
-              learning (ML) and artificial intelligence algorithms (AI) at scale. EvalAI is built to provide a
-              scalable solution to the research community to fulfill the critical need of evaluating machine
-              learning models and agents acting in an environment against annotations or with a human-in-the-loop.
-              This will help researchers, students, and data scientists to create, collaborate, and participate in
-              AI challenges organized around the globe.</i>
-          </span>
-          <!-- <span>
-            <a class="button" href="https://arxiv.org/pdf/1902.03570.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/Cloud-CV/EvalAI" target="_blank">[code]</a>
-          </span> -->
-        </p>
+            <!-- Low-Shot Robustness -->
+            <div class="pub" data-tags="robustness">
+                <img src="./files/images/lsr.png" alt="Low-Shot Robustness">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://arxiv.org/pdf/2304.11263.pdf">Benchmarking Low-Shot Robustness to Natural Distribution Shifts</a>
+                    </div>
+                    <div class="pub-venue">ICCV &middot; 2023</div>
+                    <div class="pub-authors">
+                        Aaditya Singh, Kartik Sarangmath, <span class="author sx">Prithvijit Chattopadhyay</span>, Judy Hoffman
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/pdf/2304.11263.pdf" target="_blank">[PDF]</a>
+                        <a href="https://github.com/Aaditya-Singh/Low-Shot-Robustness/" target="_blank">[Code]</a>
+                        <a class="toggle-link" onclick="toggleDescription('lsr');">[TL;DR]</a>
+                    </div>
+                    <div id="lsr" class="paper-tldr"><b>TL;DR, </b><i>Robustness to natural distribution shifts has seen remarkable progress thanks to recent pre-training strategies combined with better fine-tuning methods. However, such fine-tuning assumes access to large amounts of labelled data, and the extent to which the observations hold when the amount of training data is not as high remains unknown. We address this gap by performing the first in-depth study of robustness to various natural distribution shifts in different low-shot regimes: spanning datasets, architectures, pre-trained initializations, and state-of-the-art robustness interventions.</i></div>
+                </div>
+            </div>
 
-        <!-- <p class="paper" style="padding: 20px;">
-          <span class="title" style="font-weight:400">Unsupervised Discovery of Decision States through Intrinsic
-            Control
-          </span>
-          <span>Nirbhay Modhe,
-            <u>Prithvijit Chattopadhyay</u>,
-            Mohit Sharma,
-            Abhishek Das, </br>
-            Devi Parikh,
-            Dhruv Batra,
-            Ramakrishna Vedantam</span>
-          <span>
-            <font color="red"><i>Workshop on Task Agnostic Reinforcement Learning (TARL) ICLR</i>, 2019</font>
-          </span>
-          <img src="files/images/dsvic_examples.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 70%; height: auto;">
-          <span align="justify"><b>TL;DR, </b>Learning diverse and reusable skills in the absence of rewards in an
-            environment is
-            a key challenge in reinforcement learning. One solution to this problem, as has been
-            explored in prior work, is to learn a set of intrinsic macro-actions or options that reliably correspond to
-            trajectories when executed in an environment. In this options framework, we identify
-            and distinguish between decision-states (e.g. crossroads) where one needs to make a
-            decision, as being distinct from corridors (where one can follow default behavior) in
-            the modeling of options. Our intuition is that identifying decision states would lead
-            to more interpretable behavior from an RL agent, exposing clearly what the underlying options correspond to.
-            We formulate this as an information regularized intrinsic
-            control problem using techniques similar to (Goyal et al., 2019) who applied the information bottleneck to
-            goal-driven tasks. Our qualitative results demonstrate that we
-            learn interpretable decision states in an unsupervised manner by merely interacting
-            with the environment.
-          </span>
-          <span>
-            <a class="button" href="https://tarl2019.github.io/assets/papers/modhe2019unsupervised.pdf"
-              target="_blank">[PDF]</a>
-          </span>
-        </p> -->
+            <!-- PASTA -->
+            <div class="pub" data-tags="robustness">
+                <img src="./files/images/pasta.png" alt="PASTA">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://arxiv.org/pdf/2212.00979.pdf">PASTA: Proportional Amplitude Spectrum Training Augmentation for Syn-to-Real Domain Generalization</a>
+                    </div>
+                    <div class="pub-venue">ICCV &middot; 2023</div>
+                    <div class="pub-authors">
+                        <span class="author sx">Prithvijit Chattopadhyay</span>*, Kartik Sarangmath*, Vivek Vijaykumar, Judy Hoffman
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/pdf/2212.00979.pdf" target="_blank">[PDF]</a>
+                        <a href="https://github.com/prithv1/PASTA" target="_blank">[Code]</a>
+                        <a class="toggle-link" onclick="toggleDescription('pasta');">[TL;DR]</a>
+                    </div>
+                    <div id="pasta" class="paper-tldr"><b>TL;DR, </b><i>PASTA is a simple and effective frequency domain augmentation strategy to improve out-of-the-box synthetic-to-real (syn-to-real) generalization performance. PASTA involves perturbing the amplitude spectra of the synthetic images in the Fourier domain in a structured manner to generate augmented views. For the tasks of semantic segmentation (GTAV&rarr;Real), object detection (Sim10K&rarr;Real), and object recognition (VisDA-C Syn&rarr;Real), across a total of 5 syn-to-real shifts, we find that PASTA either outperforms or is consistently competitive with more complex state-of-the-art methods while being complementary to other generalization approaches.</i></div>
+                </div>
+            </div>
 
-        <p class="paper" style="padding: 20px;">
-          <a href="https://arxiv.org/pdf/1808.02861.pdf">
-            <span class="title" style="font-weight:400">
-              <font color="brown">Choose Your Neuron: Incorporating Domain-Knowledge through
-                Neuron-Importance</font>
-            </span>
-          </a>
-          <span>Ramprasaath R. Selvaraju<sup>*</sup>,
-            <u>Prithvijit Chattopadhyay</u><sup>*</sup>,
-            Mohamed Elhoseiny, </br>
-            Tilak Sharma,
-            Dhruv Batra,
-            Devi Parikh,
-            Stefan Lee</span>
-          <span>
-            <font color="red"><i>ECCV</i>, 2018</font>
-          </span>
-          <span>
-            <font color="red"><i>Continual Learning Workshop, NeurIPS</i> 2018</font>
-          </span>
-          <span>
-            <font color="red"><i>Visually Grounded Interaction and Language (ViGIL) Workshop, NeurIPS</i> 2018</font>
-          </span>
-          <span>
-            <a class="button" href="https://arxiv.org/pdf/1808.02861.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/ramprs/neuron-importance-zsl" target="_blank">[code]</a>
-            <a class="button"
-              href="https://mlatgt.blog/2018/09/05/choose-your-neuron-incorporating-domain-knowledge-through-neuron-importance/"
-              target="_blank">[article]</a>
-            <a class="button" onclick="toggleDescription('niwt');">[TL;DR]</a>
-          </span>
-          <img src="files/images/niwt_method.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 80%; height: auto;">
+            <!-- RobustNav -->
+            <div class="pub" data-tags="embodied-ai robustness">
+                <img src="./files/images/robustnav.png" alt="RobustNav">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://arxiv.org/pdf/2106.04531.pdf">RobustNav: Towards Benchmarking Robustness in Embodied Navigation</a>
+                    </div>
+                    <div class="pub-venue">ICCV &middot; 2021</div>
+                    <div class="pub-authors">
+                        <span class="author sx">Prithvijit Chattopadhyay</span>, Judy Hoffman, Roozbeh Mottaghi, Ani Kembhavi
+                    </div>
+                    <div class="pub-highlight">Oral Presentation</div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/pdf/2106.04531.pdf" target="_blank">[PDF]</a>
+                        <a href="https://github.com/allenai/robustnav" target="_blank">[Code]</a>
+                        <a href="https://prior.allenai.org/projects/robustnav" target="_blank">[Project Page]</a>
+                        <a href="https://www.youtube.com/watch?v=wqVGsuUbm48" target="_blank">[Video]</a>
+                        <a class="toggle-link" onclick="toggleDescription('robustnav');">[TL;DR]</a>
+                    </div>
+                    <div id="robustnav" class="paper-tldr"><b>TL;DR, </b><i>As an attempt towards assessing the robustness of embodied navigation agents, we propose RobustNav, a framework to quantify the performance of embodied navigation agents when exposed to a wide variety of visual &mdash; affecting RGB inputs &mdash; and dynamics &mdash; affecting transition dynamics &mdash; corruptions. We find that standard end-to-end RL policies significantly underperform (or fail) in the presence of visual or dynamics corruptions, warranting more research in this direction.</i></div>
+                </div>
+            </div>
 
-          <!-- <center><img src="./files/images/NIWT_teaser.png" alt="3DSP" width="350" height="250" style="border-style: none;"></center> -->
-          <span id="niwt" style="display: none;" align="justify"><b>TL;DR, </b><i>We introduce a simple, efficient
-              zero-shot learning approach -- NIWT --
-              based on
-              the observation that individual neurons in CNNs have been shown to implicitly learn a dictionary of
-              semantically meaningful concepts (simple textures and shapes to whole or partial objects). NIWT
-              learns to map domain knowledge about "unseen" classes onto this dictionary of learned concepts and
-              optimizes for network parameters that can effectively combine these concepts - essentially learning
-              classifiers by discovering and composing learned semantic concepts in deep networks.</i>
-          </span>
-          <!-- <span>
-            <a class="button" href="https://arxiv.org/pdf/1808.02861.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/ramprs/neuron-importance-zsl" target="_blank">[code]</a>
-            <a class="button"
-              href="https://mlatgt.blog/2018/09/05/choose-your-neuron-incorporating-domain-knowledge-through-neuron-importance/"
-              target="_blank">[article]</a>
-          </span> -->
-        </p>
+            <!-- Likelihood Landscapes -->
+            <div class="pub" data-tags="robustness">
+                <img src="./files/images/relative_likelihood_landscapes.png" alt="Likelihood Landscapes">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://arxiv.org/pdf/2008.11300.pdf">Likelihood Landscapes: A Unifying Principle Behind Many Adversarial Defenses</a>
+                    </div>
+                    <div class="pub-venue">Adversarial Robustness in the Real World (AROW), ECCV &middot; 2020</div>
+                    <div class="pub-authors">
+                        Fu Lin, Rohit Mittapali, <span class="author sx">Prithvijit Chattopadhyay</span>, Daniel Bolya, Judy Hoffman
+                    </div>
+                    <div class="pub-highlight">NVIDIA Best Paper Runner Up</div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/pdf/2008.11300.pdf" target="_blank">[PDF]</a>
+                        <a href="https://www.youtube.com/watch?v=RuLY6UNIeOs" target="_blank">[Video]</a>
+                        <a class="toggle-link" onclick="toggleDescription('lls');">[TL;DR]</a>
+                    </div>
+                    <div id="lls" class="paper-tldr"><b>TL;DR, </b><i>Convolutional Neural Networks (CNNs) have been shown to be vulnerable to adversarial examples, which are known to locate in subspaces close to where normal data lies but are not naturally occurring and have low probability. In this work, we investigate the potential effect defense techniques have on the geometry of the likelihood landscape &mdash; likelihood of the input images under the trained model. We first propose a way to visualize the likelihood landscape by leveraging an energy-based model interpretation of discriminative classifiers. Then we introduce a measure to quantify the flatness of the likelihood landscape. We observe that a subset of adversarial defense techniques results in a similar effect of flattening the likelihood landscape. We further explore directly regularizing towards a flat landscape for adversarial robustness.</i></div>
+                </div>
+            </div>
 
-        <p class="paper" style="padding: 20px;">
-          <a href="https://arxiv.org/pdf/1810.12366.pdf">
-            <span class="title" style="font-weight:400">
-              <font color="brown">Do explanation modalities make VQA Models more predictable to a
-                human?</font>
-            </span>
-          </a>
-          <span>Arjun Chandrasekaran<sup>*</sup>,
-            Viraj Prabhu<sup>*</sup>,
-            Deshraj Yadav<sup>*</sup>,
-            <u>Prithvijit Chattopadhyay</u><sup>*</sup>,
-            Devi Parikh</span>
-          <span>
-            <font color="red"><i>EMNLP</i> 2018</font>
-          </span>
-          <span>
-            <a class="button" href="https://arxiv.org/pdf/1810.12366.pdf" target="_blank">[PDF]</a>
-            <a class="button" onclick="toggleDescription('visexp');">[TL;DR]</a>
-          </span>
-          <img src="files/images/explanations_predictable.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 50%; height: auto;">
-          <!-- <center><img src="./files/images/explanations_predictable.png" alt="3DSP" width="350" height="350" style="border-style: none;"></center> -->
-          <span id="visexp" style="display: none;" align="justify"><b>TL;DR, </b><i>A rich line of research attempts to
-              make deep neural networks more
-              transparent by
-              generating human-interpretable 'explanations' of their decision process, especially for interactive
-              tasks like Visual Question Answering (VQA). In this work, we analyze if existing explanations indeed
-              make a VQA model -- its responses as well as failures -- more predictable to a human.</i>
-          </span>
+            <!-- DMG -->
+            <div class="pub" data-tags="robustness">
+                <img src="./files/images/DMG_approach.png" alt="DMG">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://arxiv.org/pdf/2008.12839.pdf">Learning to Balance Specificity and Invariance for In and Out of Domain Generalization</a>
+                    </div>
+                    <div class="pub-venue">ECCV &middot; 2020</div>
+                    <div class="pub-authors">
+                        <span class="author sx">Prithvijit Chattopadhyay</span>, Yogesh Balaji, Judy Hoffman
+                    </div>
+                    <div class="pub-venue">Visual Learning with Limited Labels (LwLL), CVPR 2020</div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/pdf/2008.12839.pdf" target="_blank">[PDF]</a>
+                        <a href="https://github.com/prithv1/DMG/tree/master" target="_blank">[Code]</a>
+                        <a href="https://www.youtube.com/watch?v=u4YQdV8dJWM" target="_blank">[Video]</a>
+                        <a class="toggle-link" onclick="toggleDescription('dmg');">[TL;DR]</a>
+                    </div>
+                    <div id="dmg" class="paper-tldr"><b>TL;DR, </b><i>We introduce Domain-specific Masks for Generalization, a model for improving both in-domain and out-of-domain generalization performance. To produce a model which best generalizes to both seen and unseen domains, we propose learning domain specific masks (encouraged to learn a balance of domain-invariant and domain-specific features) enabling a model to benefit from the predictive power of specialized features while retaining the universal applicability of domain-invariant features. We demonstrate competitive performance compared to naive baselines and state-of-the-art methods on both PACS and DomainNet.</i></div>
+                </div>
+            </div>
 
-        </p>
+            <!-- Visual Dialog Diversity -->
+            <div class="pub" data-tags="vision-language">
+                <img src="./files/images/diverse_dialog.png" alt="Diverse Visual Dialog">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://arxiv.org/pdf/1909.10470.pdf">Improving Generative Visual Dialog by Answering Diverse Questions</a>
+                    </div>
+                    <div class="pub-venue">EMNLP &middot; 2019</div>
+                    <div class="pub-authors">
+                        Vishvak Murahari, <span class="author sx">Prithvijit Chattopadhyay</span>, Dhruv Batra, Devi Parikh, Abhishek Das
+                    </div>
+                    <div class="pub-venue">Visual Question Answering and Dialog Workshop, CVPR 2019</div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/pdf/1909.10470.pdf" target="_blank">[PDF]</a>
+                        <a href="https://github.com/vmurahari3/visdial-diversity" target="_blank">[Code]</a>
+                        <a class="toggle-link" onclick="toggleDescription('visdiv');">[TL;DR]</a>
+                    </div>
+                    <div id="visdiv" class="paper-tldr"><b>TL;DR, </b><i>While generative visual dialog models trained with self-talk based RL perform better at the associated downstream task, they suffer from repeated interactions &mdash; resulting in saturation in improvements as the number of rounds increase. To counter this, we devise a simple auxiliary objective that incentivizes Q-Bot to ask diverse questions, thus reducing repetitions and in turn enabling A-Bot to explore a larger state space during RL i.e., be exposed to more visual concepts to talk about, and varied questions to answer.</i></div>
+                </div>
+            </div>
 
-        <p class="paper" style="padding: 20px;">
-          <a href="https://arxiv.org/pdf/1708.05122.pdf">
-            <span class="title" style="font-weight:400">
-              <font color="brown">Evaluating Visual Conversational Agents via Cooperative Human-AI
-                Games</font>
-            </span>
-          </a>
-          <span><u>Prithvijit Chattopadhyay</u><sup>*</sup>,
-            Deshraj Yadav<sup>*</sup>,
-            Viraj Prabhu,
-            Arjun Chandrasekaran,
-            Abhishek Das,
-            Stefan Lee,
-            Dhruv Batra,
-            Devi Parikh</span>
-          <span>
-            <font color="red"><i>HCOMP</i> 2017</font>
-          </span>
-          <span>
-            <font color="blue"><b>Oral presentation</b></font>
-          </span>
-          <span>
-            <a class="button" href="https://arxiv.org/pdf/1708.05122.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/GT-Vision-Lab/GuessWhich" target="_blank">[code]</a>
-            <a class="button" onclick="toggleDescription('gw');">[TL;DR]</a>
-          </span>
-          <img src="files/images/eval_visdial.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 40%; height: auto;">
-          <!-- <center><img src="./files/images/eval_visdial.png" alt="3DSP" width="300" height="400" style="border-style: none;"></center> -->
-          <span id="gw" style="display: none;" align="justify"><b>TL;DR, </b><i>We design a cooperative game -
-              GuessWhich -
-              to measure human-AI team
-              performance in
-              the specific context of the AI being a visual conversational agent. GuessWhich involves live
-              interaction between the human and the AI and is designed to gauge the extent to which progress in
-              isolated metrics for AI (& AI-AI teams) transfers to human-AI collaborative scenarios.</i>
-          </span>
-          <!-- <span>
-            <a class="button" href="https://arxiv.org/pdf/1708.05122.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/GT-Vision-Lab/GuessWhich" target="_blank">[code]</a>
-          </span> -->
-        </p>
+            <!-- IR-VIC -->
+            <div class="pub" data-tags="embodied-ai">
+                <img src="./files/images/irvic.png" alt="IR-VIC">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://arxiv.org/pdf/1907.10580.pdf">IR-VIC: Unsupervised Discovery of Sub-goals for Transfer in RL</a>
+                    </div>
+                    <div class="pub-venue">IJCAI &middot; 2020</div>
+                    <div class="pub-authors">
+                        Nirbhay Modhe, <span class="author sx">Prithvijit Chattopadhyay</span>, Mohit Sharma, Abhishek Das, Devi Parikh, Dhruv Batra, Ramakrishna Vedantam
+                    </div>
+                    <div class="pub-venue">Workshop on Task Agnostic Reinforcement Learning (TARL), ICLR 2019</div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/pdf/1907.10580.pdf" target="_blank">[PDF]</a>
+                        <a class="toggle-link" onclick="toggleDescription('irvic');">[TL;DR]</a>
+                    </div>
+                    <div id="irvic" class="paper-tldr"><b>TL;DR, </b><i>We propose a novel framework to identify subgoals useful for exploration in sequential decision making tasks under partial observability. We utilize the variational intrinsic control framework (Gregor et al., 2016) which maximizes empowerment &mdash; the ability to reliably reach a diverse set of states &mdash; and show how to identify sub-goals as states with high necessary option information through an information theoretic regularizer. Despite being discovered without explicit goal supervision, our subgoals provide better exploration and sample complexity on challenging grid-world navigation tasks compared to supervised counterparts in prior work.</i></div>
+                </div>
+            </div>
 
-        <p class="paper" style="padding: 20px;">
-          <a href="https://arxiv.org/pdf/1704.00717.pdf">
-            <span class="title" style="font-weight:400">
-              <font color="brown">It Takes Two to Tango: Towards Theory of AI's Mind</font>
-            </span>
-          </a>
-          <span>Arjun Chandrasekaranu<sup>*</sup>,
-            Deshraj Yadav<sup>*</sup>,
-            <u>Prithvijit Chattopadhyay</u><sup>*</sup>,
-            Viraj Prabhu<sup>*</sup>,
-            Devi Parikh</span>
-          <span>
-            <font color="red"><i>Chalearn Looking at People Workshop, CVPR</i> 2017</font>
-          </span>
-          <span>
-            <a class="button" href="https://arxiv.org/pdf/1704.00717.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/deshraj/TOAIM" target="_blank">[code]</a>
-            <a class="button" onclick="toggleDescription('toaim');">[TL;DR]</a>
-          </span>
-          <img src="files/images/toaim.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
-          <!-- <center><img src="./files/images/toaim.png" alt="3DSP" width="500" height="300" style="border-style: none;"></center> -->
-          <span id="toaim" style="display: none;" align="justify"><b>TL;DR, </b><i>To effectively leverage the progress
-              in
-              Artificial Intelligence (AI) to
-              make our
-              lives more productive, it is important for humans and AI to work well together in a team. In this
-              work, we argue that for human-AI teams to be effective, in addition to making AI more accurate and
-              human-like, humans must also develop a theory of AI's mind (ToAIM) - get to know its strengths,
-              weaknesses, beliefs, and quirks.</i>
-          </span>
-          <!-- <span>
-            <a class="button" href="https://arxiv.org/pdf/1704.00717.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/deshraj/TOAIM" target="_blank">[code]</a>
-          </span> -->
-        </p>
+            <!-- EvalAI -->
+            <div class="pub" data-tags="">
+                <img src="./files/images/evalai_teaser.png" alt="EvalAI">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://arxiv.org/pdf/1902.03570.pdf">EvalAI: Towards Better Evaluation Systems for AI Agents</a>
+                    </div>
+                    <div class="pub-venue">Workshop on AI Systems, SOSP &middot; 2019</div>
+                    <div class="pub-authors">
+                        Deshraj Yadav, Rishabh Jain, Harsh Agrawal, <span class="author sx">Prithvijit Chattopadhyay</span>, Taranjeet Singh, Akash Jain, Shiv Baran Singh, Stefan Lee, Dhruv Batra
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/pdf/1902.03570.pdf" target="_blank">[PDF]</a>
+                        <a href="https://github.com/Cloud-CV/EvalAI" target="_blank">[Code]</a>
+                        <a class="toggle-link" onclick="toggleDescription('evalai');">[TL;DR]</a>
+                    </div>
+                    <div id="evalai" class="paper-tldr"><b>TL;DR, </b><i>We introduce EvalAI, an open source platform for evaluating and comparing machine learning (ML) and artificial intelligence algorithms (AI) at scale. EvalAI is built to provide a scalable solution to the research community to fulfill the critical need of evaluating machine learning models and agents acting in an environment against annotations or with a human-in-the-loop. This will help researchers, students, and data scientists to create, collaborate, and participate in AI challenges organized around the globe.</i></div>
+                </div>
+            </div>
 
-        <p class="paper" style="padding: 20px;">
-          <a href="https://arxiv.org/pdf/1604.03505.pdf">
-            <span class="title" style="font-weight:400">
-              <font color="brown">Counting Everyday Objects in Everyday Scenes</font>
-            </span>
-          </a>
-          <span><u>Prithvijit Chattopadhyay</u><sup>*</sup>,
-            Ramakrishna Vedantam<sup>*</sup>,
-            Ramprasaath R. Selvaraju,
-            Dhruv Batra,
-            Devi Parikh</span>
-          <span>
-            <font color="red"><i>CVPR</i> 2017</font>
-          </span>
-          <span>
-            <font color="blue"><b>Spotlight presentation</b></font>
-          </span>
-          <span>
-            <a class="button" href="https://arxiv.org/pdf/1604.03505.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/prithv1/cvpr2017_counting" target="_blank">[code]</a>
-            <a class="button" onclick="toggleDescription('counting');">[TL;DR]</a>
-          </span>
-          <img src="files/images/seq_sub.png" alt="Thumbnail"
-            style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
+            <!-- NIWT -->
+            <div class="pub" data-tags="vision-language">
+                <img src="./files/images/niwt_method.png" alt="NIWT">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://arxiv.org/pdf/1808.02861.pdf">Choose Your Neuron: Incorporating Domain-Knowledge through Neuron-Importance</a>
+                    </div>
+                    <div class="pub-venue">ECCV &middot; 2018</div>
+                    <div class="pub-authors">
+                        Ramprasaath R. Selvaraju*, <span class="author sx">Prithvijit Chattopadhyay</span>*, Mohamed Elhoseiny, Tilak Sharma, Dhruv Batra, Devi Parikh, Stefan Lee
+                    </div>
+                    <div class="pub-venue">Continual Learning Workshop, NeurIPS 2018 &middot; Visually Grounded Interaction and Language (ViGIL) Workshop, NeurIPS 2018</div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/pdf/1808.02861.pdf" target="_blank">[PDF]</a>
+                        <a href="https://github.com/ramprs/neuron-importance-zsl" target="_blank">[Code]</a>
+                        <a href="https://mlatgt.blog/2018/09/05/choose-your-neuron-incorporating-domain-knowledge-through-neuron-importance/" target="_blank">[Article]</a>
+                        <a class="toggle-link" onclick="toggleDescription('niwt');">[TL;DR]</a>
+                    </div>
+                    <div id="niwt" class="paper-tldr"><b>TL;DR, </b><i>We introduce a simple, efficient zero-shot learning approach &mdash; NIWT &mdash; based on the observation that individual neurons in CNNs have been shown to implicitly learn a dictionary of semantically meaningful concepts (simple textures and shapes to whole or partial objects). NIWT learns to map domain knowledge about "unseen" classes onto this dictionary of learned concepts and optimizes for network parameters that can effectively combine these concepts &mdash; essentially learning classifiers by discovering and composing learned semantic concepts in deep networks.</i></div>
+                </div>
+            </div>
 
-          <!-- <center><img src="./files/images/counting_task_img.jpg" alt="3DSP" width="500" height="300" style="border-style: none;"></center> -->
-          <span id="counting" style="display: none;" align="justify"><b>TL;DR, </b><i>We study the numerosity of object
-              classes in natural, everyday images and
-              build
-              dedicated models for counting designed to tackle the large variance in counts, appearances, and
-              scales of objects found in natural scenes. We propose a contextual counting approach inspired by the
-              phenomenon of subitizing - the ability of humans to make quick assessments of counts given a
-              perceptual signal, for small count values.</i>
-          </span>
-          <!-- <span>
-            <a class="button" href="https://arxiv.org/pdf/1604.03505.pdf" target="_blank">[PDF]</a>
-            <a class="button" href="https://github.com/prithv1/cvpr2017_counting" target="_blank">[code]</a>
-          </span> -->
-        </p>
+            <!-- Visual Explanations -->
+            <div class="pub" data-tags="vision-language">
+                <img src="./files/images/explanations_predictable.png" alt="Visual Explanations">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://arxiv.org/pdf/1810.12366.pdf">Do explanation modalities make VQA Models more predictable to a human?</a>
+                    </div>
+                    <div class="pub-venue">EMNLP &middot; 2018</div>
+                    <div class="pub-authors">
+                        Arjun Chandrasekaran*, Viraj Prabhu*, Deshraj Yadav*, <span class="author sx">Prithvijit Chattopadhyay</span>*, Devi Parikh
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/pdf/1810.12366.pdf" target="_blank">[PDF]</a>
+                        <a class="toggle-link" onclick="toggleDescription('visexp');">[TL;DR]</a>
+                    </div>
+                    <div id="visexp" class="paper-tldr"><b>TL;DR, </b><i>A rich line of research attempts to make deep neural networks more transparent by generating human-interpretable 'explanations' of their decision process, especially for interactive tasks like Visual Question Answering (VQA). In this work, we analyze if existing explanations indeed make a VQA model &mdash; its responses as well as failures &mdash; more predictable to a human.</i></div>
+                </div>
+            </div>
 
+            <!-- GuessWhich -->
+            <div class="pub" data-tags="vision-language">
+                <img src="./files/images/eval_visdial.png" alt="GuessWhich">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://arxiv.org/pdf/1708.05122.pdf">Evaluating Visual Conversational Agents via Cooperative Human-AI Games</a>
+                    </div>
+                    <div class="pub-venue">HCOMP &middot; 2017</div>
+                    <div class="pub-authors">
+                        <span class="author sx">Prithvijit Chattopadhyay</span>*, Deshraj Yadav*, Viraj Prabhu, Arjun Chandrasekaran, Abhishek Das, Stefan Lee, Dhruv Batra, Devi Parikh
+                    </div>
+                    <div class="pub-highlight">Oral Presentation</div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/pdf/1708.05122.pdf" target="_blank">[PDF]</a>
+                        <a href="https://github.com/GT-Vision-Lab/GuessWhich" target="_blank">[Code]</a>
+                        <a class="toggle-link" onclick="toggleDescription('gw');">[TL;DR]</a>
+                    </div>
+                    <div id="gw" class="paper-tldr"><b>TL;DR, </b><i>We design a cooperative game &mdash; GuessWhich &mdash; to measure human-AI team performance in the specific context of the AI being a visual conversational agent. GuessWhich involves live interaction between the human and the AI and is designed to gauge the extent to which progress in isolated metrics for AI (& AI-AI teams) transfers to human-AI collaborative scenarios.</i></div>
+                </div>
+            </div>
 
+            <!-- ToAIM -->
+            <div class="pub" data-tags="vision-language">
+                <img src="./files/images/toaim.png" alt="ToAIM">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://arxiv.org/pdf/1704.00717.pdf">It Takes Two to Tango: Towards Theory of AI's Mind</a>
+                    </div>
+                    <div class="pub-venue">Chalearn Looking at People Workshop, CVPR &middot; 2017</div>
+                    <div class="pub-authors">
+                        Arjun Chandrasekaran*, Deshraj Yadav*, <span class="author sx">Prithvijit Chattopadhyay</span>*, Viraj Prabhu*, Devi Parikh
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/pdf/1704.00717.pdf" target="_blank">[PDF]</a>
+                        <a href="https://github.com/deshraj/TOAIM" target="_blank">[Code]</a>
+                        <a class="toggle-link" onclick="toggleDescription('toaim');">[TL;DR]</a>
+                    </div>
+                    <div id="toaim" class="paper-tldr"><b>TL;DR, </b><i>To effectively leverage the progress in Artificial Intelligence (AI) to make our lives more productive, it is important for humans and AI to work well together in a team. In this work, we argue that for human-AI teams to be effective, in addition to making AI more accurate and human-like, humans must also develop a theory of AI's mind (ToAIM) &mdash; get to know its strengths, weaknesses, beliefs, and quirks.</i></div>
+                </div>
+            </div>
 
+            <!-- Counting -->
+            <div class="pub" data-tags="vision-language">
+                <img src="./files/images/seq_sub.png" alt="Counting">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://arxiv.org/pdf/1604.03505.pdf">Counting Everyday Objects in Everyday Scenes</a>
+                    </div>
+                    <div class="pub-venue">CVPR &middot; 2017</div>
+                    <div class="pub-authors">
+                        <span class="author sx">Prithvijit Chattopadhyay</span>*, Ramakrishna Vedantam*, Ramprasaath R. Selvaraju, Dhruv Batra, Devi Parikh
+                    </div>
+                    <div class="pub-highlight">Spotlight Presentation</div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/pdf/1604.03505.pdf" target="_blank">[PDF]</a>
+                        <a href="https://github.com/prithv1/cvpr2017_counting" target="_blank">[Code]</a>
+                        <a class="toggle-link" onclick="toggleDescription('counting');">[TL;DR]</a>
+                    </div>
+                    <div id="counting" class="paper-tldr"><b>TL;DR, </b><i>We study the numerosity of object classes in natural, everyday images and build dedicated models for counting designed to tackle the large variance in counts, appearances, and scales of objects found in natural scenes. We propose a contextual counting approach inspired by the phenomenon of subitizing &mdash; the ability of humans to make quick assessments of counts given a perceptual signal, for small count values.</i></div>
+                </div>
+            </div>
+        </section>
 
-      </div>
+        <!-- Achievements -->
+        <section id="achievements">
+            <h2 class="section-title">Achievements</h2>
+            <ul class="achievements-list">
+                <li>Recognized as an <a href="https://iccv.thecvf.com/Conferences/2025/ProgramCommittee">outstanding reviewer</a> for ICCV 2025!</li>
+                <li>Accepted to <a href="https://iccv2023.thecvf.com/call.for.participation-363200-2-30-32.php">ICCV 2023 Doctoral Consortium</a>!</li>
+                <li>Recognized as an <a href="https://cvpr2023.thecvf.com/Conferences/2023/OutstandingReviewers">outstanding reviewer</a> for CVPR 2023!</li>
+                <li>Recognized as an <a href="https://cvpr2022.thecvf.com/outstanding-reviewers">outstanding reviewer</a> for CVPR 2022!</li>
+                <li>Recognized as a <a href="https://iclr.cc/Conferences/2022/Reviewers">highlighted reviewer</a> for ICLR 2022!</li>
+                <li>Recognized as an <a href="http://cvpr2021.thecvf.com/node/184">outstanding reviewer</a> for CVPR 2021!</li>
+                <li>Recognized as an <a href="https://paperswithcode.com/rc2021">outstanding reviewer</a> for ML Reproducibility Challenge 2021!</li>
+                <li>Recognized to be among the <a href="./files/data/Prithvijit Chattopadhyay_ICML_Certificate.pdf">top 33 percent reviewers</a> for ICML 2020!</li>
+                <li><a href="https://arxiv.org/abs/2008.11300">Likelihood Landscapes</a> received the NVIDIA Best Runner Up paper award at AROW, ECCV 2020!</li>
+                <li>Awarded the <a href="https://www.cc.gatech.edu/annual-awards-and-honors-past-recipients">College of Computing's Rising Star Doctoral Student Research Award (formerly known as the CS7001 Research Award)</a> at Georgia Tech!</li>
+                <span id="dots">...</span>
+                <span id="more" style="display: none;">
+                    <li>Recognized as one of the <a href="https://nips.cc/Conferences/2019/Reviewers">best reviewers</a> for NeurIPS 2019!</li>
+                    <li>Recognized as an <a href="https://iclr.cc/Conferences/2019/Awards">outstanding reviewer</a> for ICLR 2019!</li>
+                    <li>Recognized to be among the top 30 percent highest scoring reviewers for NeurIPS 2018!</li>
+                    <li>Awarded the <a href="https://www.cc.gatech.edu/annual-awards-and-honors-past-recipients">College of Computing's MS Research Award</a> at Georgia Tech!</li>
+                    <li>Our team won <a href="http://www.vthacks.com/">VT Hacks 2017</a>, a <a href="https://mlh.io/">Major League Hacking Event</a>, 2017!</li>
+                    <li>Our undergraduate team, DTU-AUV, qualified for the semi-finals at <a href="http://www.auvsifoundation.org/2014-robosub-teams">AUVSI Robosub 2014</a>!</li>
+                    <li>Awarded Merit Scholarships from 2012-2014 for undergraduate academic performance!</li>
+                    <li>Selected for <a href="http://kvpy.iisc.ernet.in/main/index.htm">KVPY</a> and <a href="http://www.inspire-dst.gov.in/fellowship.html">INSPIRE</a> Fellowships, 2012 for undergraduate studies in basic sciences!</li>
+                    <li>Placed among the top 1 percent students in the country in <a href="http://www.indapt.org/index.php/inphoipho">INPhO</a> 2012!</li>
+                    <li>Selected for rigorous mathematical training camps conducted by mathematicians from Bhabha Atomic Research Center (<a href="http://www.barc.gov.in/">BARC</a>) and Indian Institute of Science (<a href="http://www.iisc.ac.in/">IISc</a>) in 2012!</li>
+                    <li>Selected for <a href="http://www.csirhrdg.res.in/cpyls.htm">CSIR Programme on Youth Leadership in Science</a>, 2010!</li>
+                </span>
+            </ul>
+            <a class="toggle-link" onclick="toggleContent('achievements', 'dots', 'more', 'myBtn');" id="myBtn">[Read More]</a>
+        </section>
+
+        <!-- Projects -->
+        <section>
+            <h2 class="section-title">Projects</h2>
+
+            <div class="entry">
+                <div class="pub-title">Investigating Visual Dialog Models for Goal-Driven Self-Talk</div>
+                <div class="pub-venue">2019</div>
+                <div class="pub-authors">Prithvijit Chattopadhyay (advised by Devi Parikh)</div>
+                <div class="pub-links">
+                    <a href="files/data/Mini_Project_2_Fall_19_Report.pdf" target="_blank">[Report PDF]</a>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="pub-title">Exploring Weak-Supervision and Generative Models for Semantic Segmentation</div>
+                <div class="pub-venue">2018</div>
+                <div class="pub-authors">Prithvijit Chattopadhyay, Ramprasaath R. Selvaraju, Viraj Prabhu</div>
+                <div class="pub-links">
+                    <a href="https://virajprabhu.github.io/reports/pgm.pdf" target="_blank">[Report PDF]</a>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="pub-title">DTU AUV: Autonomous Underwater Vehicle</div>
+                <div class="pub-venue">2012-2016</div>
+                <div class="pub-authors">Prithvijit Chattopadhyay (Acoustics &amp; Control Systems Department), co-authored with DTU AUV members</div>
+                <div class="pub-links">
+                    <a href="https://www.researchgate.net/profile/Aditya-Rastogi/publication/281117733_Delhi_Technological_University_Design_and_Development_of_the_Littoral_AUV_Zyra_20/links/55d7273a08aeb38e8a8598fc/Delhi-Technological-University-Design-and-Development-of-the-Littoral-AUV-Zyra-20.pdf" target="_blank">[Report PDF]</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Theses -->
+        <section>
+            <h2 class="section-title">Theses</h2>
+            <div class="entry">
+                <div class="pub-title">Harnessing Synthetic Data for Robust and Reliable Vision</div>
+                <div class="pub-venue">Ph.D. in Computer Science, Georgia Tech, 2024</div>
+                <div class="pub-links">
+                    <a href="https://repository.gatech.edu/entities/publication/06d25907-f11f-4bc2-ac0b-9869d6722177" target="_blank">[PDF]</a>
+                </div>
+            </div>
+            <div class="entry">
+                <div class="pub-title">Evaluating Visual Conversational Agents in the Context of Human-AI Cooperative Games</div>
+                <div class="pub-venue">Masters in Computer Science (specialization Machine Learning), 2017-2019</div>
+                <div class="pub-links">
+                    <a href="https://smartech.gatech.edu/handle/1853/61308" target="_blank">[PDF]</a>
+                </div>
+            </div>
+        </section>
+
     </div>
 
-    <div id="projects">
-      <h2>Projects</h2>
-      <div>
-        <p class="paper">
-          <span class="title" style="font-weight:400">Investigating Visual Dialog Models for Goal-Driven Self-Talk
-          </span>
-          <span>Prithvijit Chattopadhyay (advised by Devi Parikh)</span>
-          <span>2019</span>
-          <span>
-            <a class="button" href="files/data/Mini_Project_2_Fall_19_Report.pdf" target="_blank">[Report PDF]</a>
-          </span>
-        </p>
+    <aside class="sidebar" aria-label="Recognition">
+        <div class="sidebar-rail">
+            <h3 class="rail-title">Recognition</h3>
+            <ul class="rail-list">
+                <li>
+                    <span class="rail-year">2025</span>
+                    <span class="rail-text"><a href="https://www.wired.com/story/nvidia-cosmos-ai-helps-robots-self-driving-cars/">Best of AI &amp; Best of CES</a> &middot; Cosmos @ CES</span>
+                </li>
+                <li>
+                    <span class="rail-year">2025</span>
+                    <span class="rail-text">Outstanding Reviewer &middot; <a href="https://iccv.thecvf.com/Conferences/2025/ProgramCommittee">ICCV</a></span>
+                </li>
+                <li>
+                    <span class="rail-year">2023</span>
+                    <span class="rail-text">Outstanding Reviewer &middot; <a href="https://cvpr2023.thecvf.com/Conferences/2023/OutstandingReviewers">CVPR</a></span>
+                </li>
+                <li>
+                    <span class="rail-year">2023</span>
+                    <span class="rail-text"><a href="https://iccv2023.thecvf.com/call.for.participation-363200-2-30-32.php">ICCV Doctoral Consortium</a></span>
+                </li>
+                <li>
+                    <span class="rail-year">2022</span>
+                    <span class="rail-text">Highlighted Reviewer &middot; <a href="https://iclr.cc/Conferences/2022/Reviewers">ICLR</a></span>
+                </li>
+                <li>
+                    <span class="rail-year">2020</span>
+                    <span class="rail-text"><a href="https://www.cc.gatech.edu/annual-awards-and-honors-past-recipients">Rising Star Doctoral Student</a> &middot; Georgia Tech</span>
+                </li>
+                <li>
+                    <span class="rail-year">2020</span>
+                    <span class="rail-text">NVIDIA Best Paper Runner-up &middot; <a href="https://arxiv.org/abs/2008.11300">AROW @ ECCV</a></span>
+                </li>
+            </ul>
+            <p class="rail-foot"><a href="#achievements">all awards &rarr;</a></p>
 
-        <p class="paper">
-          <span class="title" style="font-weight:400">Exploring Weak-Supervision and Generative Models for Semantic
-            Segmentation
-          </span>
-          <span>2018</span>
-          <span>Prithvijit Chattopadhyay,
-            Ramprasaath R. Selvaraju,
-            Viraj Prabhu</span>
-          <!-- <span><i>CVPR</i>,   2017</span> -->
-          <!-- <span>
-        <font color="blue"><b>Spotlight presentation</b></font>
-      </span> -->
+            <h3 class="rail-title stacked">In the News</h3>
+            <ul class="rail-press">
+                <li>
+                    <a href="https://www.wired.com/story/nvidia-cosmos-ai-helps-robots-self-driving-cars/" target="_blank">
+                        <span class="source">Wired</span>
+                        <span class="headline">Cosmos helps robots and self-driving cars</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://techcrunch.com/2025/01/06/nvidia-releases-its-own-brand-of-world-models/" target="_blank">
+                        <span class="source">TechCrunch</span>
+                        <span class="headline">NVIDIA releases its own brand of world models</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://venturebeat.com/orchestration/nvidias-cosmos-reason-2-aims-to-bring-reasoning-vlms-into-the-physical-world" target="_blank">
+                        <span class="source">VentureBeat</span>
+                        <span class="headline">Cosmos Reason 2 brings reasoning to physical AI</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.zdnet.com/article/nvidia-signs-largest-car-maker-toyota-to-use-its-self-driving-tech/" target="_blank">
+                        <span class="source">ZDNet</span>
+                        <span class="headline">Toyota signs on for NVIDIA self-driving tech</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.gatech.edu/news/2024/09/26/skyscenes-dataset-could-lead-safe-reliable-autonomous-flying-vehicles" target="_blank">
+                        <span class="source">Georgia Tech</span>
+                        <span class="headline">SkyScenes for autonomous flying vehicles</span>
+                    </a>
+                </li>
+            </ul>
 
-          <!-- <center><img src="./files/images/counting_task_img.jpg" alt="3DSP" width="500" height="300" style="border-style: none;"></center> -->
-          <!-- <span align="justify"><b>TL;DR, </b>We study the numerosity of object classes in natural, everyday images and build
-        dedicated models for counting designed to tackle the large variance in counts, appearances, and
-        scales of objects found in natural scenes. We propose a contextual counting approach inspired by the
-        phenomenon of subitizing - the ability of humans to make quick assessments of counts given a
-        perceptual signal, for small count values.
-      </span> -->
-          <span>
-            <a class="button" href="https://virajprabhu.github.io/reports/pgm.pdf" target="_blank">[Report PDF]</a>
-            <!-- <a class="button" href="https://github.com/prithv1/cvpr2017_counting" target="_blank">[code]</a> -->
-          </span>
-        </p>
+            <h3 class="rail-title stacked">Mentees</h3>
+            <ul class="rail-mentees">
+                <li>
+                    <span class="name">Max W.F. Ku</span>
+                    <span class="place">PhD, U Waterloo</span>
+                </li>
+                <li>
+                    <span class="name">Sahil Khose</span>
+                    <span class="place">PhD, UC Irvine</span>
+                </li>
+                <li>
+                    <span class="name">Anisha Pal</span>
+                    <span class="place">Planette AI</span>
+                </li>
+                <li>
+                    <span class="name">Vivek Vijaykumar</span>
+                    <span class="place">Databricks</span>
+                </li>
+                <li>
+                    <span class="name">Aayushi Agarwal</span>
+                    <span class="place">Mesh</span>
+                </li>
+                <li>
+                    <span class="name">Deepanshi</span>
+                </li>
+                <li>
+                    <span class="name">Kartik Sarangmath</span>
+                    <span class="place">Co-Founder, Omnara (YC S25)</span>
+                </li>
+                <li>
+                    <span class="name">Rohit Mittapalli</span>
+                    <span class="place">Anthropic</span>
+                </li>
+            </ul>
+        </div>
+    </aside>
 
-        <p class="paper">
-          <span class="title" style="font-weight:400">DTU AUV: Autonomous Underwater Vehicle
-          </span>
-          <span>Prithvijit Chattopadhyay (Acoustics & Control Systems Department)</span>
-          <span>(co-authored with DTU AUV members)</span>
-          <span>2012-2016</span>
-          <span>
-            <a class="button"
-              href="https://www.researchgate.net/profile/Aditya-Rastogi/publication/281117733_Delhi_Technological_University_Design_and_Development_of_the_Littoral_AUV_Zyra_20/links/55d7273a08aeb38e8a8598fc/Delhi-Technological-University-Design-and-Development-of-the-Littoral-AUV-Zyra-20.pdf"
-              target="_blank">[Report PDF]</a>
-            <!-- <a class="button" href="https://github.com/prithv1/cvpr2017_counting" target="_blank">[code]</a> -->
-          </span>
-        </p>
-
-      </div>
     </div>
 
-    <div id="theses">
-      <h2>Theses</h2>
-      <div>
-
-        <p class="paper">
-          <span class="title" style="font-weight:400">Evaluating Visual Conversational Agents in the Context of Human-AI
-            Cooperative Games
-          </span>
-          <span>Masters in Computer Science (specialization Machine Learning)</span>
-          <span>2017-2019</span>
-          <!-- <span>Prithvijit Chattopadhyay</span> -->
-          <span>
-            <a class="button" href="https://smartech.gatech.edu/handle/1853/61308" target="_blank">[PDF]</a>
-          </span>
-        </p>
-      </div>
+    <div id="footer">
+        Design and CSS Courtesy: <a href="https://cs.stanford.edu/~ssagawa/">Shiori Sagawa</a> &amp; <a href="https://www.sainingxie.com/">Saining Xie</a>. <a href="#Home">Back to Top</a>
     </div>
 
-    <div>
-      <h2>Professional Services</h2>
-      <div>
-        <p><b>Reviewing:</b> <a href="https://cvpr2023.thecvf.com/">CVPR 2018-23</a>,
-          <a href="https://iccv2023.thecvf.com/">ICCV 2023</a>,
-          <a href="https://www.icra2022.org/">ICRA 2021-22</a>,
-          <a href="https://eccv2018.org/">ECCV 2018</a>, <a href="https://nips.cc/">NeurIPS 2018-21,23</a>, <a
-            href="https://iclr.cc/">ICLR 2019-22</a>, <a href="https://icml.cc/Conferences/2020">ICML
-            2019-20</a>, <a href="http://www.acl2019.org/EN/index.xhtml">ACL 2019, </a><a
-            href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=34">TPAMI</a>
-        </p>
-      </div>
-    </div>
+    <!-- Toggle scripts (preserved from original) -->
+    <script type="text/javascript">
+        function myFunction() {
+            var dots = document.getElementById("dots");
+            var moreText = document.getElementById("more");
+            var btnText = document.getElementById("myBtn");
 
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read More";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Read Less";
+                moreText.style.display = "inline";
+            }
+        }
 
-    <p align="center">(Design and CSS Courtesy: <a href="https://cs.stanford.edu/~ssagawa/">Shiori Sagawa)</a></p>
-  </div>
+        function myFunction2() {
+            var dots = document.getElementById("dots2");
+            var moreText = document.getElementById("more2");
+            var btnText = document.getElementById("myBtn2");
 
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read More";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Read Less";
+                moreText.style.display = "inline";
+            }
+        }
 
+        function toggleContent(sectionId, dotsId, moreId, btnId) {
+            var dots = document.getElementById(dotsId);
+            var moreText = document.getElementById(moreId);
+            var btnText = document.getElementById(btnId);
 
+            if (window.getComputedStyle(dots).display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "[Read More]";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "[Read Less]";
+                moreText.style.display = "inline";
+            }
+        }
 
+        function toggleDescription(divId) {
+            var description = document.getElementById(divId);
+            if (description.style.display === 'none' || description.style.display === '') {
+                description.style.display = 'block';
+            } else {
+                description.style.display = 'none';
+            }
+        }
 
+        (function () {
+            var btn = document.getElementById('themeToggle');
+            function syncLabel() {
+                var theme = document.documentElement.getAttribute('data-theme') || 'light';
+                btn.textContent = theme === 'dark' ? 'light' : 'dark';
+            }
+            syncLabel();
+            btn.addEventListener('click', function () {
+                var current = document.documentElement.getAttribute('data-theme') || 'light';
+                var next = current === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                localStorage.setItem('theme', next);
+                syncLabel();
+            });
+        })();
+
+        // Pub tag filtering
+        (function () {
+            var pills = document.querySelectorAll('.tag-pill');
+            var pubs = document.querySelectorAll('.pub');
+            pills.forEach(function (pill) {
+                pill.addEventListener('click', function () {
+                    var filter = pill.getAttribute('data-filter');
+                    pills.forEach(function (p) { p.classList.remove('active'); });
+                    pill.classList.add('active');
+                    pubs.forEach(function (pub) {
+                        if (filter === 'all') {
+                            pub.classList.remove('is-hidden');
+                        } else {
+                            var tags = (pub.getAttribute('data-tags') || '').split(/\s+/);
+                            if (tags.indexOf(filter) >= 0) {
+                                pub.classList.remove('is-hidden');
+                            } else {
+                                pub.classList.add('is-hidden');
+                            }
+                        }
+                    });
+                });
+            });
+        })();
+
+        // Active section highlighting in sticky nav
+        (function () {
+            var navLinks = document.querySelectorAll('header.top nav a[data-section]');
+            var byId = {};
+            navLinks.forEach(function (a) { byId[a.getAttribute('data-section')] = a; });
+            var sections = Object.keys(byId).map(function (id) { return document.getElementById(id); }).filter(Boolean);
+            if (!('IntersectionObserver' in window) || sections.length === 0) return;
+            var visible = {};
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) { visible[e.target.id] = e.intersectionRatio; });
+                var topId = null, topRatio = 0;
+                Object.keys(visible).forEach(function (id) {
+                    if (visible[id] > topRatio) { topRatio = visible[id]; topId = id; }
+                });
+                navLinks.forEach(function (a) { a.classList.remove('active'); });
+                if (topId && byId[topId]) byId[topId].classList.add('active');
+            }, { rootMargin: '-80px 0px -60% 0px', threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] });
+            sections.forEach(function (s) { observer.observe(s); });
+        })();
+    </script>
 </body>
 
 </html>
