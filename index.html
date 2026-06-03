@@ -641,7 +641,7 @@
                 I am a Research Scientist at <a href="https://research.nvidia.com/labs/cosmos-lab/">NVIDIA Cosmos Lab</a>, where I work on world-foundation models: video-generation models for spatio-temporal forecasting and VLMs for understanding. My work spans model-design, pre-training, data curation and evaluation of large multi-modal foundation models.
             </p>
             <p>
-                I'm driven by challenging open-ended problems that stretch what I know. My latest obsessions <a class="inline-toggle" onclick="toggleDescription('obsessions');">are</a>.
+                I'm driven by challenging open-ended problems that stretch what I know. Besides the usual research grind, my latest obsessions <a class="inline-toggle" onclick="toggleDescription('obsessions');">are</a>.
             </p>
             <ol id="obsessions" class="obsessions" style="display: none;">
                 <li>Imbuing &amp; measuring physics adherence in world-models</li>
@@ -666,32 +666,32 @@
             <h2 class="section-title">Affiliations</h2>
             <div class="affiliation-strip">
                 <div class="aff">
-                    <img src="./files/images/dtu.png" alt="DTU">
-                    <p>2012-2016</p>
-                </div>
-                <div class="aff">
-                    <img src="./files/images/iiit_logo.png" alt="IIIT">
-                    <p>Winter 2014</p>
-                </div>
-                <div class="aff">
-                    <img src="./files/images/vt.jpg" alt="VT">
-                    <p>2016-2017</p>
-                </div>
-                <div class="aff">
-                    <img src="./files/images/gt.png" alt="Georgia Tech">
-                    <p>2017-2024</p>
-                </div>
-                <div class="aff">
-                    <img src="./files/images/msr_logo.jpg" alt="Microsoft Research">
-                    <p>Summer 2018</p>
+                    <img src="./files/images/nvidia_logo.png" alt="NVIDIA">
+                    <p>2024&ndash;Present</p>
                 </div>
                 <div class="aff">
                     <img src="./files/images/ai2_logo.png" alt="AI2">
                     <p>Summer 2020, 2022</p>
                 </div>
                 <div class="aff">
-                    <img src="./files/images/nvidia_logo.png" alt="NVIDIA">
-                    <p>2024&ndash;Present</p>
+                    <img src="./files/images/msr_logo.jpg" alt="Microsoft Research">
+                    <p>Summer 2018</p>
+                </div>
+                <div class="aff">
+                    <img src="./files/images/gt.png" alt="Georgia Tech">
+                    <p>2017-2024</p>
+                </div>
+                <div class="aff">
+                    <img src="./files/images/vt.jpg" alt="VT">
+                    <p>2016-2017</p>
+                </div>
+                <div class="aff">
+                    <img src="./files/images/iiit_logo.png" alt="IIIT">
+                    <p>Winter 2014</p>
+                </div>
+                <div class="aff">
+                    <img src="./files/images/dtu.png" alt="DTU">
+                    <p>2012-2016</p>
                 </div>
             </div>
         </section>
@@ -701,6 +701,7 @@
         <section id="news">
             <h2 class="section-title">News</h2>
             <ul class="news-list">
+                <li><span class="news-date">June 2026</span><span>Cosmos 3 is out! Our omnimodal world foundation model leads on understanding, reasoning, generation, and action benchmarks. <a href="https://research.nvidia.com/labs/cosmos-lab/cosmos3/">Check it out</a>.</span></li>
                 <li><span class="news-date">Oct 2025</span><span>Joined the panel discussion at the <a href="https://riwm-2025.github.io/RIWM-2025/">Workshop on Reliable and Interactable World Models</a> (RIWM) at ICCV 2025.</span></li>
                 <li><span class="news-date">August 2024</span><span>Started at NVIDIA as a Research Scientist.</span></li>
                 <li><span class="news-date">July 2024</span><span>Successfully defended my dissertation (<a href="https://www.dropbox.com/scl/fi/co3o2ywsne37onz8o3wuq/Ph.D.-Defense-Talk.pdf?rlkey=vwzgi7u50flyblaubmtjnnu2m&st=o1m7pm9e&dl=0">slides here</a>, <a href="https://repository.gatech.edu/bitstreams/ceb11068-ce8d-40e1-8931-101e3d797e5a/download">dissertation here</a>)!</span></li>
@@ -744,6 +745,28 @@
                 <button class="tag-pill" data-filter="robustness">Robustness</button>
                 <button class="tag-pill" data-filter="vision-language">Vision-Language</button>
                 <button class="tag-pill" data-filter="embodied-ai">Embodied AI</button>
+            </div>
+
+            <!-- Cosmos 3 -->
+            <div class="pub" data-tags="world-foundation-models vision-language">
+                <img src="./files/images/cosmos3.gif" alt="Cosmos 3">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://research.nvidia.com/labs/cosmos-lab/cosmos3/">Cosmos 3: Omnimodal World Models for Physical AI</a>
+                    </div>
+                    <div class="pub-venue">Technical Report &middot; 2026</div>
+                    <div class="pub-authors">
+                        NVIDIA (<span class="author sx">Prithvijit Chattopadhyay</span>: Core Contributor)
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://research.nvidia.com/labs/cosmos-lab/cosmos3/" target="_blank">[Project Page]</a>
+                        <a href="https://arxiv.org/abs/2606.02800" target="_blank">[PDF]</a>
+                        <a href="https://huggingface.co/collections/nvidia/cosmos3" target="_blank">[Huggingface]</a>
+                        <a href="https://github.com/NVIDIA/cosmos" target="_blank">[Code]</a>
+                        <a class="toggle-link" onclick="toggleDescription('Cosmos3');">[TL;DR]</a>
+                    </div>
+                    <div id="Cosmos3" class="paper-tldr"><b>TL;DR, </b><i>Cosmos 3 is a unified omnimodal world foundation model for Physical AI that connects understanding, generation, simulation, and action through a shared model moving fluidly across text, images, video, audio, and robot actions. It supports vision-language reasoning, image generation, audio-visual generation, robot policy learning, forward dynamics simulation, and inverse dynamics inference — all within a single architecture.</i></div>
+                </div>
             </div>
 
             <!-- Cosmos-Reason2 -->
