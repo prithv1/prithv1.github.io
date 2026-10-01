@@ -386,16 +386,37 @@
         /* Mobile: single column, hide right rail */
         @media (max-width: 1100px) {
             .layout {
-                grid-template-columns: 1fr;
-                grid-template-areas:
-                    "main"
-                    "aff";
+                display: flex;
+                flex-direction: column;
                 max-width: 880px;
+                margin: 0 auto;
+                gap: 0;
             }
             .layout > .container {
+                order: 1;
                 padding-left: 32px;
                 padding-right: 32px;
             }
+            .sidebar-left {
+                order: 2;
+                padding: 24px 32px 48px;
+                border-top: 1px solid var(--line);
+            }
+            .sidebar-left-rail {
+                position: static;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .sidebar-left-rail .rail-title { flex-basis: 100%; margin-bottom: 4px; }
+            .aff-vert {
+                flex-direction: column;
+                padding: 0;
+                border: none;
+                align-items: center;
+            }
+            .aff-vert img { height: 44px; max-width: 90px; margin-bottom: 4px; }
             .sidebar { display: none; }
         }
 
