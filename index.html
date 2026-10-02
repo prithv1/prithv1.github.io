@@ -919,6 +919,14 @@
                             </div>
                         </a>
                         <a class="hl-card" href="#pub">
+                            <img src="./files/images/cosmos3_edge.gif" alt="Cosmos 3 Edge demo">
+                            <div class="hl-card-body">
+                                <span class="hl-card-model">Cosmos 3 Edge</span>
+                                <div class="hl-card-title">Video Generation Post-Training</div>
+                                <div class="hl-card-desc">Cross-Domain Model Merging Techniques on top of Domain-Specific SFT.</div>
+                            </div>
+                        </a>
+                        <a class="hl-card" href="#pub">
                             <img src="./files/images/cosmos3_grounding.jpg" alt="2D grounding example">
                             <div class="hl-card-body">
                                 <span class="hl-card-model">Cosmos 3 &middot; Cosmos-Reason2</span>
@@ -1041,6 +1049,28 @@
                         <a class="toggle-link" onclick="toggleDescription('Cosmos3');">[TL;DR]</a>
                     </div>
                     <div id="Cosmos3" class="paper-tldr"><b>TL;DR, </b><i>Cosmos 3 is a unified omnimodal world foundation model for Physical AI that connects understanding, generation, simulation, and action through a shared model moving fluidly across text, images, video, audio, and robot actions. It supports vision-language reasoning, image generation, audio-visual generation, robot policy learning, forward dynamics simulation, and inverse dynamics inference — all within a single architecture.</i></div>
+                </div>
+            </div>
+
+            <!-- Cosmos 3 Edge -->
+            <div class="pub" data-tags="world-foundation-models vision-language">
+                <img src="./files/images/cosmos3_edge.gif" alt="Cosmos 3 Edge">
+                <div>
+                    <div class="pub-title">
+                        <a href="https://developer.nvidia.com/blog/post-train-nvidia-cosmos-3-edge-for-on-device-robot-control/">Cosmos 3 Edge: On-Device Omnimodal World Model for Physical AI</a>
+                    </div>
+                    <div class="pub-venue">Technical Report &middot; 2026</div>
+                    <div class="pub-authors">
+                        NVIDIA (<span class="author sx">Prithvijit Chattopadhyay</span>: Core Contributor &mdash; Post-training)
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://developer.nvidia.com/blog/post-train-nvidia-cosmos-3-edge-for-on-device-robot-control/" target="_blank">[Blog]</a>
+                        <a href="https://arxiv.org/abs/2606.02800" target="_blank">[PDF]</a>
+                        <a href="https://huggingface.co/nvidia/Cosmos3-Edge-Policy-DROID" target="_blank">[Huggingface]</a>
+                        <a href="https://github.com/NVIDIA/cosmos" target="_blank">[Code]</a>
+                        <a class="toggle-link" onclick="toggleDescription('Cosmos3Edge');">[TL;DR]</a>
+                    </div>
+                    <div id="Cosmos3Edge" class="paper-tldr"><b>TL;DR, </b><i>Cosmos 3 Edge is the on-device tier of the Cosmos 3 family &mdash; a 4B-parameter omnimodal model that reads text, images, video, audio, and actions, and outputs robot actions at ~15&nbsp;Hz on NVIDIA Jetson Thor. It brings the full Cosmos 3 Physical AI reasoning and action-generation pipeline onto edge hardware for real-time deployment, without round-trips to the cloud.</i></div>
                 </div>
             </div>
 
